@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/layout-base/layout-base.js"></script>
+    <script src="https://unpkg.com/cose-base/cose-base.js"></script>
+    <script src="https://unpkg.com/cytoscape-layout-utilities/cytoscape-layout-utilities.js"></script>
+    <script src="./js/cytoscape-fcose.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
+</head>
+
+<body>
+    <div class="actionContainer">
+        <table style="float: right; padding-left: 40px">
+            <tr>
+                <td>
+                    <select name="selectedGraph" id="selectedGraph">
+                        <option value="A">Graph A</option>
+                        <option value="B">Graph B</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="inputWrapper">
+                        <label for="nodeName">Node</label>
+                        <input type="text" name="nodeName" id="nodeName" value="" size="5" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="connectedToWrapper">
+                        <label for="connectedNode">Connected To</label>
+                        <input type="text" name="connectedNode" id="connectedNode" value="" size="5" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button name="fix-position" onclick="add()" style="float: right">
+                        Add +
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button name="fix-position" onclick="fixGraph()" style="float: right">
+                        Fix Graph
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="cy1"></div>
+    <div id="cy2"></div>
+
+    <script src="./js/spring-embedder.js"></script>
+</body>
+
+</html>
