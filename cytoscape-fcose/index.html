@@ -25,48 +25,61 @@
 
 <body>
     <div style="display: flex;flex-direction: row;justify-content: flex-start;align-items: flex-start;">
+
         <div class="actionContainer">
-            <button name="fix-position" onclick="fcoseFix()">fCoSE</button>
-
-            <button name="add panel" onclick="addPanel()">Add New Network</button>
-
-            <button name="union" onclick="union()">Union Network</button>
-
-            <button name="fix-graph" onclick="fixGraph()">Fix Networks</button>
-
-
             <table>
                 <tr>
                     <td>
-                        <div id="inputWrapper">
-                            <label for="nodeName">Network Name</label>
-                            <input type="text" name="selectedNetwork" id="selectedNetwork" value="" size="5" />
-                        </div>
+                        <button name="fix-position" class="btn btn-primary btn-sm mb-2 ml-2"
+                            onclick="fcoseFix()">fCoSE</button>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div id="inputWrapper">
-                            <label for="nodeName">Node Name</label>
-                            <input type="text" name="nodeName" id="nodeName" value="" size="5" />
-                        </div>
+                        <button name="add panel" class="btn btn-primary btn-sm mb-2 ml-2" onclick="addPanel()">Add New
+                            Network</button>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div id="connectedToWrapper">
-                            <label for="connectedNode">Connected To</label>
-                            <input type="text" name="connectedNode" id="connectedNode" value="" size="5" />
-                        </div>
+                        <button name="union" class="btn btn-primary btn-sm mb-2 ml-2" onclick="union()">Union
+                            Network</button>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <button name="fix-position" onclick="add()" style="float:right">Add+</button>
+                        <button name="fix-graph" class="btn btn-primary btn-sm mb-2 ml-2" onclick="fixGraph()">Fix
+                            Networks</button>
                     </td>
                 </tr>
+
             </table>
 
+
+
+
+            <table class="inpuTable">
+                <tr>
+                    <td><label for="nodeName">Network Name</label> </td>
+                    <td><input type="text" class="textField form-control form-control-sm" name="selectedNetwork"
+                            id="selectedNetwork" value="" size="5" /> </td>
+                </tr>
+                <tr>
+                    <td><label for="nodeName">Node Name</label></td>
+                    <td><input type="text" class="textField form-control form-control-sm" name="nodeName" id="nodeName"
+                            value="" size="5" /></td>
+                </tr>
+                <tr>
+                    <td><label for="connectedNode">Connected To</label></td>
+                    <td><input type="text" class="textField form-control form-control-sm" name="connectedNode"
+                            id="connectedNode" value="" size="5" /></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td><button name="fix-position" class="btn btn-primary btn-sm mb-2 ml-2" onclick="add()"
+                            style="float:right">Add+</button> </td>
+                </tr>
+            </table>
         </div>
         <div class="container">
         </div>
