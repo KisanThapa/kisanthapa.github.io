@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap, popper, jQuery and filesaver - for demo purpose only -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/layout-base/layout-base.js"></script>
+    <script src="https://unpkg.com/cose-base/cose-base.js"></script>
+    <script src="https://unpkg.com/cytoscape-layout-utilities/cytoscape-layout-utilities.js"></script>
+
+    <script src="./script/cytoscape-fcose.js"></script>
+    <script src="./script/graph-initials.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div style="display: flex;flex-direction: row;justify-content: flex-start;align-items: flex-start;">
+        <div class="actionContainer">
+            <button name="fix-position" onclick="fcoseFix()">fCoSE</button>
+
+            <button name="add panel" onclick="addPanel()">Add New Network</button>
+
+            <button name="union" onclick="union()">Union Network</button>
+
+            <button name="fix-graph" onclick="fixGraph()">Fix Networks</button>
+
+
+            <table>
+                <tr>
+                    <td>
+                        <div id="inputWrapper">
+                            <label for="nodeName">Network Name</label>
+                            <input type="text" name="selectedNetwork" id="selectedNetwork" value="" size="5" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="inputWrapper">
+                            <label for="nodeName">Node Name</label>
+                            <input type="text" name="nodeName" id="nodeName" value="" size="5" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="connectedToWrapper">
+                            <label for="connectedNode">Connected To</label>
+                            <input type="text" name="connectedNode" id="connectedNode" value="" size="5" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button name="fix-position" onclick="add()" style="float:right">Add+</button>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="container">
+        </div>
+        <div class="union" style="position:relative;border:1px solid green" id="cyUnion">
+            <span style='position:absolute;top:0;left:0'>Union Network</span>
+        </div>
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
