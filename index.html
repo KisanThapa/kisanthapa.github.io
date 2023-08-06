@@ -16,8 +16,8 @@
 
 <body>
 
-<div class="flex">
-    <div class="w-1/3 bg-gray-200 h-screen p-8">
+<div class="flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 bg-gray-200 md:overflow-y-auto p-8">
 
         <div class="flex flex-col justify-center items-center h-full">
             <div class="text-5xl font-bold text-red-900">Kisan Thapa</div>
@@ -80,7 +80,7 @@
     </div>
 
 
-    <div class="w-2/3 bg-gray-100 h-screen overflow-y-auto p-8">
+    <div class="w-full md:w-2/3 h-screen lg:overflow-y-auto xl:overflow-y-auto 2xl:overflow-y-auto p-8">
         <div class="text-4xl font-bold text-red-900">Portfolio</div>
         <div class="border-b border-gray-400 mt-4"></div>
 
@@ -136,7 +136,7 @@
                     </p>
 
                     <div class="flex flex-col">
-                        <div class="text-lg font-semibold text-gray-600 dark:text-gray-600">Dean's List Award</div>
+                        <div class="font-semibold text-gray-600 dark:text-gray-600">Dean's List Award</div>
                         <p class="text-base font-normal text-gray-500 dark:text-gray-500">The Dean’s list recognizes
                             outstanding academic performance. To qualify, a student must obtain a CGPA of at least 3.7
                             in the undergraduate level and 3.8 in the graduate level.
@@ -163,22 +163,132 @@
                     </p>
                 </li>
             </ol>
+        </div>
 
+
+        <!-- Work Experience Section with Vertical Timeline -->
+        <div class="flex flex-col">
+            <div class="text-2xl font-bold text-red-900 mt-8">Work Experience</div>
+
+            <ol class="relative border-l border-gray-200 dark:border-red-700 p-2 m-4">
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-red-900 dark:bg-red-900"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">September
+                        2021 - Present
+                    </time>
+
+                    <div class="flow-root">
+                        <h3 class="float-left text-lg font-semibold text-red-900">University of Massachusetts
+                            Boston</h3>
+                        <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Boston, MA</h5>
+                    </div>
+
+                    <h5 class="text-base font-semibold text-gray-600 dark:text-gray-600">
+                        Graduate Research And Teaching Assistant</h5>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-500">What have you done here
+                    </p>
+
+                    <div class="flex flex-col">
+                        <div class="font-semibold text-gray-600 dark:text-gray-600">Projects</div>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-500">List of projects
+                        </p>
+                    </div>
+
+                </li>
+
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-red-900 dark:bg-red-900"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">August 2020 -
+                        August 2021
+                    </time>
+                    <div class="flow-root">
+                        <h3 class="float-left text-lg font-semibold text-red-900">EB Pearls</h3>
+                        <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Kathmandu, Nepal</h5>
+                    </div>
+
+                    <h5 class="text-base font-semibold text-gray-600 dark:text-gray-600">Software Developer</h5>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-500">What have you done here
+                    </p>
+
+                    <div class="flex flex-col">
+                        <div class="font-semibold text-gray-600 dark:text-gray-600">Projects</div>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-500">List of Projects
+                        </p>
+                    </div>
+                </li>
+
+                <li class="ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-red-900 dark:bg-red-900"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">November 2019 -
+                        August 2020
+                    </time>
+                    <div class="flow-root">
+                        <h3 class="float-left text-lg font-semibold text-red-900">Thakur International</h3>
+                        <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Kathmandu,
+                            Nepal</h5>
+                    </div>
+
+                    <h5 class="text-base font-semibold text-gray-600 dark:text-gray-600">Software Developer</h5>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-500">What have you done here
+                    </p>
+                </li>
+
+                <li class="ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-red-900 dark:bg-red-900"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">February 2018 -
+                        June 2019
+                    </time>
+                    <div class="flow-root">
+                        <h3 class="float-left text-lg font-semibold text-red-900">Rooster Logic Pvt. Ltd</h3>
+                        <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Kathmandu,
+                            Nepal</h5>
+                    </div>
+
+                    <h5 class="text-base font-semibold text-gray-600 dark:text-gray-600">Android Developer</h5>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-500">What have you done here
+                    </p>
+                </li>
+
+                <li class="ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-red-900 dark:bg-red-900"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">November 2017 -
+                        February 2018
+                    </time>
+                    <div class="flow-root">
+                        <h3 class="float-left text-lg font-semibold text-red-900">Rooster Logic Pvt. Ltd</h3>
+                        <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Kathmandu,
+                            Nepal</h5>
+                    </div>
+
+                    <h5 class="text-base font-semibold text-gray-600 dark:text-gray-600">Internship - Android Developer</h5>
+                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-500">What have you done here
+                    </p>
+                </li>
+
+            </ol>
         </div>
 
 
         <!-- Teaching Assistant Section -->
         <div class="flex flex-col">
             <div class="text-2xl font-bold text-red-900 mt-8">Teaching Assistant</div>
-            <div class="text-l mt-4"><a href="#">CS 438/638 Applied
-                Machine Learning</a></div>
-            <div class="text-l mt-2"><a href="#">CS 220 Applied Discrete Mathematics</a></div>
+            I have been a teaching assistant for the following courses at the University of Massachusetts Boston.
+            <div class="text-l mt-4"><a href="#">CS 438/638 Applied Machine Learning - Fall 2021, Spring 2023 </a></div>
+            <div class="text-l mt-2"><a href="#">CS 220 Applied Discrete Mathematics - Spring 2022, Fall 2022</a></div>
         </div>
 
 
         <!-- Projects Section -->
         <div class="flex flex-col">
             <div class="text-2xl font-bold text-red-900 mt-8">Projects</div>
+
+            <div class="flow-root">
+                <h3 class="float-left text-lg font-semibold text-gray-600">
+                    CausalPath Newt Webserver
+                </h3>
+                <h5 class="float-right text-lg font-semibold text-gray-600 ml-4 align-right">May 2022 - Sep 2022</h5>
+            </div>
+
         </div>
 
 
