@@ -1,0 +1,5 @@
+# folder ignore
+/.idea
+/.vscode
+.DS_Store
+/.fleet
