@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap");
+
+@font-face {
+	font-family: "CommitMono";
+	src: url("../assets/fonts/CommitMono-400-Regular.otf") format("opentype"),
+		url("../assets/fonts/CommitMono-400-Regular.woff") format("woff"),
+		url("../assets/fonts/CommitMono-400-Regular.woff2") format("woff2"),
+		url("../assets/fonts/CommitMono-700-Regular.otf") format("opentype"),
+		url("../assets/fonts/CommitMono-700-Regular.woff") format("woff"),
+		url("../assets/fonts/CommitMono-700-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: "Raleway", sans-serif;
+}
