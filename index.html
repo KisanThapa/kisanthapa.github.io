@@ -4,713 +4,254 @@
 <head>
     <title>Kisan Thapa</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="assets/profile.png" type="image/x-icon">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="assets/profile.jpeg" rel="shortcut icon" type="image/x-icon">
 </head>
 
-<body>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
 
-    <div class="flex flex-col md:flex-row">
+<!-- Navbar -->
+<header class="bg-white shadow dark:bg-gray-800">
+    <div class="container mx-auto flex justify-between items-center py-4 px-12 max-w-screen-lg w-full">
 
-        <!-- Personal Info Section -->
-        <div class="md:w-1/3 lg:w-1/3 xl:w-1/3 2xl:w-1/3 bg-gray-200 p-8 py-12">
-
-            <div class="flex flex-col justify-center items-center ">
-
-                <div class="flex flex-col justify-center items-center">
-                    <div class="text-5xl font-bold text-red-900 text-center 2xl:mt-8">Kisan Thapa</div>
-
-                    <img src="assets/profile.png"
-                        class="w-56 h-56 rounded-full bg-gray-900 mt-8 transition duration-700 ease-in-out hover:scale-105"
-                        alt="My profile picture">
-
-                    <div class="text-xl font-bold text-red-900 opacity-75 mt-4 text-center">Researcher | Software
-                        Engineer
-                    </div>
-
-                    <div class="mt-4">
-                        <p><a href="https://www.cs.umb.edu/~kisan/"
-                                class="text-blue-500 hover:underline">https://www.cs.umb.edu/~kisan/</a></p>
-                        <p>Email: KisanThapa33 [AT] gmail.com</p>
-                        <p>Email: Kisan [DOT] Thapa001 [AT] umb.edu</p>
-                    </div>
-
-                    <div
-                        class="text-xl font-bold text-blue-500 mt-4 transition duration-100 ease-in-out hover:scale-125 hover:underline">
-                        <a href="assets/Kisan_Thapa_Resume.pdf">Resume</a>
-                    </div>
-<!-- 
-                    <div
-                        class="text-xl font-bold text-blue-500 transition mt-2 duration-100 ease-in-out hover:scale-125 hover:underline">
-                        <a href="assets/Kisan_Thapa_Resume.pdf">CV</a>
-                    </div> -->
-
-                    <div class="flex flex-row justify-center items-center mt-4">
-                        <div
-                            class="flex justify-center items-center w-12 h-12 rounded-full m-2 transition duration-300 ease-in-out hover:scale-125">
-                            <a href="https://www.linkedin.com/in/kisanthapa/">
-                                <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png"
-                                    alt="linkedin" />
-                            </a>
-                        </div>
-
-                        <div
-                            class="flex justify-center items-center w-12 h-12 rounded-full m-2  transition duration-300 ease-in-out hover:scale-125">
-                            <a href="https://github.com/KisanThapa">
-                                <img width="48" height="48" src="https://img.icons8.com/fluency/48/github.png"
-                                    alt="github" />
-                            </a>
-                        </div>
-
-                        <div
-                            class="flex justify-center items-center w-12 h-12 rounded-full m-2  transition duration-300 ease-in-out hover:scale-125">
-                            <a href="https://scholar.google.com/citations?user=4Qs3ndUAAAAJ&hl=en">
-                                <img width="48" height="48" src="https://img.icons8.com/color/48/google-scholar--v3.png"
-                                    alt="google-scholar--v3" />
-                            </a>
-                        </div>
-
-                        <div
-                            class="flex justify-center items-center w-12 h-12 rounded-full m-2  transition duration-300 ease-in-out hover:scale-125">
-                            <a href="https://www.instagram.com/kisan_n_n/">
-                                <img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png"
-                                    alt="instagram-new" />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="text-center text-gray-500 mt-12">
-                        I am pursuing my PhD in Computer Science at the University of Massachusetts Boston. I am a
-                        member of
-                        the <a href="https://sites.google.com/view/umb-network-biology"
-                            class="text-blue-500 hover:underline">Network
-                            Biology
-                            Laboratory</a>, advised by <a href="https://sites.google.com/view/ozgunbabur"
-                            class="text-blue-500 hover:underline">Prof.
-                            Özgün Babur</a>.
-                    </div>
-
-                    <div class="text-center text-gray-500 mt-4">
-                        I am interested in developing computational methods to study biological networks. I am also
-                        interested
-                        in developing software tools to help biologists analyze their data.
-                    </div>
-
-                </div>
-
-                <!-- A Dot as a divider -->
-                <div class="w-2 h-2 bg-gray-900 rounded-full mt-12"></div>
-
-                <!-- Side Vertical Navigation -->
-                <nav class="mt-8">
-                    <ul class="">
-                        <li class="px-4 py-2 text-center">
-                            <a href="#education" class="text-red-900 text-xl font-bold hover:underline">Education</a>
-                        </li>
-                        <li class="px-4 py-2 text-center">
-                            <a href="#work_experience" class="text-red-900 text-xl font-bold hover:underline">Work
-                                Experience</a>
-                        </li>
-                        <li class="px-4 py-2 text-center">
-                            <a href="#projects" class="text-red-900 text-xl font-bold hover:underline">Projects</a>
-                        </li>
-                        <li class="px-4 py-2 text-center">
-                            <a href="#teaching_experience"
-                                class="text-red-900 text-xl font-bold hover:underline">Teaching
-                                Experience</a>
-                        </li>
-                        <li class="px-4 py-2 text-center">
-                            <a href="#research_papers" class="text-red-900 text-xl font-bold hover:underline">Research
-                                Papers</a>
-                        </li>
-                    </ul>
-                </nav>
-
-            </div>
-
+        <div class="text-2xl font-bold">
+            Kisan <span class="font-light dark:text-gray-400">Thapa</span>
         </div>
 
-
-        <!-- My Education, Work Experice, Projects and Research Papers Section -->
-        <div
-            class="md:w-2/3 lg:w-2/3 xl:w-2/3 2xl:w-2/3 lg:overflow-y-auto xl:overflow-y-auto 2xl:overflow-y-auto p-8 pb-12">
-
-            <!-- Education section with vertical timeline UI -->
-            <div class="flex flex-col mb-8">
-                <div id="education" class="text-2xl font-bold text-red-900">Education</div>
-                <div class="border-b border-gray-400 mt-4"></div>
-
-                <ol class="relative border-l border-red-900 p-2 m-4">
-                    <li class="mb-10 ml-4">
-                        <div class="absolute w-3 h-3 bg-red-900 rounded-full mt-1.5 -left-1.5 border border-white ">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-600">September
-                            2021 - Present
-                        </time>
-
-                        <div class="flow-root">
-                            <h3 class="float-left text-lg font-semibold text-red-900">University of Massachusetts
-                                Boston</h3>
-                            <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Boston, MA</h5>
-                        </div>
-
-                        <h5 class="text-base font-semibold text-gray-600">PhD in Computer Science
-                        </h5>
-                        <p class="mb-4 text-base font-normal text-gray-500">I am PhD candidate in Computer Science at
-                            University of Massachusetts
-                            Boston.
-                            My research interest revolve around the Computational Biology, Machine Learning, and Pathway
-                            Analysis. My advisor is Prof. Ozgun Babur.
-                        </p>
-
-                        <div class="flex flex-col">
-                            <div class="font-semibold text-gray-600">Relevant Coursework</div>
-                            <p class="text-base font-normal text-gray-500">Analysis of Algorithms |
-                                Object-Oriented Software Design | Machine Learning | Artificial Intelligence | Mobile
-                                Applications Development | Computer Vision | Neural Networks |
-                                Neural Network | User Interface Design | Algorithms in Bioinformatics
-                            </p>
-                        </div>
-
-                    </li>
-
-                    <li class="mb-10 ml-4">
-                        <div class="absolute w-3 h-3 bg-red-900 rounded-full mt-1.5 -left-1.5 border border-white ">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-600">August 2013
-                            -
-                            February 2018
-                        </time>
-                        <div class="flow-root">
-                            <h3 class="float-left text-lg font-semibold text-red-900">Pokhara University</h3>
-                            <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Pokhara, Nepal
-                            </h5>
-                        </div>
-
-                        <h5 class="text-base font-semibold text-gray-600">Bachelor of Computer
-                            Engineering</h5>
-                        <p class="mb-4 text-base font-normal text-gray-500">Completed my Bachelor
-                            of
-                            Computer Engineering from Pokhara University, Nepal. I graduated with a 3.8 GPA out of 4,
-                            standing as the third-highest achievement within the university.
-                        </p>
-
-                        <div class="flex flex-col">
-                            <div class="font-semibold text-gray-600">Dean's List Award [GPA 3.8/4, #3
-                                Highest]
-                            </div>
-                            <p class="text-base font-normal text-gray-500">"Achieved excellence by
-                                securing a spot on the Dean's List with an impressive 3.8 GPA out of 4, standing as the
-                                third-highest achievement within the university."
-                            </p>
-                        </div>
-
-                        <div class="flex flex-col mt-2">
-                            <div class="font-semibold text-gray-600">Relevant Coursework</div>
-                            <p class="text-base font-normal text-gray-500">Data Structure and
-                                Algorithms | Programming in C, C++, Java, Python |
-                                Database Management System | Computer Networks | Operating System | Software Engineering
-                                | Computer
-                                Architecture | Web Technologies | Computer Graphics | Microprocessor | Computer
-                                Organization and Architecture |
-                                Theory of Computation | Numerical Methods | Probability and Statistics | Discrete
-                                Mathematics
-                            </p>
-                        </div>
-
-                    </li>
-
-                    <li class="ml-4">
-                        <div class="absolute w-3 h-3 bg-red-900 rounded-full mt-1.5 -left-1.5 border border-white  ">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-600">August 2011
-                            -
-                            December 2013
-                        </time>
-                        <div class="flow-root">
-                            <h3 class="float-left text-lg font-semibold text-red-900">Radiant Higher Secondary School
-                            </h3>
-                            <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Mahendranagar,
-                                Nepal</h5>
-                        </div>
-
-                        <h5 class="text-base font-semibold text-gray-600">Intermediate, Science and
-                            Technology</h5>
-                        <p class="mb-4 text-base font-normal text-gray-500">
-                        </p>
-                    </li>
-                </ol>
-            </div>
-
-
-            <!-- Work Experience Section with Vertical Timeline -->
-            <div class="flex flex-col mb-8">
-                <div id="work_experience" class="text-2xl font-bold text-red-900 mt-8">Work Experience</div>
-                <div class="border-b border-gray-400 mt-4"></div>
-
-                <ol class="relative border-l border-red-900 p-2 m-4">
-                    <li class="mb-10 ml-4">
-                        <div class="absolute w-3 h-3 bg-red-900 rounded-full mt-1.5 -left-1.5 border border-white  ">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-600">September
-                            2021 - Present
-                        </time>
-
-                        <div class="flow-root">
-                            <h3 class="float-left text-lg font-semibold text-red-900">Network Biology Lab at University
-                                of Massachusetts
-                                Boston</h3>
-                            <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Boston, MA</h5>
-                        </div>
-
-                        <h5 class="text-base font-semibold text-gray-600">
-                            Graduate Research And Teaching Assistant</h5>
-                        <p class="mb-2 text-base font-normal text-gray-500">
-
-                        <ul class="list-disc pl-4 mb-2">
-                            <li class="text-base font-normal text-gray-500">Enhanced the Causalpath webserver through
-                                seamless integration of Newt visualization,
-                                resulting
-                                in a doubled user
-                                engagement and heightened responsiveness for intricate graphs.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Engineered a cutting-edge transcription
-                                factor activity prediction tool, achieving a
-                                remarkable
-                                15x acceleration in
-                                analyses through advanced parallelization and vectorization strategies.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Implementated of a Python-based pipeline for
-                                the Single Cell Pathway Analysis Tool,
-                                effectively
-                                halving analysis time and facilitating swift identification of pivotal biological
-                                pathways.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Collaborated synergistically with fellow
-                                researchers to extract profound insights from
-                                mouse
-                                breast cancer data,
-                                offering a substantial contribution to the group's analytical pursuits.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Demonstrated proficiency across a spectrum
-                                of technologies including Python, Numpy,
-                                Pandas,
-                                Java, HTML, Tailwind
-                                CSS, Node JS, React JS, Django, and Rest API, ensuring seamless development and
-                                meticulous
-                                debugging.
-                            </li>
-                        </ul>
-                        </p>
-
-                        <p>Leveraged Knowledge in Python, Numpy, Pandas, Java, HTML, Tailwind CSS, Node JS, React JS,
-                            Django, Rest API, Debugging</p>
-
-                    </li>
-
-                    <li class="mb-10 ml-4">
-                        <div class="absolute w-3 h-3 bg-red-900 rounded-full mt-1.5 -left-1.5 border border-white  ">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-600">August 2020
-                            -
-                            August 2021
-                        </time>
-                        <div class="flow-root">
-                            <h3 class="float-left text-lg font-semibold text-red-900">EB Pearls Pvt. Ltd.</h3>
-                            <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Kathmandu,
-                                Nepal</h5>
-                        </div>
-
-                        <h5 class="text-base font-semibold text-gray-600">Software Developer</h5>
-                        <p class="mb-4 text-base font-normal text-gray-500">
-                        <ul class="list-disc pl-4 mb-4">
-
-                            <li class="text-base font-normal text-gray-500">Crafted the mobile interface for the 'Halo'
-                                crowdfunding initiative, enabling seamless
-                                direct donations and
-                                influencing the lives of over 5000 recipients.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Transformed legacy Android code into
-                                industry-standard excellence, accelerating feature
-                                enhancements by over 50%.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Elevated user experience by optimizing the
-                                heatmap view for a million users within the
-                                Intro Dating App, leveraging
-                                the power of Google Map SDK.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Expertise spans Java, Kotlin, Android SDK,
-                                JUnit, Espresso, Dependency Injection, Rest
-                                API integration, AWS S3,
-                                Firebase, caching, Jira, C++, and Google Maps.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Committed to perpetual growth, embracing
-                                cutting-edge technologies for impactful and
-                                innovative solutions.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Enthusiastic problem solver, dedicated to
-                                the creation of user-centric applications that
-                                make a meaningful impact.
-                            </li>
-
-                        </ul>
-                        </p>
-
-                        <p>Leveraged Knowledge in Java, Kotlin, Android SDK, JUnit, Espresso, DI, Rest API, AWS S3,
-                            Firebase, Caching, Jira, C++,
-                            Google Map</p>
-                    </li>
-
-                    <li class="ml-4">
-                        <div class="absolute w-3 h-3 bg-red-900 rounded-full mt-1.5 -left-1.5 border border-white  ">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-600">November
-                            2017 -
-                            June 2020
-                        </time>
-                        <div class="flow-root">
-                            <h3 class="float-left text-lg font-semibold text-red-900">Rooster Logic Pvt. Ltd</h3>
-                            <h5 class="float-right text-lg font-semibold text-red-900 ml-4 align-right">Kathmandu,
-                                Nepal</h5>
-                        </div>
-
-                        <h5 class="text-base font-semibold text-gray-600">Software Engineer |
-                            Software Engineer Internship</h5>
-                        <p class="mb-4 text-base font-normal text-gray-500">
-                        <ul class="list-disc pl-4 mb-4">
-                            <li class="text-base font-normal text-gray-500">Resolved 20 issues in the Sukarmi Mobile
-                                App, leading to a threefold reduction in survey
-                                completion time per user.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Created an issue tracking system using
-                                Android Development and Node JS server for
-                                rainwater harvesting plants for
-                                households, resulting in an 80% reduction in issue resolve time.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Leveraged expertise in Java, Android SDK,
-                                Node JS webserver, Javascript, Firebase, Rest
-                                API, and project management.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Applied skills in Java, Android SDK, Node JS
-                                webserver, and JavaScript, coupled with
-                                effective utilization of
-                                Firebase and Rest API.
-                            </li>
-                            <li class="text-base font-normal text-gray-500">Showcased project management excellence by
-                                optimizing processes and resolving challenges
-                                through skillful management
-                                and technological dexterity.
-                            </li>
-                        </ul>
-                        </p>
-
-                        <p>Leveraged Knowledge in Java, Android SDK, Node JS webserver, Javascript, Firebase, Rest API,
-                            Project Management</p>
-                    </li>
-
-                </ol>
-            </div>
-
-
-            <!-- Projects Section -->
-            <div class="flex flex-col">
-                <div id="projects" class="text-2xl font-bold text-red-900 mt-8">Projects</div>
-                <div class="border-b border-gray-400 mt-4"></div>
-
-                <div class="flow-root mt-4">
-                    <h3 class="float-left text-lg font-semibold text-gray-600">CausalPath Newt Webserver</h3>
-                    <h5 class="float-right text-lg font-semibold text-gray-600 ml-4 align-right">May 2022 - September
-                        2022
-                    </h5>
-                </div>
-                <p class="mb-1 text-base font-normal text-gray-500">CausalPath works on a set of molecular profiles and
-                    predicts the causal mechanisms that acts on the data. It integrates
-                    prior knowledge from biological pathway databases, and uses them to explain new observations. While
-                    the main focus is
-                    phosphoproteomics, CausalPath can also work on global proteomic, transcriptomic, acetylomic and
-                    methylomic profiles, and
-                    combinations of them.
-                </p>
-
-                <p class="mb-2"><a class="font-semibold">Utilized:</a> HTML, JavaScript, CSS, Node JS, Git, Chrome Dev
-                    Tools
-                </p>
-
-                <a href="https://github.com/PathwayAndDataAnalysis/causalpath-newt-webserver"
-                    class="mb-12 text-blue-500 hover:underline">
-                    https://github.com/PathwayAndDataAnalysis/causalpath-newt-webserver
-                </a>
-
-
-                <div class="flow-root">
-                    <h3 class="float-left text-lg font-semibold text-gray-600">Single Cell Trajectories Analysis</h3>
-                    <h5 class="float-right text-lg font-semibold text-gray-600 ml-4 align-right">September 2022 -
-                        Ongoing</h5>
-                </div>
-                <p class="mb-1 text-base font-normal text-gray-500">I've developed a comprehensive solution for
-                    single-cell pathway analysis:
-                    <br />
-                    1. Client: I built a user-friendly web app with React JS for generating, visualizing, and modifying
-                    cell
-                    trajectories.
-                    <br />
-                    2. Server: A robust Django-based server handles communication with real-time responses and data
-                    storage.
-                    <br />
-                    3. Database: I use MongoDB for data storage, ensuring data integrity.
-                    <br />
-                    I've also implemented a Python pipeline for efficient multi-step analysis, making pathway analysis
-                    more
-                    accessible to
-                    researchers. My goal is to advance bioinformatics and simplify complex analyses for a better
-                    understanding of cellular
-                    behavior.
-                </p>
-
-                <p class="mb-2"><a class="font-semibold">Utilized:</a> React JS, Django, MongoDB, HTML, Tailwind CSS,
-                    JavaScript, Rest API,
-                    Graph JS, Python, Git
-                </p>
-
-                <p>Server GitHub:
-                    <a href="https://github.com/PathwayAndDataAnalysis/single-cell-pathway-analysis"
-                        class="mb-1 text-blue-500 hover:underline">
-                        https://github.com/PathwayAndDataAnalysis/single-cell-pathway-analysis
-                    </a>
-                </p>
-
-                <p class="mb-12">Client GitHub:
-                    <a href="https://github.com/PathwayAndDataAnalysis/single-cell-pathway-analysis-client"
-                        class="text-blue-500 hover:underline">
-                        https://github.com/PathwayAndDataAnalysis/single-cell-pathway-analysis-client
-                    </a>
-                </p>
-
-
-                <div class="flow-root">
-                    <h3 class="float-left text-lg font-semibold text-gray-600">Transcription Factor Prediction</h3>
-                    <h5 class="float-right text-lg font-semibold text-gray-600 ml-4 align-right">February 2023 - Ongoing
-                    </h5>
-                </div>
-                <p class="mb-4 text-base font-normal text-gray-500">Developed a new transcription factor activity
-                    prediction tool using Python, Numpy, and Pandas. I implemented
-                    parallelization in Python to work on large CSV files(more than 600 MB) and to run the analysis for
-                    each cell. This
-                    project is based on rank-based analysis.
-                </p>
-
-                <p class="mb-2"><a class="font-semibold">Utilized:</a> Python, Numpy, Pandas, Git, Jupyter Notebook,
-                    Google Colab, Vectorization, Parallelization
-
-                <p class="mb-12"><a href="https://github.com/PathwayAndDataAnalysis/TF-Analysis"
-                        class="text-blue-500 hover:underline">
-                        https://github.com/PathwayAndDataAnalysis/TF-Analysis
-                    </a>
-                </p>
-
-                <div class="flow-root">
-                    <h3 class="float-left text-lg font-semibold text-gray-600">Personal Portfolio Website</h3>
-                    <h5 class="float-right text-lg font-semibold text-gray-600 ml-4 align-right">Never Ending</h5>
-                </div>
-                <a href="https://kisanthapa.github.io/" class="mb-12 text-blue-500 hover:underline">
-                    https://kisanthapa.github.io/
-                </a>
-
-
-                <div class="flow-root">
-                    <h3 class="float-left text-lg font-semibold text-gray-600">Classification of mutated and not mutated
-                        genes using Machine Learning</h3>
-                    <h5 class="float-right text-lg font-semibold text-gray-600 ml-4 align-right">Fall 2021</h5>
-                </div>
-                <p class="mb-4 text-base font-normal text-gray-500">I built a machine-learning model to classify whether
-                    a gene is mutated or not based on its read count. As genes mutate
-                    so frequently, some mutations are harmful some are not. As we have many datasets already available
-                    about the gene
-                    mutations. So if we can detect gene is mutated or not of a patient using machine learning models, we
-                    can infer other
-                    information about the patient like suggesting a similar type of treatment to other patients who also
-                    have the same
-                    mutation. I used a dataset from The Cancer Genome Atlas (TCGA), a landmark cancer genomics program,
-                    molecularly
-                    characterized over 20,000 primary cancer and matched normal samples spanning 33 cancer types.
-                </p>
-
-                <p class="mb-2"><a class="font-semibold">Utilized:</a> Python, Tensorflow, Keras, Pandas, Numpy, Git,
-                    Jupyter Notebook, Google Colab
-
-                <p class="mb-1">Source Code:<a href="https://github.com/KisanThapa/GeneMutationClassification"
-                        class="mb-1 text-blue-500 hover:underline">
-                        https://github.com/KisanThapa/GeneMutationClassification
-                    </a>
-                </p>
-
-                <p class="mb-12">Project Report: <a href="https://sites.google.com/view/ml-project-report/home"
-                        class="text-blue-500 hover:underline">
-                        https://sites.google.com/view/ml-project-report/home
-                    </a>
-                </p>
-
-
-                <div class="flow-root">
-                    <h3 class="float-left text-lg font-semibold text-gray-600">Facebook Video Downloader and Video
-                        Player</h3>
-                    <h5 class="float-right text-lg font-semibold text-gray-600 ml-4 align-right"></h5>
-                </div>
-                <p class="mb-8 text-base font-normal text-gray-500">It allows users to browse news feeds, friends'
-                    timelines, pages, and liked groups with an integrated browser. This app
-                    enables users to download and save videos from Facebook with a simple click, allowing for offline
-                    viewing or sharing
-                    with friends via various apps.I published it to Google Play Store.</p>
-
-                <div class="flow-root mb-8">
-                    <h3 class="float-left text-lg font-semibold text-gray-600">To know more about my personal projects
-                        please visit <a href="https://www.linkedin.com/in/kisanthapa/"
-                            class="text-blue-500 hover:underline">My LinkedIn Porfile</a></h3>
-                </div>
-
-            </div>
-
-
-            <!-- Teaching Assistant Section -->
-            <div class="flex flex-col mb-8">
-                <div id="teaching_experience" class="text-2xl font-bold text-red-900 mt-8">Teaching Experience</div>
-                <div class="border-b border-gray-400 mt-4"></div>
-
-                <div class="text-l mt-4">
-                    I have been a teaching assistant for the following courses at the University of Massachusetts
-                    Boston.
-                </div>
-                <div class="text-l mt-4">CS 438/638 Applied Machine Learning - Fall 2021, Spring 2023</div>
-                <div class="text-l mt-2">CS 220 Applied Discrete Mathematics - Spring 2022, Fall 2022</div>
-            </div>
-
-
-            <!-- Research Papers Section -->
-            <div class="flex flex-col">
-                <div id="research_papers" class="text-2xl font-bold text-red-900 mt-8">Research Papers</div>
-                <div class="border-b border-gray-400 mt-4"></div>
-
-                <ol class="list-decimal pl-4">
-                    <!-- Create numbered list -->
-                    <li>
-                        <div class="text-l italic mt-4">
-                            "Protein Kinase Signaling Networks Driven by Oncogenic Gq/11 in Uveal Melanoma Identified by
-                            Phosphoproteomic and
-                            Bioinformatic Analyses" Michael D Onken, Petra Erdmann-Gilmore, Qiang Zhang, Kisan Thapa,
-                            Emily King, Kevin M Kaltenbronn, Sarah E Noda, Carol M
-                            Makepeace, Dennis Goldfarb, Özgün Babur, R Reid Townsend, Kendall J Blumer
-                            <div class="text-red-900 font-semibold">
-                                Molecular & Cellular Proteomics 22 (11)
-                            </div>
-                            <a href="https://doi.org/10.1016/j.mcpro.2023.100649" class="text-blue-500 hover:underline">
-                                doi: https://doi.org/10.1016/j.mcpro.2023.100649
-                            </a>
-
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="text-l italic mt-4">"A prognostic matrix code defines functional glioblastoma
-                            phenotypes and niches"
-                            Monika Vishnoi, Zeynep Dereli, Zheng Yin, Elisabeth K. Kong, Meric Kinali, Kisan Thapa,
-                            Ozgun
-                            Babur,
-                            Kyuson Yun, Nourhan Abdelfattah, Xubin Li, Behnaz Bozorgui, Robert C. Rostomily, Anil Korkut
-                            <div class="text-red-900 font-semibold">
-                                bioRxiv 2023.06.06.543903;
-                            </div>
-                            <a href="https://doi.org/10.1101/2023.06.06.543903" class="text-blue-500 hover:underline">
-                                doi: https://doi.org/10.1101/2023.06.06.543903
-                            </a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="text-l italic mt-4">"A framework for considering prior information in
-                            network-based approaches to--omics data analysis"
-                            Julia Somers, Madeleine R Fenner, Dharani Thirumalaisamy, Garth Kong, William Yashar, Meric
-                            Kinali, Kisan Thapa, Olga
-                            Nikolova, Özgün Babur, Emek Demir
-                            <div class="text-red-900 font-semibold">
-                                Proteomics 23 (21-22), 2200402
-                            </div>
-                            <a href="https://doi.org/10.22541/au.168984016.69483308/v1"
-                                class="text-blue-500 hover:underline">
-                                doi: https://doi.org/10.22541/au.168984016.69483308/v1
-                            </a>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="text-l italic mt-4">"Performance of chatgpt on usmle: Unlocking the potential of
-                            large
-                            language models for ai-assisted medical education"
-                            Prabin Sharma, Kisan Thapa, Prastab Dhakal, Mala Deep Upadhaya, Santosh Adhikari, Salik Ram
-                            Khanal
-                            <div class="text-red-900 font-semibold">
-                                arXiv:2307.00112 [cs.CY, cs.AI] 2023.
-                            </div>
-                            <a href="https://doi.org/10.48550/arXiv.2307.00112" class="text-blue-500 hover:underline">
-                                doi: https://doi.org/10.48550/arXiv.2307.00112
-                            </a>
-                            </a>
-                        </div>
-                    </li>
-
-
-                    <li>
-                        <div class="text-l italic mt-4">"Screening Autism Spectrum Disorder in childrens using Deep
-                            Learning
-                            Approach : Evaluating the classification model of
-                            YOLOv8 by comparing with other models"
-                            Subash Gautam, Prabin Sharma, Kisan Thapa, Mala Deep Upadhaya, Dikshya Thapa, Salik Ram
-                            Khanal,
-                            Vítor Manuel de Jesus
-                            Filipe
-                            <div class="text-red-900 font-semibold">
-                                arXiv:2306.14300 [cs.CV, cs.AI] 2023.
-                            </div>
-                            <a href="https://doi.org/10.48550/arXiv.2306.14300" class="text-blue-500 hover:underline">
-                                doi: https://doi.org/10.48550/arXiv.2306.14300
-                            </a>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="text-l italic mt-4">"Towards blind user's indoor navigation: a comparative study of
-                            beacons
-                            and decawave for indoor accurate location"
-                            Prabin Sharma, Sambad Bidari, Kisan Thapa, Antonio Valente, Hugo Paredes
-                            <br>
-                            <a href="https://doi.org/10.48550/arXiv.1912.01499" class="text-blue-500 hover:underline">
-                                doi: https://doi.org/10.48550/arXiv.1912.01499
-                            </a>
-                            </a>
-                        </div>
-                    </li>
-
-                </ol>
-
-                <!-- Empty Div to put padding at bottom -->
-                <div class="mb-20"></div>
-
-            </div>
-
-
-            <!-- Copyright to Kisan Thapa Section -->
-            <div class="flex flex-col justify-center items-center">
-                <div class="text-center text-gray-500">
-                    &copy; 2023 Kisan Thapa
-                </div>
-            </div>
-
-        </div>
+        <nav class="hidden md:flex space-x-4 items-center">
+            <a class="hover:text-red-500 dark:hover:text-red-500 transition text-red-500"
+               href="index.html">About</a>
+            <!--            <a class="hover:text-red-500 transition" href="pages/blog.html">Blog</a>-->
+            <a class="hover:text-red-500 transition" href="pages/projects.html">Projects</a>
+            <a class="hover:text-red-500 transition" href="pages/publications.html">Publications</a>
+            <a class="hover:text-red-500 transition" href="pages/contact.html">Contact</a>
+            <a class="hover:text-red-500 transition" href="pages/cv.html">Resume/CV</a>
+
+            <!--            <button class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full" id="toggle-theme">-->
+            <!--                <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor"-->
+            <!--                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
+            <!--                    <path d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12H3m15.66 4.34l-.71-.71M6.05 6.05l-.71-.71m12.02 12.02l-.71-.71M6.05 17.95l-.71-.71M12 5a7 7 0 100 14 7 7 0 000-14z"-->
+            <!--                          stroke-linecap="round" stroke-linejoin="round"-->
+            <!--                          stroke-width="2"></path>-->
+            <!--                </svg>-->
+            <!--            </button>-->
+
+        </nav>
+
+        <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full" id="hamburger-menu">
+            <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor"
+                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                </path>
+            </svg>
+        </button>
 
     </div>
+
+    <nav class="hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
+        <a class="hover:text-red-500 dark:hover:text-red-500 transition text-red-500" href="index.html">About</a>
+        <!--        <a class="hover:text-red-500 transition" href="pages/blog.html">Blog</a>-->
+        <a class="hover:text-red-500 transition" href="pages/projects.html">Projects</a>
+        <a class="hover:text-red-500 transition" href="pages/publications.html">Publications</a>
+        <a class="hover:text-red-500 transition" href="pages/contact.html">Contact</a>
+        <a class="hover:text-red-500 transition" href="pages/cv.html">Resume/CV</a>
+    </nav>
+
+</header>
+
+
+<div class="container mx-auto max-w-screen-lg w-full">
+
+    <!-- Content -->
+    <main class="container mx-auto mt-16 px-12 max-w-screen-lg w-full">
+        <section class="mb-8" id="about">
+            <div class="text-2xl font-bold dark:text-white">
+                Kisan <span class="font-light dark:text-gray-400">Thapa</span>
+            </div>
+            <div class="mt-2">
+                PhD Candidate in Computer Science at UMass Boston, specializing in computational biology and deep
+                learning. I conduct research as part of the <a class="text-red-500 hover:underline"
+                                                               href="https://sites.google.com/view/umb-network-biology">Network
+                Biology
+                Laboratory</a> under the guidance of <a class="text-red-500 hover:underline"
+                                                        href="https://sites.google.com/view/ozgunbabur">Prof.
+                Özgün Babur.</a>
+            </div>
+
+        </section>
+
+        <section class="mb-8 mt-16">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-2/3 mr-16">
+
+                    <div>
+                        I am passionate about developing computational methods, leveraging deep learning and graph
+                        neural networks(GNNs) techniques to
+                        analyze and model biological networks. Additionally, I am dedicated to creating user-friendly
+                        software tools that empower biologists to extract meaningful insights from their data with
+                        efficiency and precision.
+                    </div>
+
+                    <div class="my-4">
+                        You can find my public contributions in <a class="text-red-500 hover:underline"
+                                                                   href="https://github.com/KisanThapa">GitHub</a>.
+                    </div>
+
+                    <div class="my-4">
+                        My LinkedIn profile is available <a class="text-red-500 hover:underline"
+                                                            href="https://www.linkedin.com/in/kisanthapa/">here</a>.
+                    </div>
+
+                    <div class="my-4">
+                        <a class="text-red-500 hover:underline"
+                           href="assets/Kisan_Thapa_Resume.pdf">RESUME</a>
+                    </div>
+
+                    If you want reach out to me, Email me:
+                    <a class="text-red-500 hover:underline">Kisan [DOT] Thapa001 [AT] umb.edu</a>
+
+
+                </div>
+
+                <div class="w-1/3">
+                    <img alt="Image 1" class="w-full h-auto rounded-[16px]" src="assets/profile.jpeg">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- New Section -->
+        <div class="text-2xl mt-8">News</div>
+        <section class="mb-8 mt-4">
+            <div class="flex flex-col sm:flex-row">
+                <div class="w-full sm:w-1/4">
+                    Dec 25, 2024
+                </div>
+
+                <div class="flex-1">
+                    This personal portfolio website gone live!
+                </div>
+            </div>
+
+            <!--            <div class="flex flex-col sm:flex-row mt-8">-->
+            <!--                <div class="w-full sm:w-1/4">-->
+            <!--                    Jan 31, 2024-->
+            <!--                </div>-->
+
+            <!--                <div class="flex-1">-->
+            <!--                   -->
+            <!--                </div>-->
+            <!--            </div>-->
+        </section>
+
+
+        <!-- Selected Publications Section -->
+        <div class="text-2xl mt-16">Selected Publications</div>
+        <section class="mb-8 mt-4">
+
+            <!-- Paper Detail - 1 -->
+            <div class="mt-8">
+                <div class="text-xl">Protein Kinase Signaling Networks Driven by Oncogenic Gq/11 in Uveal
+                    Melanoma Identified by Phosphoproteomic and Bioinformatic Analyses
+                </div>
+
+                <p>Michael D Onken, Petra Erdmann-Gilmore, Qiang Zhang, <a
+                        class="text-red-500 hover:underline">Kisan Thapa</a>, Emily King, Kevin M
+                    Kaltenbronn, Sarah E Noda, Carol M Makepeace, Dennis Goldfarb, Özgün Babur, R Reid Townsend,
+                    Kendall J Blumer</p>
+
+                <p class="my-2"><a href="#"><em>Molecular & Cellular Proteomics 22 (11)</em></a></p>
+
+                <div class="flex space-x-4 my-2">
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://www.mcponline.org/article/S1535-9476(23)00160-3/fulltext">Journal</a>
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://doi.org/10.1016/j.mcpro.2023.100649">Bib</a>
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://doi.org/10.1016/j.mcpro.2023.100649">URL</a>
+                </div>
+            </div>
+
+            <!-- Paper Detail - 4 -->
+            <div class="mt-8">
+                <div class="text-xl">A framework for considering prior information in network‐based approaches
+                    to omics data analysis
+                </div>
+                <p>
+                    Julia Somers, Madeleine Fenner, Garth Kong, Dharani Thirumalaisamy, William M Yashar, <a
+                        class="text-red-500 hover:underline">Kisan Thapa</a>, Meric Kinali, Olga Nikolova, Özgün
+                    Babur, Emek Demir
+                </p>
+
+                <p class="my-2"><a href="#"><em>Proteomics 23 (21-22)</em></a></p>
+
+                <div class="flex space-x-4 my-2">
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/epdf/10.1002/pmic.202200402">Journal</a>
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://doi.org/10.1002/pmic.202200402">Bib</a>
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://doi.org/10.1002/pmic.202200402">URL</a>
+                </div>
+
+            </div>
+
+            <!-- Paper Detail - 1 -->
+            <div class="mt-8">
+                <div class="text-xl">A prognostic matrix gene expression signature defines functional glioblastoma
+                    phenotypes and niches
+                </div>
+                <p>Monika Vishnoi, Zeynep Dereli, Zheng Yin, Elisabeth K Kong, Meric Kinali, <a
+                        class="text-red-500 hover:underline">Kisan Thapa</a>, Ozgun
+                    Babur, Kyuson Yun, Nourhan Abdelfattah, Xubin Li, Behnaz Bozorgui, Mary C Farach-Carson, Robert
+                    C Rostomily, Anil Korkut</p>
+
+                <p class="my-2"><a href="#"><em>Research Square 2024</em></a></p>
+
+                <div class="flex space-x-4 my-2">
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://www.researchsquare.com/article/rs-4541464/v1">Journal</a>
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://doi.org/10.21203/rs.3.rs-4541464/v1">Bib</a>
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://doi.org/10.21203/rs.3.rs-4541464/v1">URL</a>
+                </div>
+            </div>
+
+            <!-- Paper Detail - 5 -->
+            <div class="mt-8">
+                <div class="text-xl">Performance of ChatGPT on USMLE: Unlocking the potential of large language
+                    models for AI-assisted medical education
+                </div>
+                <p>
+                    Prabin Sharma, <a class="text-red-500 hover:underline">Kisan Thapa</a>, Dikshya Thapa,
+                    Prastab Dhakal,
+                    Mala Deep Upadhaya, Santosh Adhikari, Salik Ram Khanal
+                </p>
+
+                <p class="my-2"><a href="#"><em>arXiv preprint arXiv:2307.00112</em></a></p>
+
+                <div class="flex space-x-4 my-2">
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://arxiv.org/abs/2307.00112">Journal</a>
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://arxiv.org/pdf/2307.00112">Bib</a>
+                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
+                       href="https://arxiv.org/pdf/2307.00112">URL</a>
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/index.js"></script>
 
 </body>
 

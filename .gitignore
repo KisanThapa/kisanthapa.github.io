@@ -3,3 +3,5 @@
 /.vscode
 .DS_Store
 /.fleet
+*.DS_Store
+/.zed
