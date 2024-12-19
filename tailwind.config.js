@@ -1,8 +1,12 @@
 module.exports = {
     darkMode: 'class', // Enables dark mode with a `class` strategy
-    content: ['./*.html'], // Specify the HTML files to scan for classes
+    content: ['./*.html', './*.js'], // Specify the HTML files to scan for classes
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                roboto: ['Roboto', 'sans-serif'],
+            },
+        },
     },
     plugins: [],
 };

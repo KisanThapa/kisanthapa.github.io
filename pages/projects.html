@@ -7,19 +7,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="../css/style.css" rel="stylesheet">
     <link href="../assets/profile.jpeg" rel="shortcut icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons" rel="stylesheet"
+          type="text/css">
 </head>
 
-<body class="text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<body class="font-extralight text-gray-800 dark:bg-gray-900 dark:text-gray-200">
 
 <!-- Navbar -->
 <header class="bg-white shadow dark:bg-gray-800">
     <div class="container mx-auto flex justify-between items-center py-4 px-12 max-w-screen-lg w-full">
 
-        <div class="text-2xl font-bold dark:text-white">
-            Kisan <span class="font-light dark:text-gray-400">Thapa</span>
+        <div class="text-3xl font-bold dark:text-white">
+            Kisan <span class="font-extralight dark:text-gray-400">Thapa</span>
         </div>
 
-        <nav class="hidden md:flex space-x-4 items-center">
+        <nav class="font-light hidden md:flex space-x-4 items-center">
             <a class="hover:text-red-500 transition" href="../index.html">About</a>
             <!--            <a class="hover:text-red-500 transition" href="blog.html">Blog</a>-->
             <a class="hover:text-red-500 transition text-red-500" href="projects.html">Projects</a>
@@ -37,7 +39,7 @@
 
     </div>
 
-    <nav class="hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
+    <nav class="font-light hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
         <a class="hover:text-red-500 transition" href="../index.html">About</a>
         <!--        <a class="hover:text-red-500 transition" href="blog.html">Blog</a>-->
         <a class="hover:text-red-500 transition text-red-500" href="projects.html">Projects</a>
@@ -52,12 +54,39 @@
 <div class="container mx-auto max-w-screen-lg w-full">
 
     <!-- Content -->
-    <main class="container mx-auto mt-8 px-12 max-w-screen-lg w-full">
-        <section class="mb-8" id="about">
-            <h2 class="text-2xl font-bold mb-4">Projects</h2>
-            <p>
-                Working on it...
-            </p>
+    <main class="container mx-auto mt-16 px-12 max-w-screen-lg w-full">
+        <section class="mb-8" id="projects">
+            <div class="text-2xl font-medium dark:text-white mb-8">
+                Projects
+            </div>
+
+            <div class="flex flex-col gap-8">
+
+                <!-- Project Card 1 -->
+                <div class="border rounded-lg p-4 flex flex-col md:flex-row items-center">
+                    <img alt="Project 1" class="h-full w-full md:w-1/2 object-cover mr-4"
+                         src="https://causalpath.cs.umb.edu/img/causalpath-insights.png">
+                    <div class="mt-4 w-full">
+                        <h3 class="text-xl font-light dark:text-white">CausalPath Webserver</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">CausalPath works on a set of molecular profiles
+                            and predicts the causal mechanisms that acts on the data. It integrates prior knowledge from
+                            biological pathway databases, and uses them to explain new observations. While the main
+                            focus is phosphoproteomics, CausalPath can also work on global proteomic, transcriptomic,
+                            acetylomic and methylomic profiles, and combinations of them.</p>
+                        <a class="text-red-500 hover:underline mt-2 block"
+                           href="https://github.com/PathwayAndDataAnalysis/causalpath-newt-webserver">GitHub
+                            Project</a>
+
+                        <p>
+                            <a class="text-red-500 hover:underline mt-2 block" href="https://causalpath.cs.umb.edu">CausalPath
+                                Webserver</a>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
         </section>
 
     </main>
