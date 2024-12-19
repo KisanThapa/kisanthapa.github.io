@@ -5,41 +5,37 @@
     <title>Kisan Thapa</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="assets/kisan_icon.jpeg" rel="shortcut icon" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
           rel="stylesheet"
           type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="font-extralight text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<body class="font-extralight text-gray-800">
 
 <!-- Navbar -->
-<header class="bg-white shadow dark:bg-gray-800">
+<header class="bg-white shadow">
     <div class="container mx-auto flex justify-between items-center py-4 px-12 max-w-screen-lg w-full">
 
         <div class="text-3xl font-bold">
-            Kisan <span class="font-extralight dark:text-gray-400">Thapa</span>
+            Kisan <span class="font-extralight">Thapa</span>
         </div>
 
         <nav class="font-light hidden md:flex space-x-4 items-center">
-            <a class="hover:text-red-500 dark:hover:text-red-500 transition text-red-500"
+            <a class="hover:text-red-500 transition text-red-500"
                href="index.html">About</a>
             <!--            <a class="hover:text-red-500 transition" href="pages/blog.html">Blog</a>-->
             <a class="hover:text-red-500 transition" href="pages/projects.html">Projects</a>
             <a class="hover:text-red-500 transition" href="pages/publications.html">Publications</a>
             <a class="hover:text-red-500 transition" href="pages/contact.html">Contact</a>
             <a class="hover:text-red-500 transition" href="pages/cv.html">Resume/CV</a>
-
-<!--            <button class="p-2" id="toggle-theme">-->
-<!--                <i class="fas fa-moon text-gray-800 dark:text-gray-200"></i>-->
-<!--            </button>-->
-
         </nav>
 
-        <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full" id="hamburger-menu">
-            <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor"
+        <button class="md:hidden p-2 bg-gray-200 rounded-full" id="hamburger-menu">
+            <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                 </path>
@@ -49,7 +45,7 @@
     </div>
 
     <nav class="font-light hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
-        <a class="hover:text-red-500 dark:hover:text-red-500 transition text-red-500" href="index.html">About</a>
+        <a class="hover:text-red-500 transition text-red-500" href="index.html">About</a>
         <!--        <a class="hover:text-red-500 transition" href="pages/blog.html">Blog</a>-->
         <a class="hover:text-red-500 transition" href="pages/projects.html">Projects</a>
         <a class="hover:text-red-500 transition" href="pages/publications.html">Publications</a>
@@ -65,8 +61,8 @@
     <!-- Content -->
     <main class="container mx-auto mt-16 px-12 max-w-screen-lg w-full">
         <section class="mb-8" id="index">
-            <div class="text-3xl font-bold dark:text-white">
-                Kisan <span class="font-extralight dark:text-gray-400">Thapa</span>
+            <div class="text-3xl font-bold">
+                Kisan <span class="font-extralight">Thapa</span>
             </div>
             <div class="mt-2">
                 PhD Candidate in Computer Science at UMass Boston, specializing in computational biology and deep
@@ -269,7 +265,13 @@
 
 </div>
 
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Copyright Section -->
+<footer class="bg-white mt-16 pb-16">
+    <div class="container mx-auto py-4 px-12 max-w-screen-lg w-full text-center text-gray-600">
+        &copy; 2024 Kisan Thapa. All rights reserved.
+    </div>
+</footer>
+
 <script src="js/index.js"></script>
 
 </body>
