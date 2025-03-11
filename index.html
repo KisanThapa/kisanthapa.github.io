@@ -5,6 +5,9 @@
     <title>Kisan Thapa</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Kisan Thapa - PhD Candidate in Computational Biology & Deep Learning. Researcher at UMass Boston."
+          name="description">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="assets/kisan_icon.jpeg" rel="shortcut icon" type="image/x-icon">
@@ -14,24 +17,23 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="font-extralight text-gray-800">
+<body class="font-light text-gray-800">
 
 <!-- Navbar -->
 <header class="bg-white shadow">
     <div class="container mx-auto flex justify-between items-center py-4 px-12 max-w-screen-lg w-full">
 
         <div class="text-3xl font-bold">
-            Kisan <span class="font-extralight">Thapa</span>
+            Kisan <span class="font-light">Thapa</span>
         </div>
 
-        <nav class="font-light hidden md:flex space-x-4 items-center">
+        <nav class="font-medium hidden md:flex space-x-4 items-center">
             <a class="hover:text-red-500 transition text-red-500"
                href="index.html">About</a>
-            <!--            <a class="hover:text-red-500 transition" href="pages/blog.html">Blog</a>-->
             <a class="hover:text-red-500 transition" href="pages/projects.html">Projects</a>
             <a class="hover:text-red-500 transition" href="pages/publications.html">Publications</a>
             <a class="hover:text-red-500 transition" href="pages/contact.html">Contact</a>
-            <a class="hover:text-red-500 transition" href="pages/cv.html">Resume/CV</a>
+            <a class="hover:text-red-500 transition" href="pages/cv.html">Resume</a>
         </nav>
 
         <button class="md:hidden p-2 bg-gray-200 rounded-full" id="hamburger-menu">
@@ -44,13 +46,12 @@
 
     </div>
 
-    <nav class="font-light hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
+    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
         <a class="hover:text-red-500 transition text-red-500" href="index.html">About</a>
-        <!--        <a class="hover:text-red-500 transition" href="pages/blog.html">Blog</a>-->
         <a class="hover:text-red-500 transition" href="pages/projects.html">Projects</a>
         <a class="hover:text-red-500 transition" href="pages/publications.html">Publications</a>
         <a class="hover:text-red-500 transition" href="pages/contact.html">Contact</a>
-        <a class="hover:text-red-500 transition" href="pages/cv.html">Resume/CV</a>
+        <a class="hover:text-red-500 transition" href="pages/cv.html">Resume</a>
     </nav>
 
 </header>
@@ -61,10 +62,8 @@
     <!-- Content -->
     <main class="container mx-auto mt-16 px-12 max-w-screen-lg w-full">
         <section class="mb-8" id="index">
-            <div class="text-3xl font-bold">
-                Kisan <span class="font-extralight">Thapa</span>
-            </div>
-            <div class="mt-2">
+            <h1 class="text-3xl font-bold">Kisan Thapa</h1>
+            <div class="mt-8">
                 PhD Candidate in Computer Science at UMass Boston, specializing in computational biology and deep
                 learning. I conduct research as part of the <a class="text-red-500 hover:underline"
                                                                href="https://sites.google.com/view/umb-network-biology">Network
@@ -76,7 +75,7 @@
 
         </section>
 
-        <section class="mb-8 mt-16">
+        <section class="mb-8 mt-12">
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-2/3 mr-16">
 
@@ -89,28 +88,23 @@
                         efficiency and precision.
                     </div>
 
-                    <div class="my-4">
-                        You can find my public contributions in <a class="text-red-500 hover:underline"
-                                                                   href="https://github.com/KisanThapa">GitHub</a>.
-                    </div>
-
-                    <div class="my-4">
-                        My LinkedIn profile is available <a class="text-red-500 hover:underline"
-                                                            href="https://www.linkedin.com/in/kisanthapa/">here</a>.
-                    </div>
-
-                    <div class="my-4">
-                        <a class="text-red-500 hover:underline"
+                    <div class="mt-4 font-medium">
+                        <a class="text-red-500 mr-4 hover:underline" href="https://github.com/KisanThapa">GitHub</a> |
+                        <a class="text-red-500 ml-4 mr-4 hover:underline"
+                           href="https://www.linkedin.com/in/kisanthapa/">LinkedIn</a> |
+                        <a class="text-red-500 ml-4 hover:underline"
                            href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf">Resume</a>
                     </div>
 
-                    If you want reach out to me, Email me:
-                    <a class="text-red-500 hover:underline">Kisan [DOT] Thapa001 [AT] umb.edu</a>
+                    <div class="mt-4">
+                        Email:
+                        <a class="text-red-500 font-medium hover:underline">Kisan [DOT] Thapa001 [AT] umb.edu</a>
+                    </div>
 
                 </div>
 
-                <div class="w-1/3">
-                    <img alt="Image 1" class="w-full h-auto rounded-[16px]" src="assets/profile.jpeg">
+                <div class="flex w-1/3 sm:justify-center">
+                    <img alt="Kisan Thapa Image" class="w-48 h-auto rounded-[32px]" src="assets/profile.jpeg">
                 </div>
             </div>
         </section>
@@ -149,15 +143,59 @@
         <!-- New Section -->
         <div class="text-2xl mt-8 font-medium">News</div>
         <section class="mb-8 mt-4">
+
+            <div class="flex flex-col sm:flex-row">
+                <div class="w-full sm:w-1/4">
+                    Feb 14, 2025
+                </div>
+
+                <div class="flex-1 mb-4">
+                    Presented our paper
+                    <a class="text-red-500 hover:underline">"A Review of Strategies for Incorporating Prior Knowledge
+                        into Omics
+                        Analysis Using Deep Neural Networks"</a> at the Graduate Symposium at the <em>University of
+                    Massachusetts Boston</em>.
+                </div>
+
+            </div>
+
+
+            <div class="flex flex-col sm:flex-row">
+                <div class="w-full sm:w-1/4">
+                    Jan 12, 2025
+                </div>
+
+                <div class="flex-1 mb-4">
+                    The paper
+                    <a class="text-red-500 hover:underline">"A Review of Strategies for Incorporating Prior Knowledge
+                        into Omics
+                        Analysis Using Deep Neural Networks"</a> has been accepted in <em>Cell Press Patterns</em>.
+                </div>
+
+            </div>
+
+
             <div class="flex flex-col sm:flex-row">
                 <div class="w-full sm:w-1/4">
                     Dec 14, 2024
                 </div>
 
-                <div class="flex-1">
+                <div class="flex-1 mb-4">
                     This personal portfolio website gone live!
                 </div>
             </div>
+
+
+            <div class="flex flex-col sm:flex-row">
+                <div class="w-full sm:w-1/4">
+                    Dec 20, 2023
+                </div>
+
+                <div class="flex-1">
+                    Successfully passed the PhD qualifying exam!
+                </div>
+            </div>
+
         </section>
 
 
