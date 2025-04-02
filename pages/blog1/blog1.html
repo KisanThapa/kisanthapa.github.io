@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class=""> <!-- JS adds 'dark' if needed -->
+
+<head>
+  <!-- *** UPDATE TITLE FOR EACH POST *** -->
+  <title>Blog Post Title | Kisan Thapa</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- *** UPDATE DESCRIPTION FOR EACH POST *** -->
+  <meta content="Detailed blog post about [Topic]. Insights by Kisan Thapa." name="description">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include your compiled CSS if using the Typography plugin -->
+  <!-- <link href="../dist/output.css" rel="stylesheet"> -->
+  <link href="../css/style.css" rel="stylesheet"> <!-- Keep if you have custom base styles -->
+  <link href="../assets/kisan_icon.jpeg" rel="shortcut icon" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
+        rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Basic styling if NOT using Typography plugin -->
+  <style>
+    /* Basic styles if Typography plugin isn't used */
+    .manual-prose h2 { @apply text-2xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white; }
+    .manual-prose h3 { @apply text-xl font-semibold mt-5 mb-2 text-gray-900 dark:text-white; }
+    .manual-prose p { @apply mb-4 text-gray-700 dark:text-gray-300 leading-relaxed; }
+    .manual-prose ul { @apply list-disc list-inside mb-4 pl-4 text-gray-700 dark:text-gray-300; }
+    .manual-prose ol { @apply list-decimal list-inside mb-4 pl-4 text-gray-700 dark:text-gray-300; }
+    .manual-prose li { @apply mb-2; }
+    .manual-prose a { @apply text-red-600 dark:text-red-400 underline hover:text-red-700 dark:hover:text-red-300; }
+    .manual-prose code { @apply px-1 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-sm text-red-800 dark:text-red-300; }
+    .manual-prose pre { @apply p-4 bg-gray-800 dark:bg-gray-900 rounded-md overflow-x-auto text-sm text-gray-200 dark:text-gray-300 mb-4; }
+    .manual-prose pre code { @apply bg-transparent p-0 rounded-none text-inherit; }
+    .manual-prose blockquote { @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-400 mb-4; }
+  </style>
+
+</head>
+
+<!-- Added dark mode classes -->
+<body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+
+<!-- Navbar (Copied structure, ensure Blog link is active) -->
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+    <div class="text-3xl font-bold text-gray-900 dark:text-white">
+      Kisan <span class="font-light">Thapa</span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <!-- Desktop Navigation -->
+      <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
+        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
+        <!-- Keep Blog active as we are inside the blog section -->
+        <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400" href="blog.html">Blog</a>
+        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="projects.html">Projects</a>
+        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="publications.html">Publications</a>
+        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="contact.html">Contact</a>
+        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="cv.html">Resume</a>
+      </nav>
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle-button" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:focus:ring-offset-gray-800">
+        <span id="theme-toggle-sun-icon" class="hidden"><i class="fas fa-sun text-yellow-500"></i></span>
+        <span id="theme-toggle-moon-icon" class="hidden"><i class="fas fa-moon text-blue-400"></i></span>
+        <span class="sr-only">Toggle theme</span>
+      </button>
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200" id="hamburger-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        <span class="sr-only">Open menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700" id="mobile-menu">
+    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
+    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400" href="blog.html">Blog</a>
+    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="projects.html">Projects</a>
+    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="publications.html">Publications</a>
+    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
+    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="cv.html">Resume</a>
+  </nav>
+</header>
+
+<div class="container mx-auto max-w-screen-lg w-full">
+  <!-- Content -->
+  <main class="container mx-auto mt-8 sm:mt-12 px-6 sm:px-12 max-w-screen-lg w-full">
+
+    <!-- Back to Blog Link -->
+    <div class="mb-6">
+      <a href="blog.html" class="text-sm text-red-500 dark:text-red-400 hover:underline">
+        ← Back to Blog List
+      </a>
+    </div>
+
+    <article class="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 shadow-md border border-gray-200 dark:border-gray-700">
+      <!-- Post Header -->
+      <header class="mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
+        <!-- *** UPDATE TITLE *** -->
+        <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-gray-900 dark:text-white leading-tight">
+          Graph Neural Networks in Biology: Beyond Simple Embeddings
+        </h1>
+        <!-- Metadata -->
+        <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 gap-x-4 gap-y-1">
+                    <span>
+                        <i class="fas fa-calendar-alt mr-1"></i>
+                      <!-- *** UPDATE DATE *** -->
+                        October 26, 2024
+                    </span>
+          <span>
+                        <i class="fas fa-user mr-1"></i> Kisan Thapa
+                    </span>
+          <span>
+                        <i class="fas fa-tags mr-1"></i>
+            <!-- *** UPDATE TAGS *** -->
+                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Deep Learning</a>,
+                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">GNNs</a>,
+                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Computational Biology</a>
+                    </span>
+          <!-- Optional: Reading Time
+          <span>
+             <i class="fas fa-clock mr-1"></i> 5 min read
+          </span>
+          -->
+        </div>
+      </header>
+
+      <!-- Optional Featured Image -->
+      <figure class="mb-6">
+        <!-- *** UPDATE IMAGE SRC & ALT *** -->
+        <img src="../assets/sample-blog-1.png" alt="Abstract representation of Graph Neural Networks" class="w-full max-h-96 object-cover rounded-md border border-gray-200 dark:border-gray-700">
+        <!-- Optional Caption -->
+        <!-- <figcaption class="text-xs text-center text-gray-500 dark:text-gray-400 mt-2">Fig 1: GNN layers processing biological network data.</figcaption> -->
+      </figure>
+
+      <!-- Post Content Area -->
+      <!-- Add class="prose dark:prose-invert max-w-none" if using Tailwind Typography plugin -->
+      <!-- Add class="manual-prose" if using the manual styles in the <style> tag -->
+      <div class="prose dark:prose-invert max-w-none">
+
+        <!-- *** START WRITING YOUR BLOG POST CONTENT HERE *** -->
+
+        <p>
+          Graph Neural Networks (GNNs) have rapidly emerged as a powerful toolset for analyzing relational data, making them exceptionally well-suited for various problems in computational biology. Biological systems, from protein interactions to gene regulatory networks, are inherently graph-structured. While early applications focused on tasks like node embedding, node classification (e.g., predicting protein function), and link prediction (e.g., predicting drug-target interactions), the potential of GNNs extends far beyond these foundational tasks.
+        </p>
+
+        <p>
+          This post delves into some of the more advanced applications and ongoing challenges in applying GNNs to biological data, moving towards more complex biological questions.
+        </p>
+
+        <h2>Moving Beyond Static Snapshots</h2>
+
+        <p>
+          Many biological networks represent dynamic processes. Traditional GNNs often operate on static graphs. However, research is increasingly exploring:
+        </p>
+        <ul>
+          <li><strong>Temporal GNNs:</strong> Modeling how networks evolve over time, crucial for understanding developmental processes or disease progression.</li>
+          <li><strong>Dynamic Edge Features:</strong> Incorporating changes in interaction strengths or types.</li>
+          <li><strong>Causal Inference:</strong> Using GNNs not just to correlate but potentially to infer causal relationships within pathways, perhaps by integrating intervention data.</li>
+        </ul>
+
+        <h2>Interpretability: Opening the Black Box</h2>
+
+        <p>
+          A major hurdle for deep learning in science is interpretability. While GNNs can make accurate predictions, understanding *why* they make those predictions is critical for biological validation and discovery. Techniques being explored include:
+        </p>
+        <ol>
+          <li>Attention Mechanisms: Identifying which nodes or edges were most influential for a prediction.</li>
+          <li>Subgraph Explanations: Extracting the minimal subgraph responsible for a model's decision.</li>
+          <li>Perturbation Analysis: Observing how changes in the input graph affect the output.</li>
+        </ol>
+
+        <h3>Challenges Remain</h3>
+
+        <p>
+          Despite the excitement, several challenges persist: handling heterogeneous graphs (multiple node/edge types), dealing with noisy or incomplete network data, and scaling GNNs to massive biological datasets like single-cell atlases.
+        </p>
+
+        <blockquote>
+          "The integration of domain knowledge remains key. GNN architectures that explicitly incorporate biological priors often outperform generic models."
+        </blockquote>
+
+        <pre><code class="language-python"># Example: Basic GNN layer (using hypothetical library)
+import bio_gnn
+
+# Define a simple GNN model
+class SimpleGNN(bio_gnn.Module):
+    def __init__(self, in_channels, hidden_channels, out_channels):
+        super().__init__()
+        self.conv1 = bio_gnn.layers.GraphConv(in_channels, hidden_channels)
+        self.conv2 = bio_gnn.layers.GraphConv(hidden_channels, out_channels)
+
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index).relu()
+        x = self.conv2(x, edge_index)
+        return x
+
+# Load data and train...
+# model = SimpleGNN(dataset.num_node_features, 16, dataset.num_classes)
+</code></pre>
+
+        <p>
+          The journey of GNNs in biology is just beginning. As both GNN methods and biological data generation continue to advance, we can expect even more transformative applications in understanding life at the molecular level.
+        </p>
+
+        <!-- *** END BLOG POST CONTENT *** -->
+
+      </div>
+
+      <!-- Optional Sections (Add if needed) -->
+      <!-- Social Sharing Placeholder -->
+      <!-- <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg font-medium mb-2 text-gray-900 dark:text-white">Share this post:</h3>
+          <div class="flex space-x-2">
+              <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#" class="text-blue-700 hover:text-blue-900"><i class="fab fa-linkedin fa-lg"></i></a>
+              <a href="#" class="text-red-500 hover:text-red-700"><i class="fas fa-envelope fa-lg"></i></a>
+          </div>
+      </div> -->
+
+      <!-- Comments Placeholder -->
+      <!-- <div class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
+           <h3 class="text-xl font-medium mb-4 text-gray-900 dark:text-white">Comments</h3>
+           <p class="text-gray-600 dark:text-gray-400">Comments are disabled for this post.</p>
+           <!-- Or integrate Disqus/etc. here -->
+</div> -->
+
+</article>
+
+</main>
+</div>
+
+<!-- Footer (Consistent structure) -->
+<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+  <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
+    © <script>document.write(new Date().getFullYear())</script> Kisan Thapa. All rights reserved.
+  </div>
+</footer>
+
+<!-- Link JS (Corrected path) -->
+<script src="../js/index.js"></script>
+
+</body>
+</html>

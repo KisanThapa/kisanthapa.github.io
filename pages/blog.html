@@ -1,128 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=""> <!-- JS adds 'dark' if needed -->
 
 <head>
     <title>Blog | Kisan Thapa</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Updated Meta Description -->
+    <meta content="Blog by Kisan Thapa covering topics in Computational Biology, Deep Learning, Bioinformatics, PhD life, and research insights." name="description">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet"> <!-- Ensure this exists or remove -->
     <link href="../assets/kisan_icon.jpeg" rel="shortcut icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
+          rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<!-- Added dark mode classes -->
+<body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
-<!-- Navbar -->
-<header class="bg-white shadow dark:bg-gray-800">
-    <div class="container mx-auto flex justify-between items-center py-4 px-12 max-w-screen-lg w-full">
-
-        <div class="text-2xl font-bold dark:text-white">
-            Kisan <span class="font-light dark:text-gray-400">Thapa</span>
+<!-- Navbar (Copied structure, added Blog link, marked active) -->
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+        <div class="text-3xl font-bold text-gray-900 dark:text-white">
+            Kisan <span class="font-light">Thapa</span>
         </div>
-
-        <nav class="hidden md:flex space-x-4 items-center">
-            <a class="hover:text-red-500 transition" href="../index.html">About</a>
-            <a class="hover:text-red-500 transition" href="projects.html">Projects</a>
-            <a class="hover:text-red-500 transition" href="publications.html">Publications</a>
-            <a class="hover:text-red-500 transition" href="contact.html">Contact</a>
-            <a class="hover:text-red-500 transition" href="cv.html">Resume/CV</a>
-        </nav>
-
-        <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full" id="hamburger-menu">
-            <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor"
-                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                </path>
-            </svg>
-        </button>
-
+        <div class="flex items-center space-x-4">
+            <!-- Desktop Navigation -->
+            <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400" href="blog.html">Blog</a> <!-- Active Blog Link -->
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="projects.html">Projects</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="publications.html">Publications</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="contact.html">Contact</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="cv.html">Resume</a>
+            </nav>
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle-button" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:focus:ring-offset-gray-800">
+                <span id="theme-toggle-sun-icon" class="hidden"><i class="fas fa-sun text-yellow-500"></i></span>
+                <span id="theme-toggle-moon-icon" class="hidden"><i class="fas fa-moon text-blue-400"></i></span>
+                <span class="sr-only">Toggle theme</span>
+            </button>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200" id="hamburger-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <span class="sr-only">Open menu</span>
+            </button>
+        </div>
     </div>
-
-    <nav class="hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
-        <a class="hover:text-red-500 transition" href="../index.html">About</a>
-        <!--            <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500" href="blog.html">Blog</a>-->
-        <a class="hover:text-red-500 transition" href="projects.html">Projects</a>
-        <a class="hover:text-red-500 transition" href="publications.html">Publications</a>
-        <a class="hover:text-red-500 transition" href="contact.html">Contact</a>
-        <a class="hover:text-red-500 transition" href="cv.html">Resume/CV</a>
+    <!-- Mobile Menu -->
+    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700" id="mobile-menu">
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400" href="blog.html">Blog</a> <!-- Active Blog Link -->
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="projects.html">Projects</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="publications.html">Publications</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="cv.html">Resume</a>
     </nav>
-
 </header>
 
-
 <div class="container mx-auto max-w-screen-lg w-full">
-
     <!-- Content -->
-    <main class="container mx-auto mt-16 px-12 max-w-screen-lg w-full">
-        <section class="mb-8" id="about">
+    <main class="container mx-auto mt-8 sm:mt-16 px-6 sm:px-12 max-w-screen-lg w-full">
+        <section class="mb-12" id="blog-posts">
 
-            <div class="flex flex-row my-8">
-                <div class="w-1/4">
-                    <img alt="Image 1" class="w-full h-auto rounded-[12px]" src="../assets/profile.jpeg">
-                </div>
+            <h1 class="text-2xl sm:text-3xl font-medium mb-2 text-gray-900 dark:text-white">Blog</h1>
+            <p class="mb-8 text-gray-700 dark:text-gray-300">Thoughts, updates, and explorations in computational biology, deep learning, and the PhD journey.</p>
 
-                <div class="mx-8">
-                    <div class="text-2xl hover:text-red-500 transition cursor-pointer">Are
-                        There Groups of Crohn's Disease Patients with Similar Faecal
-                        Calprotectin Patterns Over Time?
+            <!-- Blog Post List -->
+            <div class="space-y-10">
+
+                <!-- Sample Blog Post 1 -->
+                <article class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <a href="#"> <!-- Link to the actual blog post page -->
+                            <img alt="Abstract representation of Graph Neural Networks" class="rounded-md w-full h-48 object-cover border dark:border-gray-600" src="../assets/sample-blog-1.png"> <!-- Use a relevant placeholder image -->
+                        </a>
                     </div>
-
-                    <div class="flex flex-col mt-4">
-                        <div class="flex flex-row">
-                            <div class="text-sm text-gray-500">Kisan Thapa</div>
-                            <div class="w-1 h-1 bg-gray-500 rounded-full mt-2 mx-4"></div>
-                            <div class="text-sm text-gray-500">August 2021</div>
+                    <div class="md:w-2/3">
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-2 space-x-4">
+                            <span><i class="fas fa-calendar-alt mr-1"></i> October 26, 2024</span>
+                            <span><i class="fas fa-tags mr-1"></i> <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Deep Learning</a>, <a href="#" class="hover:text-red-500 dark:hover:text-red-400">GNNs</a></span>
                         </div>
-                        <div class="flex flex-row">
-                            <div class="text-sm text-gray-500">2023</div>
-                            <div class="w-1 h-1 bg-gray-500 rounded-full mt-2 mx-4"></div>
-                            <div class="text-sm text-gray-500">#hashtag</div>
-                            <div class="w-1 h-1 bg-gray-500 rounded-full mt-2 mx-4"></div>
-                            <div class="text-sm text-gray-500">tag</div>
-                        </div>
-
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="#" class="text-gray-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 transition">
+                                Graph Neural Networks in Biology: Beyond Simple Embeddings
+                            </a>
+                        </h2>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            Graph Neural Networks (GNNs) are proving incredibly powerful for modeling biological networks. But how can we move beyond basic node classification or link prediction? This post explores recent advancements and challenges in using GNNs for causal inference and dynamic modeling in biological systems...
+                        </p>
+                        <a href="#" class="text-sm font-medium text-red-500 dark:text-red-400 hover:underline">Read More →</a>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <hr class="flex-grow">
-
-            <div class="flex flex-row my-8">
-                <div class="w-1/4">
-                    <img alt="Image 1" class="w-full h-auto rounded-[12px]" src="../assets/profile.jpeg">
-                </div>
-
-                <div class="mx-8">
-                    <div class="text-2xl hover:text-red-500 transition cursor-pointer">Are
-                        There Groups of Crohn's Disease Patients with Similar Faecal
-                        Calprotectin Patterns Over Time?
+                <!-- Sample Blog Post 2 -->
+                <article class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <a href="#"> <!-- Link to the actual blog post page -->
+                            <img alt="Illustration of integrating prior knowledge into analysis" class="rounded-md w-full h-48 object-cover border dark:border-gray-600" src="../assets/sample-blog-2.png"> <!-- Use a relevant placeholder image -->
+                        </a>
                     </div>
-
-                    <div class="flex flex-col mt-4">
-                        <div class="flex flex-row">
-                            <div class="text-sm text-gray-500">Kisan Thapa</div>
-                            <div class="w-1 h-1 bg-gray-500 rounded-full mt-2 mx-4"></div>
-                            <div class="text-sm text-gray-500">August 2021</div>
+                    <div class="md:w-2/3">
+                        <div class="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-2 space-x-4">
+                            <span><i class="fas fa-calendar-alt mr-1"></i> September 15, 2024</span>
+                            <span><i class="fas fa-tags mr-1"></i> <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Computational Biology</a>, <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Omics</a></span>
                         </div>
-                        <div class="flex flex-row">
-                            <div class="text-sm text-gray-500">2023</div>
-                            <div class="w-1 h-1 bg-gray-500 rounded-full mt-2 mx-4"></div>
-                            <div class="text-sm text-gray-500">#hashtag</div>
-                            <div class="w-1 h-1 bg-gray-500 rounded-full mt-2 mx-4"></div>
-                            <div class="text-sm text-gray-500">tag</div>
-                        </div>
-
+                        <h2 class="text-xl font-semibold mb-2">
+                            <a href="#" class="text-gray-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 transition">
+                                The Art of Integrating Prior Knowledge in Omics Analysis
+                            </a>
+                        </h2>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            High-throughput omics data is information-rich but often noisy. Integrating existing biological knowledge (e.g., from pathway databases) can significantly enhance analysis power and interpretability. Here's a look at different strategies, from simple filtering to sophisticated model constraints...
+                        </p>
+                        <a href="#" class="text-sm font-medium text-red-500 dark:text-red-400 hover:underline">Read More →</a>
                     </div>
+                </article>
+
+                <!-- Add more blog post previews here -->
+
+                <!-- Placeholder for No Posts Yet -->
+                <!--
+                <div class="text-center py-12 text-gray-500 dark:text-gray-400">
+                    <i class="fas fa-feather fa-3x mb-4"></i>
+                    <p>No blog posts yet. Stay tuned!</p>
                 </div>
+                -->
+
             </div>
 
         </section>
     </main>
-
 </div>
 
+<!-- Footer (Consistent structure) -->
+<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
+        © <script>document.write(new Date().getFullYear())</script> Kisan Thapa. All rights reserved.
+    </div>
+</footer>
+
+<!-- Link JS (Corrected path) -->
 <script src="../js/index.js"></script>
 
 </body>
-
 </html>

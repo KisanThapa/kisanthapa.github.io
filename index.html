@@ -1,425 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
-    <title>Kisan Thapa</title>
+    <title>Kisan Thapa - PhD Candidate | Computational Biology & Deep Learning</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Kisan Thapa - PhD Candidate in Computational Biology & Deep Learning. Researcher at UMass Boston."
+    <meta content="Personal portfolio of Kisan Thapa, a PhD Candidate in Computer Science at UMass Boston specializing in Computational Biology, Deep Learning, GNNs, and Bioinformatics. Researcher at the Network Biology Laboratory."
           name="description">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="assets/kisan_icon.jpeg" rel="shortcut icon" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-          rel="stylesheet"
-          type="text/css">
+          rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="font-light text-gray-800">
+<!-- Added dark mode classes to body -->
+<body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
 <!-- Navbar -->
-<header class="bg-white shadow">
-    <div class="container mx-auto flex justify-between items-center py-4 px-12 max-w-screen-lg w-full">
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
 
-        <div class="text-3xl font-bold">
+        <div class="text-3xl font-bold text-gray-900 dark:text-white">
             Kisan <span class="font-light">Thapa</span>
         </div>
 
-        <nav class="font-medium hidden md:flex space-x-4 items-center">
-            <a class="hover:text-red-500 transition text-red-500"
-               href="index.html">About</a>
-            <a class="hover:text-red-500 transition" href="pages/projects.html">Projects</a>
-            <a class="hover:text-red-500 transition" href="pages/publications.html">Publications</a>
-            <a class="hover:text-red-500 transition" href="pages/contact.html">Contact</a>
-            <a class="hover:text-red-500 transition" href="pages/cv.html">Resume</a>
-        </nav>
+        <div class="flex items-center space-x-4">
+            <!-- Desktop Navigation -->
+            <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400"
+                   href="index.html">About</a> <!-- Active link -->
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="pages/projects.html">Projects</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="pages/publications.html">Publications</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="pages/contact.html">Contact</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="pages/cv.html">Resume</a>
+            </nav>
 
-        <button class="md:hidden p-2 bg-gray-200 rounded-full" id="hamburger-menu">
-            <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
-                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                </path>
-            </svg>
-        </button>
-
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
+                    id="hamburger-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2"></path>
+                </svg>
+                <span class="sr-only">Open menu</span>
+            </button>
+        </div>
     </div>
 
-    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
-        <a class="hover:text-red-500 transition text-red-500" href="index.html">About</a>
-        <a class="hover:text-red-500 transition" href="pages/projects.html">Projects</a>
-        <a class="hover:text-red-500 transition" href="pages/publications.html">Publications</a>
-        <a class="hover:text-red-500 transition" href="pages/contact.html">Contact</a>
-        <a class="hover:text-red-500 transition" href="pages/cv.html">Resume</a>
+    <!-- Mobile Menu -->
+    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+         id="mobile-menu">
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
+           href="index.html">About</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+           href="pages/projects.html">Projects</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="pages/publications.html">Publications</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+           href="pages/contact.html">Contact</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="pages/cv.html">Resume</a>
     </nav>
-
 </header>
 
-
 <div class="container mx-auto max-w-screen-lg w-full">
+    <main class="container mx-auto mt-8 sm:mt-16 px-6 sm:px-12 max-w-screen-lg w-full">
+        <!-- Intro Section -->
+        <section class="mb-12" id="about-intro">
+            <div class="flex flex-col md:flex-row items-start gap-8">
+                <!-- Text Content Column -->
+                <div class="md:w-2/3">
+                    <h1 class="text-3xl sm:text-4xl font-bold mb-2 text-gray-900 dark:text-white">Kisan Thapa</h1>
+                    <p class="text-xl text-gray-700 dark:text-gray-300 mb-4">PhD Candidate in Computer Science</p>
+                    <div class="space-y-4 text-gray-800 dark:text-gray-300">
+                        <p>
+                            I am a PhD candidate at the University of Massachusetts Boston, specializing in <strong
+                                class="font-medium text-gray-900 dark:text-white">Computational Biology</strong> and
+                            <strong class="font-medium text-gray-900 dark:text-white">Deep Learning</strong>.
+                            My research focuses on developing and applying advanced computational methods, particularly
+                            leveraging deep learning and graph neural networks (GNNs), to decipher complex biological
+                            systems from omics data.
+                        </p>
+                        <p>
+                            I work within the <a class="text-red-500 hover:underline dark:text-red-400 font-medium"
+                                                 href="https://sites.google.com/view/umb-network-biology"
+                                                 target="_blank" rel="noopener noreferrer">Network Biology
+                            Laboratory</a> under the supervision of <a
+                                class="text-red-500 hover:underline dark:text-red-400 font-medium"
+                                href="https://sites.google.com/view/ozgunbabur" target="_blank"
+                                rel="noopener noreferrer">Prof. Özgün Babur</a>. My passion lies in bridging the gap
+                            between cutting-edge AI techniques and biological discovery, creating intuitive software
+                            tools that empower researchers.
+                        </p>
+                    </div>
 
-    <!-- Content -->
-    <main class="container mx-auto mt-16 px-12 max-w-screen-lg w-full">
-        <section class="mb-8" id="index">
-            <h1 class="text-3xl font-bold">Kisan Thapa</h1>
-            <div class="mt-8">
-                PhD Candidate in Computer Science at UMass Boston, specializing in computational biology and deep
-                learning. I conduct research as part of the <a class="text-red-500 hover:underline"
-                                                               href="https://sites.google.com/view/umb-network-biology">Network
-                Biology
-                Laboratory</a> under the guidance of <a class="text-red-500 hover:underline"
-                                                        href="https://sites.google.com/view/ozgunbabur">Prof.
-                Özgün Babur.</a>
+                    <!-- Links Section -->
+                    <div class="mt-6 font-medium flex flex-wrap gap-x-4 gap-y-2 items-center text-gray-600 dark:text-gray-400">
+                        <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
+                           href="https://github.com/KisanThapa" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github fa-fw mr-1"></i> GitHub
+                        </a>
+                        <span class="text-gray-400 dark:text-gray-600 hidden md:inline">|</span>
+                        <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
+                           href="https://www.linkedin.com/in/kisanthapa/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin fa-fw mr-1"></i> LinkedIn
+                        </a>
+                        <span class="text-gray-400 dark:text-gray-600 hidden md:inline">|</span>
+                        <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
+                           href="https://scholar.google.com/citations?user=4Qs3ndUAAAAJ&hl=en" target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fas fa-graduation-cap fa-fw mr-1"></i> Google Scholar
+                        </a>
+                        <span class="text-gray-400 dark:text-gray-600 hidden md:inline">|</span>
+                        <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
+                           href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf" target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf fa-fw mr-1"></i> Resume
+                        </a>
+                    </div>
+
+                    <div class="mt-4 text-sm text-gray-700 dark:text-gray-400">
+                        Email:
+                        <span class="text-red-500 dark:text-red-400 font-medium select-all">
+                            Kisan<span class="text-blue-500 dark:text-blue-400">[DOT]</span>Thapa001<span
+                                class="text-blue-500 dark:text-blue-400">[AT]</span>umb.edu
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="md:w-1/3 mt-8 md:mt-0 flex justify-center md:justify-end">
+                    <img alt="Kisan Thapa profile picture"
+                         class="w-60 h-60 sm:w-64 sm:h-64 object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-700"
+                         src="assets/profile.jpeg">
+                </div>
             </div>
-
         </section>
 
-        <section class="mb-8 mt-12">
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-2/3 mr-16">
-
-                    <div>
-                        I am passionate about developing computational methods, leveraging deep learning and graph
-                        neural networks(GNNs) techniques to
-                        analyze and model biological networks. Additionally, I am dedicated to creating
-                        user-friendly
-                        software tools that empower biologists to extract meaningful insights from their data with
-                        efficiency and precision.
-                    </div>
-
-                    <div class="mt-4 font-medium flex space-x-6">
-                        <a class="text-red-500 flex items-center hover:underline" href="https://github.com/KisanThapa">
-                            <svg height="24" viewBox="0 0 48 48" width="24" x="0px" xmlns="http://www.w3.org/2000/svg"
-                                 y="0px">
-                                <linearGradient gradientUnits="userSpaceOnUse"
-                                                id="rL2wppHyxHVbobwndsT6Ca_AZOZNnY73haj_gr1"
-                                                x1="4"
-                                                x2="44" y1="23.508" y2="23.508">
-                                    <stop offset="0" stop-color="#4c4c4c"></stop>
-                                    <stop offset="1" stop-color="#343434"></stop>
-                                </linearGradient>
-                                <path d="M24,4C12.954,4,4,12.954,4,24c0,8.887,5.801,16.411,13.82,19.016h12.36	C38.199,40.411,44,32.887,44,24C44,12.954,35.046,4,24,4z"
-                                      fill="url(#rL2wppHyxHVbobwndsT6Ca_AZOZNnY73haj_gr1)">
-                                </path>
-                                <path
-                                        d="M30.01,41.996L30,36.198c0-0.939-0.22-1.856-0.642-2.687c5.641-1.133,8.386-4.468,8.386-10.177	c0-2.255-0.665-4.246-1.976-5.92c0.1-0.317,0.174-0.645,0.22-0.981c0.188-1.369-0.023-2.264-0.193-2.984l-0.027-0.116	c-0.186-0.796-0.409-1.364-0.418-1.388l-0.111-0.282l-0.111-0.282l-0.302-0.032l-0.303-0.032c0,0-0.199-0.021-0.501-0.021	c-0.419,0-1.04,0.042-1.627,0.241l-0.196,0.066c-0.74,0.249-1.439,0.485-2.417,1.069c-0.286,0.171-0.599,0.366-0.934,0.584	C27.334,12.881,25.705,12.69,24,12.69c-1.722,0-3.365,0.192-4.889,0.571c-0.339-0.22-0.654-0.417-0.942-0.589	c-0.978-0.584-1.677-0.819-2.417-1.069l-0.196-0.066c-0.585-0.199-1.207-0.241-1.626-0.241c-0.302,0-0.501,0.021-0.501,0.021	l-0.302,0.032l-0.3,0.031l-0.112,0.281l-0.113,0.283c-0.01,0.026-0.233,0.594-0.419,1.391l-0.027,0.115	c-0.17,0.719-0.381,1.615-0.193,2.983c0.048,0.346,0.125,0.685,0.23,1.011c-1.285,1.666-1.936,3.646-1.936,5.89	c0,5.695,2.748,9.028,8.397,10.17c-0.194,0.388-0.345,0.798-0.452,1.224c-0.197,0.067-0.378,0.112-0.538,0.137	c-0.238,0.036-0.487,0.054-0.739,0.054c-0.686,0-1.225-0.134-1.435-0.259c-0.313-0.186-0.872-0.727-1.414-1.518	c-0.463-0.675-1.185-1.558-1.992-1.927c-0.698-0.319-1.437-0.502-2.029-0.502c-0.138,0-0.265,0.01-0.376,0.028	c-0.517,0.082-0.949,0.366-1.184,0.78c-0.203,0.357-0.235,0.773-0.088,1.141c0.219,0.548,0.851,0.985,1.343,1.255	c0.242,0.133,0.765,0.619,1.07,1.109c0.229,0.368,0.335,0.63,0.482,0.992c0.087,0.215,0.183,0.449,0.313,0.732	c0.47,1.022,1.937,1.924,2.103,2.023c0.806,0.483,2.161,0.638,3.157,0.683l0.123,0.003c0,0,0.001,0,0.001,0	c0.24,0,0.57-0.023,1.004-0.071v2.613c0.002,0.529-0.537,0.649-1.25,0.638l0.547,0.184C19.395,43.572,21.645,44,24,44	c2.355,0,4.605-0.428,6.703-1.176l0.703-0.262C30.695,42.538,30.016,42.422,30.01,41.996z"
-                                        opacity=".05"></path>
-                                <path
-                                        d="M30.781,42.797c-0.406,0.047-1.281-0.109-1.281-0.795v-5.804c0-1.094-0.328-2.151-0.936-3.052	c5.915-0.957,8.679-4.093,8.679-9.812c0-2.237-0.686-4.194-2.039-5.822c0.137-0.365,0.233-0.75,0.288-1.147	c0.175-1.276-0.016-2.086-0.184-2.801l-0.027-0.116c-0.178-0.761-0.388-1.297-0.397-1.319l-0.111-0.282l-0.303-0.032	c0,0-0.178-0.019-0.449-0.019c-0.381,0-0.944,0.037-1.466,0.215l-0.196,0.066c-0.714,0.241-1.389,0.468-2.321,1.024	c-0.332,0.198-0.702,0.431-1.101,0.694C27.404,13.394,25.745,13.19,24,13.19c-1.762,0-3.435,0.205-4.979,0.61	c-0.403-0.265-0.775-0.499-1.109-0.699c-0.932-0.556-1.607-0.784-2.321-1.024l-0.196-0.066c-0.521-0.177-1.085-0.215-1.466-0.215	c-0.271,0-0.449,0.019-0.449,0.019l-0.302,0.032l-0.113,0.283c-0.009,0.022-0.219,0.558-0.397,1.319l-0.027,0.116	c-0.169,0.715-0.36,1.524-0.184,2.8c0.056,0.407,0.156,0.801,0.298,1.174c-1.327,1.62-1.999,3.567-1.999,5.795	c0,5.703,2.766,8.838,8.686,9.806c-0.395,0.59-0.671,1.255-0.813,1.964c-0.33,0.13-0.629,0.216-0.891,0.256	c-0.263,0.04-0.537,0.06-0.814,0.06c-0.69,0-1.353-0.129-1.69-0.329c-0.44-0.261-1.057-0.914-1.572-1.665	c-0.35-0.51-1.047-1.417-1.788-1.755c-0.635-0.29-1.298-0.457-1.821-0.457c-0.11,0-0.21,0.008-0.298,0.022	c-0.366,0.058-0.668,0.252-0.828,0.534c-0.128,0.224-0.149,0.483-0.059,0.708c0.179,0.448,0.842,0.85,1.119,1.002	c0.335,0.184,0.919,0.744,1.254,1.284c0.251,0.404,0.37,0.697,0.521,1.067c0.085,0.209,0.178,0.437,0.304,0.712	c0.331,0.719,1.353,1.472,1.905,1.803c0.754,0.452,2.154,0.578,2.922,0.612l0.111,0.002c0.299,0,0.8-0.045,1.495-0.135v3.177	c0,0.779-0.991,0.81-1.234,0.81c-0.031,0,0.503,0.184,0.503,0.184C19.731,43.64,21.822,44,24,44c2.178,0,4.269-0.36,6.231-1.003	C30.231,42.997,30.812,42.793,30.781,42.797z"
-                                        opacity=".07"></path>
-                                <path d="M36.744,23.334c0-2.31-0.782-4.226-2.117-5.728c0.145-0.325,0.296-0.761,0.371-1.309	c0.172-1.25-0.031-2-0.203-2.734s-0.375-1.25-0.375-1.25s-0.922-0.094-1.703,0.172s-1.453,0.469-2.422,1.047	c-0.453,0.27-0.909,0.566-1.27,0.806C27.482,13.91,25.785,13.69,24,13.69c-1.801,0-3.513,0.221-5.067,0.652	c-0.362-0.241-0.821-0.539-1.277-0.811c-0.969-0.578-1.641-0.781-2.422-1.047s-1.703-0.172-1.703-0.172s-0.203,0.516-0.375,1.25	s-0.375,1.484-0.203,2.734c0.077,0.562,0.233,1.006,0.382,1.333c-1.31,1.493-2.078,3.397-2.078,5.704	c0,5.983,3.232,8.714,9.121,9.435c-0.687,0.726-1.148,1.656-1.303,2.691c-0.387,0.17-0.833,0.33-1.262,0.394	c-1.104,0.167-2.271,0-2.833-0.333s-1.229-1.083-1.729-1.813c-0.422-0.616-1.031-1.331-1.583-1.583	c-0.729-0.333-1.438-0.458-1.833-0.396c-0.396,0.063-0.583,0.354-0.5,0.563c0.083,0.208,0.479,0.521,0.896,0.75	c0.417,0.229,1.063,0.854,1.438,1.458c0.418,0.674,0.5,1.063,0.854,1.833c0.249,0.542,1.101,1.219,1.708,1.583	c0.521,0.313,1.562,0.491,2.688,0.542c0.389,0.018,1.308-0.096,2.083-0.206v3.75c0,0.639-0.585,1.125-1.191,1.013	C19.756,43.668,21.833,44,24,44c2.166,0,4.243-0.332,6.19-0.984C29.585,43.127,29,42.641,29,42.002v-5.804	c0-1.329-0.527-2.53-1.373-3.425C33.473,32.071,36.744,29.405,36.744,23.334z M11.239,32.727c-0.154-0.079-0.237-0.225-0.185-0.328	c0.052-0.103,0.22-0.122,0.374-0.043c0.154,0.079,0.237,0.225,0.185,0.328S11.393,32.806,11.239,32.727z M12.451,33.482	c-0.081,0.088-0.255,0.06-0.389-0.062s-0.177-0.293-0.096-0.381c0.081-0.088,0.255-0.06,0.389,0.062S12.532,33.394,12.451,33.482z M13.205,34.732c-0.102,0.072-0.275,0.005-0.386-0.15s-0.118-0.34-0.016-0.412s0.275-0.005,0.386,0.15	C13.299,34.475,13.307,34.66,13.205,34.732z M14.288,35.673c-0.069,0.112-0.265,0.117-0.437,0.012s-0.256-0.281-0.187-0.393	c0.069-0.112,0.265-0.117,0.437-0.012S14.357,35.561,14.288,35.673z M15.312,36.594c-0.213-0.026-0.371-0.159-0.353-0.297	c0.017-0.138,0.204-0.228,0.416-0.202c0.213,0.026,0.371,0.159,0.353,0.297C15.711,36.529,15.525,36.62,15.312,36.594z M16.963,36.833c-0.227-0.013-0.404-0.143-0.395-0.289c0.009-0.146,0.2-0.255,0.427-0.242c0.227,0.013,0.404,0.143,0.395,0.289	C17.381,36.738,17.19,36.846,16.963,36.833z M18.521,36.677c-0.242,0-0.438-0.126-0.438-0.281s0.196-0.281,0.438-0.281	c0.242,0,0.438,0.126,0.438,0.281S18.762,36.677,18.521,36.677z"
-                                      fill="#fff">
-                                </path>
-                            </svg>
-                            GitHub
-                        </a>
-                        <span>|</span>
-                        <a class="text-red-500 flex items-center hover:underline"
-                           href="https://www.linkedin.com/in/kisanthapa/">
-                            <svg height="24" viewBox="0 0 48 48" width="24" x="0px" xmlns="http://www.w3.org/2000/svg"
-                                 y="0px">
-                                <path d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5	V37z"
-                                      fill="#0078d4">
-                                </path>
-                                <path
-                                        d="M30,37V26.901c0-1.689-0.819-2.698-2.192-2.698c-0.815,0-1.414,0.459-1.779,1.364	c-0.017,0.064-0.041,0.325-0.031,1.114L26,37h-7V18h7v1.061C27.022,18.356,28.275,18,29.738,18c4.547,0,7.261,3.093,7.261,8.274	L37,37H30z M11,37V18h3.457C12.454,18,11,16.528,11,14.499C11,12.472,12.478,11,14.514,11c2.012,0,3.445,1.431,3.486,3.479	C18,16.523,16.521,18,14.485,18H18v19H11z"
-                                        opacity=".05"></path>
-                                <path
-                                        d="M30.5,36.5v-9.599c0-1.973-1.031-3.198-2.692-3.198c-1.295,0-1.935,0.912-2.243,1.677	c-0.082,0.199-0.071,0.989-0.067,1.326L25.5,36.5h-6v-18h6v1.638c0.795-0.823,2.075-1.638,4.238-1.638	c4.233,0,6.761,2.906,6.761,7.774L36.5,36.5H30.5z M11.5,36.5v-18h6v18H11.5z M14.457,17.5c-1.713,0-2.957-1.262-2.957-3.001	c0-1.738,1.268-2.999,3.014-2.999c1.724,0,2.951,1.229,2.986,2.989c0,1.749-1.268,3.011-3.015,3.011H14.457z"
-                                        opacity=".07"></path>
-                                <path d="M12,19h5v17h-5V19z M14.485,17h-0.028C12.965,17,12,15.888,12,14.499C12,13.08,12.995,12,14.514,12	c1.521,0,2.458,1.08,2.486,2.499C17,15.887,16.035,17,14.485,17z M36,36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698	c-1.501,0-2.313,1.012-2.707,1.99C24.957,25.543,25,26.511,25,27v9h-5V19h5v2.616C25.721,20.5,26.85,19,29.738,19	c3.578,0,6.261,2.25,6.261,7.274L36,36L36,36z"
-                                      fill="#fff">
-                                </path>
-                            </svg>
-                            LinkedIn
-                        </a>
-                        <span>|</span>
-                        <a class="text-red-500 flex items-center hover:underline"
-                           href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf">
-                            <svg fill="#000000" width="20px" height="20px" viewBox="0 0 32 32" data-name="Layer 1"
-                                 id="Layer_1" xmlns="http://www.w3.org/2000/svg">
-                                <rect height="1" width="12" x="10" y="29"/>
-                                <rect height="1" width="12" x="10" y="2"/>
-                                <rect height="1" width="4" x="9" y="5"/>
-                                <rect height="1" width="4" x="9" y="9"/>
-                                <rect height="1" width="10" x="13" y="12"/>
-                                <rect height="1" width="3" x="9" y="12"/>
-                                <rect height="1" width="10" x="13" y="15"/>
-                                <rect height="1" width="3" x="9" y="15"/>
-                                <rect height="1" width="10" x="13" y="18"/>
-                                <rect height="1" width="3" x="9" y="18"/>
-                                <rect height="1" width="10" x="13" y="21"/>
-                                <rect height="1" width="3" x="9" y="21"/>
-                                <rect height="1" width="10" x="13" y="24"/>
-                                <rect height="1" width="3" x="9" y="24"/>
-                                <rect height="1" transform="translate(9.5 41.5) rotate(-90)" width="20" x="15.5"
-                                      y="15.5"/>
-                                <path d="M22,2V3h2a1,1,0,0,1,1,1V6h1V4a2,2,0,0,0-2-2Z"/>
-                                <rect height="1" transform="translate(-9.5 22.5) rotate(-90)" width="20" x="-3.5"
-                                      y="15.5"/>
-                                <path d="M10,2V3H8A1,1,0,0,0,7,4V6H6V4A2,2,0,0,1,8,2Z"/>
-                                <path d="M22,30V29h2a1,1,0,0,0,1-1V26h1v2a2,2,0,0,1-2,2Z"/>
-                                <path d="M10,30V29H8a1,1,0,0,1-1-1V26H6v2a2,2,0,0,0,2,2Z"/>
-                                <rect height="5" width="1" x="9" y="5"/>
-                                <rect height="5" width="1" x="12" y="5"/>
-                            </svg>
-                            Resume
-                        </a>
-                    </div>
-
-                    <div class="mt-4">
-                        Email:
-                        <a class="text-red-500 font-medium hover:underline">
-                            Kisan <span class="text-blue-500">[DOT]</span> Thapa001 <span
-                                class="text-blue-500">[AT]</span> umb.edu
-                        </a>
-                    </div>
-
-                    <div class="mt-4">
-                        Website:
-                        <a class="text-red-500 font-medium hover:underline" href="https://www.cs.umb.edu/~kisan/">
-                            https://www.cs.umb.edu/~kisan/
-                        </a>
-                    </div>
-
-
-                </div>
-
-                <div class="flex w-1/3 sm:justify-center">
-                    <img alt="Kisan Thapa Image" class="w-64 h-auto rounded-[32px]" src="assets/profile.jpeg">
-                </div>
+        <!-- Research Interests Section -->
+        <section class="my-12" id="research-interests">
+            <h2 class="text-2xl font-medium mb-4 text-gray-900 dark:text-white">Research Interests</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-300 text-sm font-medium px-3 py-1 rounded-full">Computational Biology</span>
+                <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Deep Learning</span>
+                <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 text-sm font-medium px-3 py-1 rounded-full">Graph Neural Networks</span>
+                <span class="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-300 text-sm font-medium px-3 py-1 rounded-full">Machine Learning</span>
+                <!--                <span class="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Omics Data Analysis</span>-->
+                <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-sm font-medium px-3 py-1 rounded-full">Network Biology</span>
             </div>
         </section>
 
         <!-- Education Section -->
-        <div class="text-2xl mt-8 font-medium">Education</div>
-        <section class="mb-8 mt-4">
-            <div class="flex flex-col sm:flex-row">
-                <div class="w-full sm:w-1/4">
-                    2021 - Present
+        <section class="mb-12" id="education">
+            <h2 class="text-2xl font-medium mb-4 text-gray-900 dark:text-white">Education</h2>
+            <div class="space-y-4 border-l-2 border-red-200 dark:border-red-700 pl-4">
+                <div class="relative">
+                    <div class="absolute -left-[2.6rem] top-1 w-4 h-4 bg-red-500 dark:bg-red-400 rounded-full border-2 border-white dark:border-gray-800"></div>
+                    <!-- Timeline dot -->
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">2021 – Present</p>
+                    <p class="font-medium text-gray-900 dark:text-white">PhD in Computer Science</p>
+                    <p class="text-gray-700 dark:text-gray-300">University of Massachusetts Boston</p>
                 </div>
-
-                <div class="flex-1">
-                    PhD in Computer Science
-                </div>
-                <div class="flex-1">
-                    University of Massachusetts Boston
-                </div>
-
-            </div>
-            <div class="flex flex-col sm:flex-row mt-4">
-                <div class="w-full sm:w-1/4">
-                    2013 - 2017
-                </div>
-
-                <div class="flex-1">
-                    Bachelor of Computer Engineering
-                </div>
-                <div class="flex-1">
-                    Pokhara University, Nepal
+                <div class="relative">
+                    <div class="absolute -left-[2.6rem] top-1 w-4 h-4 bg-red-500 dark:bg-red-400 rounded-full border-2 border-white dark:border-gray-800"></div>
+                    <!-- Timeline dot -->
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">2013 – 2017</p>
+                    <p class="font-medium text-gray-900 dark:text-white">Bachelor of Computer Engineering</p>
+                    <p class="text-gray-700 dark:text-gray-300">Pokhara University, Nepal</p>
                 </div>
             </div>
         </section>
 
+        <!-- News Section -->
+        <section class="mb-12" id="news">
+            <h2 class="text-2xl font-medium mb-4 text-gray-900 dark:text-white">News & Updates</h2>
+            <div class="space-y-4">
 
-        <!-- New Section -->
-        <div class="text-2xl mt-8 font-medium">News</div>
-        <section class="mb-8 mt-4">
-
-            <div class="flex flex-col sm:flex-row">
-                <div class="w-full sm:w-1/4">
-                    🗓️ Mar 14, 2025
+                <!-- News items -->
+                <div class="flex items-start space-x-3">
+                    <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Mar 14, 2025</span>
+                    <div class="flex-1 text-gray-800 dark:text-gray-300">
+                        🎉 Published my first-author paper
+                        <a href="pages/publications.html#paper-id-1"
+                           class="text-red-500 hover:underline dark:text-red-400 font-medium">"Strategies to include
+                            prior knowledge..."</a>
+                        in <strong>CellPress Patterns</strong>.
+                    </div>
                 </div>
 
-                <div class="flex-1 mb-4">
-                    🎉 Published my first-author paper
-                    <span class="text-red-500 hover:underline">"A Review of Strategies for Incorporating Prior Knowledge into Omics Analysis Using Deep Neural Networks"</span>
-                    in <strong>CellPress Patterns</strong> 🏆📖.
-                </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row">
-                <div class="w-full sm:w-1/4">
-                    🗓️ Feb 14, 2025
+                <div class="flex items-start space-x-3">
+                    <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Feb 14, 2025</span>
+                    <div class="flex-1 text-gray-800 dark:text-gray-300">
+                        🎤 Presented our paper on prior knowledge integration at the Graduate Research Symposium,
+                        <strong>UMass Boston</strong>.
+                    </div>
                 </div>
 
-                <div class="flex-1 mb-4">
-                    🎤 Presented our paper
-                    <span class="text-red-500 hover:underline">"A Review of Strategies for Incorporating Prior Knowledge
-            into Omics Analysis Using Deep Neural Networks"</span>
-                    at the Graduate Symposium at the <strong>University of Massachusetts Boston</strong> 🏛️.
-                </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row">
-                <div class="w-full sm:w-1/4">
-                    🗓️ Jan 12, 2025
+                <div class="flex items-start space-x-3">
+                    <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Jan 12, 2025</span>
+                    <div class="flex-1 text-gray-800 dark:text-gray-300">
+                        📰 Our review paper on integrating prior knowledge in deep learning for omics analysis was
+                        accepted by <strong>Cell Press Patterns</strong>!
+                    </div>
                 </div>
 
-                <div class="flex-1 mb-4">
-                    📰 The paper
-                    <span class="text-red-500 hover:underline">"A Review of Strategies for Incorporating Prior Knowledge
-            into Omics Analysis Using Deep Neural Networks"</span>
-                    has been accepted in <strong>Cell Press Patterns</strong> 🎉🏆.
-                </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row">
-                <div class="w-full sm:w-1/4">
-                    🌐 Dec 14, 2024
+                <div class="flex items-start space-x-3">
+                    <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Dec 14, 2024</span>
+                    <div class="flex-1 text-gray-800 dark:text-gray-300">
+                        🚀 Launched this personal portfolio website!
+                    </div>
                 </div>
 
-                <div class="flex-1 mb-4">
-                    🚀 This personal portfolio website went live! 🎨💻
+                <div class="flex items-start space-x-3">
+                    <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Dec 20, 2023</span>
+                    <div class="flex-1 text-gray-800 dark:text-gray-300">
+                        ✅ Passed the PhD qualifying exam! 🎉📜
+                    </div>
                 </div>
             </div>
-
-            <div class="flex flex-col sm:flex-row">
-                <div class="w-full sm:w-1/4">
-                    🎓 Dec 20, 2023
-                </div>
-
-                <div class="flex-1">
-                    ✅ Successfully passed the PhD qualifying exam! 🎉📜
-                </div>
-            </div>
-
         </section>
-
-
-        <!-- Selected Publications Section -->
-        <div class="text-2xl mt-16 font-medium">Selected Publications</div>
-        <section class="mb-8 mt-4">
-
-            <!-- Paper Detail - 1 -->
-            <div class="mt-8">
-                <div class="text-xl">Strategies to include prior knowledge in omics analysis with deep neural networks
-                </div>
-                <p><span class="text-red-500 hover:underline">Kisan Thapa</span>, Meric Kinali, Shichao Pei, Augustin
-                    Luna, and Ozgun Babur</p>
-
-                <p class="my-2"><a href="#"><em>CellPress Patterns 2025</em></a></p>
-
-                <div class="flex space-x-4 my-2">
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://doi.org/10.1016/j.patter.2025.101203">Journal</a>
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://doi.org/10.1016/j.patter.2025.101203">Bib</a>
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://doi.org/10.1016/j.patter.2025.101203">URL</a>
-                </div>
-            </div>
-
-            <!-- Paper Detail - 1 -->
-            <div class="mt-8">
-                <div class="text-xl">Protein Kinase Signaling Networks Driven by Oncogenic Gq/11 in Uveal
-                    Melanoma Identified by Phosphoproteomic and Bioinformatic Analyses
-                </div>
-
-                <p>Michael D Onken, Petra Erdmann-Gilmore, Qiang Zhang, <span
-                        class="text-red-500 hover:underline">Kisan Thapa</span>, Emily King, Kevin M
-                    Kaltenbronn, Sarah E Noda, Carol M Makepeace, Dennis Goldfarb, Özgün Babur, R Reid Townsend,
-                    Kendall J Blumer</p>
-
-                <p class="my-2"><a href="#"><em>Molecular & Cellular Proteomics 22 (11)</em></a></p>
-
-                <div class="flex space-x-4 my-2">
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://www.mcponline.org/article/S1535-9476(23)00160-3/fulltext">Journal</a>
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://doi.org/10.1016/j.mcpro.2023.100649">Bib</a>
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://doi.org/10.1016/j.mcpro.2023.100649">URL</a>
-                </div>
-            </div>
-
-            <!-- Paper Detail - 4 -->
-            <div class="mt-8">
-                <div class="text-xl">A framework for considering prior information in network‐based approaches
-                    to omics data analysis
-                </div>
-                <p>
-                    Julia Somers, Madeleine Fenner, Garth Kong, Dharani Thirumalaisamy, William M Yashar, <span
-                        class="text-red-500 hover:underline">Kisan Thapa</span>, Meric Kinali, Olga Nikolova, Özgün
-                    Babur, Emek Demir
-                </p>
-
-                <p class="my-2"><a href="#"><em>Proteomics 23 (21-22)</em></a></p>
-
-                <div class="flex space-x-4 my-2">
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/epdf/10.1002/pmic.202200402">Journal</a>
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://doi.org/10.1002/pmic.202200402">Bib</a>
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://doi.org/10.1002/pmic.202200402">URL</a>
-                </div>
-
-            </div>
-
-            <!-- Paper Detail - 1 -->
-            <!--            <div class="mt-8">-->
-            <!--                <div class="text-xl">A prognostic matrix gene expression signature defines functional glioblastoma-->
-            <!--                    phenotypes and niches-->
-            <!--                </div>-->
-            <!--                <p>Monika Vishnoi, Zeynep Dereli, Zheng Yin, Elisabeth K Kong, Meric Kinali, <span-->
-            <!--                        class="text-red-500 hover:underline">Kisan Thapa</span>, Ozgun-->
-            <!--                    Babur, Kyuson Yun, Nourhan Abdelfattah, Xubin Li, Behnaz Bozorgui, Mary C Farach-Carson, Robert-->
-            <!--                    C Rostomily, Anil Korkut</p>-->
-
-            <!--                <p class="my-2"><a href="#"><em>Research Square 2024</em></a></p>-->
-
-            <!--                <div class="flex space-x-4 my-2">-->
-            <!--                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"-->
-            <!--                       href="https://www.researchsquare.com/article/rs-4541464/v1">Journal</a>-->
-            <!--                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"-->
-            <!--                       href="https://doi.org/10.21203/rs.3.rs-4541464/v1">Bib</a>-->
-            <!--                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"-->
-            <!--                       href="https://doi.org/10.21203/rs.3.rs-4541464/v1">URL</a>-->
-            <!--                </div>-->
-            <!--            </div>-->
-
-            <!-- Paper Detail - 5 -->
-            <div class="mt-8">
-                <div class="text-xl">Performance of ChatGPT on USMLE: Unlocking the potential of large language
-                    models for AI-assisted medical education
-                </div>
-                <p>
-                    Prabin Sharma, <span class="text-red-500 hover:underline">Kisan Thapa</span>, Dikshya Thapa,
-                    Prastab Dhakal,
-                    Mala Deep Upadhaya, Santosh Adhikari, Salik Ram Khanal
-                </p>
-
-                <p class="my-2"><a href="#"><em>arXiv preprint arXiv:2307.00112</em></a></p>
-
-                <div class="flex space-x-4 my-2">
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://arxiv.org/abs/2307.00112">Journal</a>
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://arxiv.org/pdf/2307.00112">Bib</a>
-                    <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                       href="https://arxiv.org/pdf/2307.00112">URL</a>
-                </div>
-
-            </div>
-
-
-        </section>
-
     </main>
-
 </div>
 
-<!-- Copyright Section -->
-<footer class="bg-white mt-16 pb-16">
-    <div class="container mx-auto py-4 px-12 max-w-screen-lg w-full text-center text-gray-600">
-        &copy; 2024 Kisan Thapa. All rights reserved.
+<!-- Footer -->
+<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
+        ©
+        <script>document.write(new Date().getFullYear())</script>
+        Kisan Thapa. All rights reserved.
     </div>
 </footer>
 
+<!-- Link JS -->
 <script src="js/index.js"></script>
 
 </body>
-
 </html>

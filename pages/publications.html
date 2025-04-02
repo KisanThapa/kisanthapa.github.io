@@ -1,247 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
     <title>Publications | Kisan Thapa</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Kisan Thapa - PhD Candidate in Computational Biology & Deep Learning. Researcher at UMass Boston."
+    <meta content="Peer-reviewed publications and preprints by Kisan Thapa, PhD Candidate. Research areas include computational biology, deep learning in omics, network analysis, and bioinformatics."
           name="description">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="../css/style.css" rel="stylesheet">
     <link href="../assets/kisan_icon.jpeg" rel="shortcut icon" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-          rel="stylesheet"
-          type="text/css">
+          rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="font-light text-gray-800">
+
+<body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
 <!-- Navbar -->
-<header class="bg-white shadow">
-    <div class="container mx-auto flex justify-between items-center py-4 px-12 max-w-screen-lg w-full">
-
-        <div class="text-3xl font-bold">
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+        <div class="text-3xl font-bold text-gray-900 dark:text-white">
             Kisan <span class="font-light">Thapa</span>
         </div>
+        <div class="flex items-center space-x-4">
+            <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="projects.html">Projects</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400"
+                   href="publications.html">Publications</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="contact.html">Contact</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="cv.html">Resume</a>
+            </nav>
 
-        <nav class="font-medium hidden md:flex space-x-4 items-center">
-            <a class="hover:text-red-500 transition" href="../index.html">About</a>
-            <a class="hover:text-red-500 transition" href="projects.html">Projects</a>
-            <a class="hover:text-red-500 transition text-red-500"
-               href="publications.html">Publications</a>
-            <a class="hover:text-red-500 transition" href="contact.html">Contact</a>
-            <a class="hover:text-red-500 transition" href="cv.html">Resume</a>
-        </nav>
-
-        <button class="md:hidden p-2 bg-gray-200 rounded-full" id="hamburger-menu">
-            <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
-                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                </path>
-            </svg>
-        </button>
-
+            <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
+                    id="hamburger-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2"></path>
+                </svg>
+                <span class="sr-only">Open menu</span>
+            </button>
+        </div>
     </div>
-
-    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
-        <a class="hover:text-red-500 transition" href="../index.html">About</a>
-        <a class="hover:text-red-500 transition" href="projects.html">Projects</a>
-        <a class="hover:text-red-500 transition text-red-500"
+    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+         id="mobile-menu">
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="projects.html">Projects</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
            href="publications.html">Publications</a>
-        <a class="hover:text-red-500 transition" href="contact.html">Contact</a>
-        <a class="hover:text-red-500 transition" href="cv.html">Resume</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="cv.html">Resume</a>
     </nav>
-
 </header>
 
-
 <div class="container mx-auto max-w-screen-lg w-full">
+    <main class="container mx-auto mt-8 sm:mt-16 px-6 sm:px-12 max-w-screen-lg w-full">
+        <section class="mb-8" id="publications-list">
 
-    <!-- Content -->
-    <main class="container mx-auto mt-16 px-12 max-w-screen-lg w-full">
-        <section class="mb-8" id="about">
+            <h1 class="text-2xl sm:text-3xl font-medium mb-2 text-gray-900 dark:text-white">Publications</h1>
+            <p class="mb-8 text-gray-700 dark:text-gray-300">A list of my contributions to peer-reviewed journals and
+                preprints.</p>
 
-            <div class="font-medium text-2xl">Publications</div>
-            <p>Recent publications I have contributed to.</p>
-
-            <div>
-                <!-- 2025 Papers -->
-                <div class="flex items-center mt-8 mb-2">
-                    <hr class="flex-grow">
-                    <span class="ml-4">2025</span>
-                </div>
-
-
-                <!-- Paper Detail - 1 -->
-                <div class="mt-8">
-                    <div class="text-xl">Strategies to include prior knowledge in omics analysis with deep neural networks
-                    </div>
-                    <p><span class="text-red-500 hover:underline">Kisan Thapa</span>, Meric Kinali, Shichao Pei, Augustin Luna, and Ozgun Babur</p>
-
-                    <p class="my-2"><a href="#"><em>CellPress Patterns 2025</em></a></p>
-
-                    <div class="flex space-x-4 my-2">
-                        <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                           href="https://doi.org/10.1016/j.patter.2025.101203">Journal</a>
-                        <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                           href="https://doi.org/10.1016/j.patter.2025.101203">Bib</a>
-                        <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                           href="https://doi.org/10.1016/j.patter.2025.101203">URL</a>
-                    </div>
-                </div>
-
-
-                <!-- 2024 Papers -->
-                <div class="flex items-center mt-8 mb-2">
-                    <hr class="flex-grow">
-                    <span class="ml-4">2024</span>
-                </div>
-
-
-                <!-- Paper Detail - 1 -->
-                <div class="mt-8">
-                    <div class="text-xl">A prognostic matrix gene expression signature defines functional glioblastoma
-                        phenotypes and niches
-                    </div>
-                    <p>Monika Vishnoi, Zeynep Dereli, Zheng Yin, Elisabeth K Kong, Meric Kinali, <span
-                            class="text-red-500 hover:underline">Kisan Thapa</span>, Ozgun
-                        Babur, Kyuson Yun, Nourhan Abdelfattah, Xubin Li, Behnaz Bozorgui, Mary C Farach-Carson, Robert
-                        C Rostomily, Anil Korkut</p>
-
-                    <p class="my-2"><a href="#"><em>Research Square 2024</em></a></p>
-
-                    <div class="flex space-x-4 my-2">
-                        <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                           href="https://www.researchsquare.com/article/rs-4541464/v1">Journal</a>
-                        <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                           href="https://doi.org/10.21203/rs.3.rs-4541464/v1">Bib</a>
-                        <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                           href="https://doi.org/10.21203/rs.3.rs-4541464/v1">URL</a>
-                    </div>
-                </div>
-
-
-                <!-- 2023 Papers -->
+            <!-- Publications -->
+            <div class="space-y-10">
+                <!-- 2025 Section -->
                 <div>
-                    <div class="flex items-center mt-8 mb-2">
-                        <hr class="flex-grow">
-                        <span class="ml-4">2023</span>
-                    </div>
+                    <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2 text-gray-900 dark:text-white">
+                        2025</h2>
+                    <div class="space-y-8">
+                        <!-- Paper Detail - CellPress Patterns 2025 -->
+                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Strategies to
+                                include prior knowledge in omics analysis with deep neural networks</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                <strong class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, Meric Kinali,
+                                Shichao Pei, Augustin Luna, Ozgun Babur
+                            </p>
+                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">CellPress Patterns, 2025</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
+                                   href="https://doi.org/10.1016/j.patter.2025.101203" target="_blank"
+                                   rel="noopener noreferrer">
+                                    <i class="fas fa-scroll mr-1"></i> Journal
+                                </a>
 
-                    <!-- Paper Detail - 3 -->
-                    <div class="mt-8">
-                        <div class="text-xl">Protein Kinase Signaling Networks Driven by Oncogenic Gq/11 in Uveal
-                            Melanoma Identified by Phosphoproteomic and Bioinformatic Analyses
-                        </div>
-
-                        <p>Michael D Onken, Petra Erdmann-Gilmore, Qiang Zhang, <span
-                                class="text-red-500 hover:underline">Kisan Thapa</span>, Emily King, Kevin M
-                            Kaltenbronn, Sarah E Noda, Carol M Makepeace, Dennis Goldfarb, Özgün Babur, R Reid Townsend,
-                            Kendall J Blumer</p>
-
-                        <p class="my-2"><a href="#"><em>Molecular & Cellular Proteomics 22 (11)</em></a></p>
-
-                        <div class="flex space-x-4 my-2">
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://www.mcponline.org/article/S1535-9476(23)00160-3/fulltext">Journal</a>
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://doi.org/10.1016/j.mcpro.2023.100649">Bib</a>
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://doi.org/10.1016/j.mcpro.2023.100649">URL</a>
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                                   href="https://doi.org/10.1016/j.patter.2025.101203" target="_blank" rel="noopener noreferrer"> <i
+                                        class="fas fa-quote-right mr-1"></i> Bib</a>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Paper Detail - 4 -->
-                    <div class="mt-8">
-                        <div class="text-xl">A framework for considering prior information in network‐based approaches
-                            to omics data analysis
+
+                <!-- 2024 Section -->
+                <div>
+                    <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2 text-gray-900 dark:text-white">
+                        2024</h2>
+                    <div class="space-y-8">
+                        <!-- Paper Detail - Research Square 2024 -->
+                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">A prognostic
+                                matrix gene expression signature defines functional glioblastoma phenotypes and
+                                niches</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Monika Vishnoi, Zeynep Dereli, ...,
+                                <strong class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Anil Korkut
+                            </p> <!-- Abbreviate long author lists -->
+                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">Research Square (Preprint),
+                                2024</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
+                                   href="https://www.researchsquare.com/article/rs-4541464/v1" target="_blank"
+                                   rel="noopener noreferrer">
+                                    <i class="fas fa-scroll mr-1"></i> Preprint
+                                </a>
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                                   href="https://doi.org/10.21203/rs.3.rs-4541464/v1" target="_blank"
+                                   rel="noopener noreferrer"> <i class="fas fa-quote-right mr-1"></i> Bib</a>
+                            </div>
                         </div>
-                        <p>
-                            Julia Somers, Madeleine Fenner, Garth Kong, Dharani Thirumalaisamy, William M Yashar, <span
-                                class="text-red-500 hover:underline">Kisan Thapa</span>, Meric Kinali, Olga Nikolova, Özgün
-                            Babur, Emek Demir
-                        </p>
-
-                        <p class="my-2"><a href="#"><em>Proteomics 23 (21-22)</em></a></p>
-
-                        <div class="flex space-x-4 my-2">
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/epdf/10.1002/pmic.202200402">Journal</a>
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://doi.org/10.1002/pmic.202200402">Bib</a>
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://doi.org/10.1002/pmic.202200402">URL</a>
-                        </div>
-
                     </div>
+                </div>
 
-                    <!-- Paper Detail - 5 -->
-                    <div class="mt-8">
-                        <div class="text-xl">Performance of ChatGPT on USMLE: Unlocking the potential of large language
-                            models for AI-assisted medical education
+                <!-- 2023 Section -->
+                <div>
+                    <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2 text-gray-900 dark:text-white">
+                        2023</h2>
+                    <div class="space-y-8">
+                        <!-- Paper Detail - MCP 2023 -->
+                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Protein Kinase Signaling Networks Driven by Oncogenic Gq/11 in Uveal Melanoma Identified by Phosphoproteomic and Bioinformatic Analyses</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Michael D Onken, ..., <strong
+                                    class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Kendall J Blumer
+                            </p>
+                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">Molecular & Cellular
+                                Proteomics 22 (11), 2023</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
+                                   href="https://www.mcponline.org/article/S1535-9476(23)00160-3/fulltext"
+                                   target="_blank" rel="noopener noreferrer"><i class="fas fa-scroll mr-1"></i> Journal</a>
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                                   href="https://doi.org/10.1016/j.mcpro.2023.100649" target="_blank"
+                                   rel="noopener noreferrer"><i class="fas fa-quote-right mr-1"></i> Bib</a>
+                            </div>
                         </div>
-                        <p>
-                            Prabin Sharma, <span class="text-red-500 hover:underline">Kisan Thapa</span>, Dikshya Thapa,
-                            Prastab Dhakal,
-                            Mala Deep Upadhaya, Santosh Adhikari, Salik Ram Khanal
-                        </p>
 
-                        <p class="my-2"><a href="#"><em>arXiv preprint arXiv:2307.00112</em></a></p>
-
-                        <div class="flex space-x-4 my-2">
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://arxiv.org/abs/2307.00112">Journal</a>
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://arxiv.org/pdf/2307.00112">Bib</a>
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://arxiv.org/pdf/2307.00112">URL</a>
+                        <!-- Paper Detail - Proteomics 2023 -->
+                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">A framework for
+                                considering prior information in network‐based approaches to omics data analysis</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Julia Somers, ..., <strong
+                                    class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Emek Demir</p>
+                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">Proteomics 23 (21-22),
+                                2023</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
+                                   href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/epdf/10.1002/pmic.202200402"
+                                   target="_blank" rel="noopener noreferrer"><i class="fas fa-scroll mr-1"></i> Journal</a>
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                                   href="https://doi.org/10.1002/pmic.202200402" target="_blank"
+                                   rel="noopener noreferrer"><i class="fas fa-quote-right mr-1"></i> Bib</a>
+                            </div>
                         </div>
 
+                        <!-- Paper Detail - arXiv ChatGPT 2023 -->
+                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Performance of
+                                ChatGPT on USMLE: Unlocking the potential of large language models...</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Prabin Sharma, <strong
+                                    class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Salik Ram Khanal
+                            </p>
+                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">arXiv preprint
+                                arXiv:2307.00112, 2023</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
+                                   href="https://arxiv.org/abs/2307.00112" target="_blank" rel="noopener noreferrer"><i
+                                        class="fas fa-scroll mr-1"></i> Preprint</a>
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                                   href="https://arxiv.org/pdf/2307.00112" target="_blank" rel="noopener noreferrer"><i
+                                        class="fas fa-file-pdf mr-1"></i> PDF</a>
+                            </div>
+                        </div>
+
+                        <!-- Paper Detail - arXiv YOLOv8 2023 -->
+                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Screening Autism
+                                Spectrum Disorder in childrens using Deep Learning Approach...</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Subash Gautam, Prabin Sharma,
+                                <strong class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Vítor Manuel
+                                de Jesus Filipe</p>
+                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">arXiv preprint
+                                arXiv:2306.14300, 2023</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
+                                   href="https://arxiv.org/abs/2306.14300" target="_blank" rel="noopener noreferrer"><i
+                                        class="fas fa-scroll mr-1"></i> Preprint</a>
+                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                                   href="https://arxiv.org/pdf/2306.14300" target="_blank" rel="noopener noreferrer"><i
+                                        class="fas fa-file-pdf mr-1"></i> PDF</a>
+                            </div>
+                        </div>
                     </div>
-
-                    <!-- Paper Detail - 6 -->
-                    <div class="mt-8">
-                        <div class="text-xl">Screening Autism Spectrum Disorder in childrens using Deep Learning
-                            Approach: Evaluating the classification model of YOLOv8 by comparing with other models
-                        </div>
-
-                        <p>
-                            Subash Gautam, Prabin Sharma, <span class="text-red-500 hover:underline">Kisan Thapa</span>, Mala
-                            Deep Upadhaya, Dikshya Thapa, Salik Ram Khanal, Vítor Manuel de Jesus Filipe
-                        </p>
-
-                        <p class="my-2"><a href="#"><em>arXiv preprint arXiv:2306.14300</em></a></p>
-
-                        <div class="flex space-x-4 my-2">
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://arxiv.org/abs/2306.14300">Journal</a>
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://arxiv.org/pdf/2306.14300">Bib</a>
-                            <a class="text-sm flex items-center justify-center py-1 px-4 rounded border border-red-400 hover:bg-red-600 hover:text-white"
-                               href="https://arxiv.org/pdf/2306.14300">URL</a>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
-
         </section>
-
     </main>
-
 </div>
 
-<!-- Copyright Section -->
-<footer class="bg-white mt-16 pb-16">
-    <div class="container mx-auto py-4 px-12 max-w-screen-lg w-full text-center text-gray-600">
-        &copy; 2024 Kisan Thapa. All rights reserved.
+<!-- Footer (Copied from index.html, adjusted paths) -->
+<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
+        ©
+        <script>document.write(new Date().getFullYear())</script>
+        Kisan Thapa. All rights reserved.
     </div>
 </footer>
 
+<!-- Link JS (Adjusted path) -->
 <script src="../js/index.js"></script>
 
 </body>
-
 </html>

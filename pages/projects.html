@@ -1,131 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
     <title>Projects | Kisan Thapa</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Kisan Thapa - PhD Candidate in Computational Biology & Deep Learning. Researcher at UMass Boston."
+    <meta content="Selected projects by Kisan Thapa, PhD Candidate, focusing on computational biology tools like CausalPath, transcription factor activity prediction, and deep learning applications in bioinformatics."
           name="description">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="../css/style.css" rel="stylesheet">
     <link href="../assets/kisan_icon.jpeg" rel="shortcut icon" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-          rel="stylesheet"
-          type="text/css">
+          rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="font-light text-gray-800">
+<body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
 <!-- Navbar -->
-<header class="bg-white shadow">
-    <div class="container mx-auto flex justify-between items-center py-4 px-12 max-w-screen-lg w-full">
-
-        <div class="text-3xl font-bold">
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+        <div class="text-3xl font-bold text-gray-900 dark:text-white">
             Kisan <span class="font-light">Thapa</span>
         </div>
+        <div class="flex items-center space-x-4">
+            <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400"
+                   href="projects.html">Projects</a> <!-- Active link -->
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition"
+                   href="publications.html">Publications</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="contact.html">Contact</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="cv.html">Resume</a>
+            </nav>
 
-        <nav class="font-medium hidden md:flex space-x-4 items-center">
-            <a class="hover:text-red-500 transition" href="../index.html">About</a>
-            <a class="hover:text-red-500 transition text-red-500" href="projects.html">Projects</a>
-            <a class="hover:text-red-500 transition" href="publications.html">Publications</a>
-            <a class="hover:text-red-500 transition" href="contact.html">Contact</a>
-            <a class="hover:text-red-500 transition" href="cv.html">Resume</a>
-        </nav>
-
-        <button class="md:hidden p-2 bg-gray-200 rounded-full" id="hamburger-menu">
-            <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-            </svg>
-        </button>
-
+            <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
+                    id="hamburger-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2"></path>
+                </svg>
+                <span class="sr-only">Open menu</span>
+            </button>
+        </div>
     </div>
-
-    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4" id="mobile-menu">
-        <a class="hover:text-red-500 transition" href="../index.html">About</a>
-        <a class="hover:text-red-500 transition text-red-500" href="projects.html">Projects</a>
-        <a class="hover:text-red-500 transition" href="publications.html">Publications</a>
-        <a class="hover:text-red-500 transition" href="contact.html">Contact</a>
-        <a class="hover:text-red-500 transition" href="cv.html">Resume</a>
+    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+         id="mobile-menu">
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
+           href="projects.html">Projects</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="publications.html">Publications</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
+        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="cv.html">Resume</a>
     </nav>
-
 </header>
 
-
 <div class="container mx-auto max-w-screen-lg w-full">
-
-    <!-- Content -->
-    <main class="container mx-auto mt-16 px-12 max-w-screen-lg w-full">
+    <main class="container mx-auto mt-8 sm:mt-16 px-6 sm:px-12 max-w-screen-lg w-full">
         <section class="mb-8" id="projects">
-            <div class="text-2xl font-medium mb-8">
+            <h1 class="text-2xl sm:text-3xl font-medium mb-6 text-gray-900 dark:text-white">
                 Projects
-            </div>
+            </h1>
+            <p class="mb-8 text-gray-700 dark:text-gray-300">Here are some of the projects I've worked on, focusing on
+                leveraging computational techniques for biological insight.</p>
 
-            <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-10 sm:gap-12">
 
                 <!-- Project Card 1 -->
-                <div class="border rounded-lg p-4 flex flex-col md:flex-row items-center">
-                    <img alt="Project CausalPath Webserver" class="h-full w-full md:w-1/2 object-cover mr-4"
-                         src="https://causalpath.cs.umb.edu/img/causalpath-insights.png">
-                    <div class="mt-4 w-full">
-                        <h3 class="text-xl font-medium">CausalPath Webserver</h3>
-                        <p class="mt-2 text-gray-600">CausalPath works on a set of molecular profiles
-                            and predicts the causal mechanisms that acts on the data. It integrates prior knowledge from
-                            biological pathway databases, and uses them to explain new observations. While the main
-                            focus is phosphoproteomics, CausalPath can also work on global proteomic, transcriptomic,
-                            acetylomic and methylomic profiles, and combinations of them.</p>
-                        <a class="text-red-500 hover:underline mt-2 block"
-                           href="https://github.com/PathwayAndDataAnalysis/causalpath-newt-webserver">GitHub
-                            Project</a>
-
-                        <p>
-                            <a class="text-red-500 hover:underline mt-2 block" href="https://causalpath.cs.umb.edu">CausalPath
-                                Webserver</a>
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6 flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-gray-800 hover:shadow-md transition-shadow duration-300">
+                    <div class="md:w-2/5 flex-shrink-0">
+                        <img alt="Screenshot of the CausalPath Webserver interface"
+                             class="rounded-md w-full object-cover border dark:border-gray-600"
+                             src="https://causalpath.cs.umb.edu/img/causalpath-insights.png">
+                    </div>
+                    <div class="w-full md:w-3/5">
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">CausalPath Webserver</h3>
+                        <span class="text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded-full my-2 inline-block">Active / Maintained</span>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            CausalPath analyzes molecular profiles (phosphoproteomics, transcriptomics, etc.) to infer
+                            causal biological mechanisms by integrating prior knowledge from pathway databases. It helps
+                            explain experimental observations in the context of known biology.
                         </p>
+                        <div class="mt-3 text-sm">
+                            <strong class="text-gray-700 dark:text-gray-200">Tech:</strong> Java, JavaScript, HTML, CSS, Cytoscape.js
+                        </div>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            <a class="text-red-500 dark:text-red-400 hover:underline text-sm font-medium flex items-center gap-1"
+                               href="https://github.com/PathwayAndDataAnalysis/causalpath-newt-webserver"
+                               target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> GitHub Project
+                            </a>
+                            <a class="text-red-500 dark:text-red-400 hover:underline text-sm font-medium flex items-center gap-1"
+                               href="https://causalpath.cs.umb.edu" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i> Live Webserver
+                            </a>
+                        </div>
                     </div>
                 </div>
-
 
                 <!-- Project Card 2 -->
-                <div class="border rounded-lg p-4 flex flex-col md:flex-row items-center">
-                    <img alt="Project: Transcription Factor Activity Prediction" class="h-full w-full md:w-1/2 object-cover mr-4"
-                         src="../assets/tf_activity_pred_project.png">
-                    <div class="mt-4 w-full">
-                        <h3 class="text-xl font-medium">Transcription Factor Activity Prediction</h3>
-                        <p class="mt-2 text-gray-600">
-                            Transcription factors (TFs) are proteins that bind to specific DNA sequences and regulate
-                            the
-                            transcription of genes. TF activity prediction is a challenging problem in computational
-                            biology. This project aims to predict the activity of TFs from gene expression data using
-                            rank-based methods. The project is implemented as a webserver that takes gene expression
-                            data
-                            as input and predicts the activity of TFs.
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6 flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-gray-800 hover:shadow-md transition-shadow duration-300">
+                    <div class="md:w-2/5 flex-shrink-0">
+                        <img alt="Diagram illustrating the Transcription Factor Activity Prediction project workflow"
+                             class="rounded-md w-full object-cover border dark:border-gray-600"
+                             src="../assets/tf_activity_pred_project.png">
+                    </div>
+                    <div class="w-full md:w-3/5">
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Transcription Factor Activity
+                            Prediction</h3>
+                        <span class="text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 px-2 py-0.5 rounded-full my-2 inline-block">Ongoing Development</span>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            This project implements rank-based methods (like GSEA, VIPER) within a webserver to predict
+                            transcription factor (TF) activity from gene expression data. It provides biologists with an
+                            accessible tool to infer regulatory changes.
                         </p>
-                        <a class="text-red-500 hover:underline mt-2 block"
-                           href="https://github.com/PathwayAndDataAnalysis/TF-Prediction-Webserver">GitHub
-                            Project</a>
-
+                        <div class="mt-3 text-sm">
+                            <strong class="text-gray-700 dark:text-gray-200">Tech:</strong> Python, Flask, Pandas, NumPy,
+                        </div>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            <a class="text-red-500 dark:text-red-400 hover:underline text-sm font-medium flex items-center gap-1"
+                               href="https://github.com/PathwayAndDataAnalysis/TF-Prediction-Webserver" target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> GitHub Project
+                            </a>
+                        </div>
                     </div>
                 </div>
+
             </div>
-
         </section>
-
     </main>
-
 </div>
 
-<!-- Copyright Section -->
-<footer class="bg-white mt-16 pb-16">
-    <div class="container mx-auto py-4 px-12 max-w-screen-lg w-full text-center text-gray-600">
-        &copy; 2024 Kisan Thapa. All rights reserved.
+<!-- Footer (Copied from index.html, adjusted paths) -->
+<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
+        ©
+        <script>document.write(new Date().getFullYear())</script>
+        Kisan Thapa. All rights reserved.
     </div>
 </footer>
 
+<!-- Link JS (Adjusted path) -->
 <script src="../js/index.js"></script>
 
 </body>
-
 </html>
