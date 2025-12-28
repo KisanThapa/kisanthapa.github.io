@@ -5,257 +5,365 @@
     <title>Publications | Kisan Thapa</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Peer-reviewed publications and preprints by Kisan Thapa, PhD Candidate. Research areas include computational biology, deep learning in omics, network analysis, and bioinformatics."
-          name="description">
+    <meta content="Peer-reviewed publications and preprints by Kisan Thapa in computational biology and deep learning."
+        name="description">
 
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-          rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
+
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
-
 <body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
-<!-- Navbar -->
-<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
-        <div class="text-3xl font-bold text-gray-900 dark:text-white">
-            Kisan <span class="font-light">Thapa</span>
-        </div>
-        <div class="flex items-center space-x-4">
-            <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
+    <!-- Navbar -->
+    <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+
+            <!-- Simple Logo -->
+            <a href="../index.html"
+                class="text-2xl font-mono font-semibold text-gray-900 dark:text-white hover:text-red-500 transition">
+                Kisan Thapa.
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="projects.html">Projects</a>
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400"
-                   href="publications.html">Publications</a>
+                    href="publications.html">Publications</a> <!-- Active link -->
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="contact.html">Contact</a>
-                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="resume.html">Resume</a>
-                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="cv.html">CV</a>
+
+                <!-- Simple Resume Button -->
+                <a href="resume.html"
+                    class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-200 hover:border-red-500 hover:text-red-500 dark:hover:border-red-400 dark:hover:text-red-400 transition">
+                    Resume / CV
+                </a>
             </nav>
 
+            <!-- Mobile Menu Button -->
             <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
-                    id="hamburger-menu">
+                id="hamburger-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
-                          stroke-width="2"></path>
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    </path>
                 </svg>
                 <span class="sr-only">Open menu</span>
             </button>
         </div>
-    </div>
-    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
-         id="mobile-menu">
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="projects.html">Projects</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
-           href="publications.html">Publications</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="resume.html">Resume</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="cv.html">CV</a>
-    </nav>
-</header>
 
-<div class="container mx-auto max-w-screen-lg w-full">
-    <main class="container mx-auto mt-8 sm:mt-16 px-6 sm:px-12 max-w-screen-lg w-full">
-        <section class="mb-8" id="publications-list">
+        <!-- Mobile Menu -->
+        <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+            id="mobile-menu">
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="projects.html">Projects</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
+                href="publications.html">Publications</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="resume.html">Resume /
+                CV</a>
+        </nav>
+    </header>
 
-            <h1 class="text-2xl sm:text-3xl font-medium mb-2 text-gray-900 dark:text-white">Publications</h1>
-            <p class="mb-8 text-gray-700 dark:text-gray-300">A list of my contributions to peer-reviewed journals and
-                preprints.</p>
+    <main class="container mx-auto mt-8 sm:mt-8 px-6 sm:px-12 max-w-screen-lg w-full">
 
-            <!-- Publications -->
-            <div class="space-y-10">
-                <!-- 2025 Section -->
-                <div>
-                    <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2 text-gray-900 dark:text-white">
-                        2025</h2>
-                    <div class="space-y-8">
-                        <!-- Paper Detail - CellPress Patterns 2025 -->
-                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Strategies to
-                                include prior knowledge in omics analysis with deep neural networks</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                                <strong class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, Meric Kinali,
-                                Shichao Pei, Augustin Luna, Ozgun Babur
-                            </p>
-                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">CellPress Patterns, 2025</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
-                                   href="https://doi.org/10.1016/j.patter.2025.101203" target="_blank"
-                                   rel="noopener noreferrer">
-                                    <i class="fas fa-scroll mr-1"></i> Journal
-                                </a>
-
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                                   href="https://doi.org/10.1016/j.patter.2025.101203" target="_blank" rel="noopener noreferrer"> <i
-                                        class="fas fa-quote-right mr-1"></i> Bib</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- 2024 Section -->
-                <div>
-                    <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2 text-gray-900 dark:text-white">
-                        2024</h2>
-                    <div class="space-y-8">
-                        <!-- Paper Detail - Research Square 2024 -->
-                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">A prognostic
-                                matrix gene expression signature defines functional glioblastoma phenotypes and
-                                niches</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Monika Vishnoi, Zeynep Dereli, ...,
-                                <strong class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Anil Korkut
-                            </p> <!-- Abbreviate long author lists -->
-                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">Research Square (Preprint),
-                                2024</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
-                                   href="https://www.researchsquare.com/article/rs-4541464/v1" target="_blank"
-                                   rel="noopener noreferrer">
-                                    <i class="fas fa-scroll mr-1"></i> Preprint
-                                </a>
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                                   href="https://doi.org/10.21203/rs.3.rs-4541464/v1" target="_blank"
-                                   rel="noopener noreferrer"> <i class="fas fa-quote-right mr-1"></i> Bib</a>
-                            </div>
-                        </div>
-
-                        <!-- Paper Detail - ChatGPT 2024 -->
-                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Unlocking the Potential of Large Language Models for AI-Assisted Medical Education: A Case Study with ChatGPT</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Prabin Sharma, <strong class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Vitor Filipe</p>
-                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">International Conference on Technology and Innovation in Learning, Teaching and Education, 2024</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
-                                   href="https://doi.org/10.1007/978-3-032-02675-0_2"
-                                   target="_blank" rel="noopener noreferrer"><i class="fas fa-scroll mr-1"></i> Conference</a>
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                                   href="https://link.springer.com/chapter/10.1007/978-3-032-02675-0_2" target="_blank"
-                                   rel="noopener noreferrer"><i class="fas fa-quote-right mr-1"></i> Bib</a>
-                            </div>
-                        </div>
-
-                        <!-- Paper Detail - Cloud Vision 2024 -->
-                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Performance analysis and evaluation of cloud vision emotion Apis</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Salik R Khanal, Prabin Sharma, <strong class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Vitor Filipe</p>
-                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">Proceedings of the 11th International Conference on Software Development and Technologies for Enhancing Accessibility and Fighting Info-exclusion, 2024</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
-                                   href="https://doi.org/10.1145/3696593.3696599"
-                                   target="_blank" rel="noopener noreferrer"><i class="fas fa-scroll mr-1"></i> Conference</a>
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                                   href="https://doi.org/10.1145/3696593.3696599" target="_blank"
-                                   rel="noopener noreferrer"><i class="fas fa-quote-right mr-1"></i> Bib</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- 2023 Section -->
-                <div>
-                    <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2 text-gray-900 dark:text-white">
-                        2023</h2>
-                    <div class="space-y-8">
-                        <!-- Paper Detail - MCP 2023 -->
-                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Protein Kinase Signaling Networks Driven by Oncogenic Gq/11 in Uveal Melanoma Identified by Phosphoproteomic and Bioinformatic Analyses</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Michael D Onken, ..., <strong
-                                    class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Kendall J Blumer
-                            </p>
-                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">Molecular & Cellular
-                                Proteomics 22 (11), 2023</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
-                                   href="https://www.mcponline.org/article/S1535-9476(23)00160-3/fulltext"
-                                   target="_blank" rel="noopener noreferrer"><i class="fas fa-scroll mr-1"></i> Journal</a>
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                                   href="https://doi.org/10.1016/j.mcpro.2023.100649" target="_blank"
-                                   rel="noopener noreferrer"><i class="fas fa-quote-right mr-1"></i> Bib</a>
-                            </div>
-                        </div>
-
-                        <!-- Paper Detail - Proteomics 2023 -->
-                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">A framework for
-                                considering prior information in network‐based approaches to omics data analysis</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Julia Somers, ..., <strong
-                                    class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Emek Demir</p>
-                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">Proteomics 23 (21-22),
-                                2023</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
-                                   href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/epdf/10.1002/pmic.202200402"
-                                   target="_blank" rel="noopener noreferrer"><i class="fas fa-scroll mr-1"></i> Journal</a>
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                                   href="https://doi.org/10.1002/pmic.202200402" target="_blank"
-                                   rel="noopener noreferrer"><i class="fas fa-quote-right mr-1"></i> Bib</a>
-                            </div>
-                        </div>
-
-                        <!-- Paper Detail - arXiv ChatGPT 2023 -->
-                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Performance of
-                                ChatGPT on USMLE: Unlocking the potential of large language models...</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Prabin Sharma, <strong
-                                    class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Salik Ram Khanal
-                            </p>
-                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">arXiv preprint
-                                arXiv:2307.00112, 2023</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
-                                   href="https://arxiv.org/abs/2307.00112" target="_blank" rel="noopener noreferrer"><i
-                                        class="fas fa-scroll mr-1"></i> Preprint</a>
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                                   href="https://arxiv.org/pdf/2307.00112" target="_blank" rel="noopener noreferrer"><i
-                                        class="fas fa-file-pdf mr-1"></i> PDF</a>
-                            </div>
-                        </div>
-
-                        <!-- Paper Detail - arXiv YOLOv8 2023 -->
-                        <div class="p-4 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-snug">Screening Autism
-                                Spectrum Disorder in childrens using Deep Learning Approach...</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Subash Gautam, Prabin Sharma,
-                                <strong class="text-red-600 dark:text-red-400">Kisan Thapa</strong>, ..., Vítor Manuel
-                                de Jesus Filipe</p>
-                            <p class="my-2 text-sm italic text-gray-700 dark:text-gray-300">arXiv preprint
-                                arXiv:2306.14300, 2023</p>
-                            <div class="flex flex-wrap gap-2 mt-3">
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-red-400 dark:border-red-600 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition"
-                                   href="https://arxiv.org/abs/2306.14300" target="_blank" rel="noopener noreferrer"><i
-                                        class="fas fa-scroll mr-1"></i> Preprint</a>
-                                <a class="text-xs flex items-center justify-center py-1 px-3 rounded border border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                                   href="https://arxiv.org/pdf/2306.14300" target="_blank" rel="noopener noreferrer"><i
-                                        class="fas fa-file-pdf mr-1"></i> PDF</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Page Header -->
+        <section class="mb-12 border-b border-gray-100 dark:border-gray-800 pb-4">
+            <h1 class="text-3xl sm:text-3xl font-semibold mb-2 text-gray-900 dark:text-white">
+                Publications
+            </h1>
+            <p class="text-gray-800 dark:text-gray-300">
+                A list of my contributions to peer-reviewed journals, conferences, and preprints.
+            </p>
         </section>
+
+        <!-- Publications List -->
+        <div class="space-y-12">
+
+            <!-- 2025 -->
+            <section>
+                <div class="flex items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-300 dark:text-gray-600 mr-4">2025</h2>
+                    <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Paper Item -->
+                    <article class="flex flex-col sm:flex-row gap-4 sm:items-start group">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-300 border border-red-100 dark:border-red-800">Journal</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-tight mb-2">
+                                Strategies to include prior knowledge in omics analysis with deep neural networks
+                            </h3>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                <strong class="text-gray-900 dark:text-white">Kisan Thapa</strong>, Meric Kinali,
+                                Shichao Pei, Augustin Luna, Ozgun Babur
+                            </div>
+                            <div class="text-sm italic text-gray-500 dark:text-gray-500 mb-3">
+                                CellPress Patterns
+                            </div>
+                            <div class="flex gap-3 text-sm">
+                                <a href="https://doi.org/10.1016/j.patter.2025.101203" target="_blank"
+                                    class="flex items-center text-red-500 dark:text-red-400 hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1.5 text-xs"></i> DOI
+                                </a>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 hover:text-gray-800 dark:hover:text-gray-300 transition">
+                                    <i class="fas fa-quote-right mr-1.5 text-xs"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 2024 -->
+            <section>
+                <div class="flex items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-300 dark:text-gray-600 mr-4">2024</h2>
+                    <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Paper Item -->
+                    <article class="flex flex-col sm:flex-row gap-4 sm:items-start">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Preprint</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-tight mb-2">
+                                A prognostic matrix gene expression signature defines functional glioblastoma phenotypes
+                                and niches
+                            </h3>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                Monika Vishnoi, Zeynep Dereli, ..., <strong class="text-gray-900 dark:text-white">Kisan
+                                    Thapa</strong>, ..., Anil Korkut
+                            </div>
+                            <div class="text-sm italic text-gray-500 dark:text-gray-500 mb-3">
+                                Research Square
+                            </div>
+                            <div class="flex gap-3 text-sm">
+                                <a href="https://www.researchsquare.com/article/rs-4541464/v1" target="_blank"
+                                    class="flex items-center text-red-500 dark:text-red-400 hover:underline">
+                                    <i class="fas fa-file-pdf mr-1.5 text-xs"></i> PDF
+                                </a>
+                                <a href="https://doi.org/10.21203/rs.3.rs-4541464/v1" target="_blank"
+                                    class="flex items-center text-gray-500 hover:text-gray-800 dark:hover:text-gray-300 transition">
+                                    <i class="fas fa-quote-right mr-1.5 text-xs"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Paper Item -->
+                    <article class="flex flex-col sm:flex-row gap-4 sm:items-start">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">Conference</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-tight mb-2">
+                                Unlocking the Potential of Large Language Models for AI-Assisted Medical Education: A
+                                Case Study with ChatGPT
+                            </h3>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                Prabin Sharma, <strong class="text-gray-900 dark:text-white">Kisan Thapa</strong>, ...,
+                                Vitor Filipe
+                            </div>
+                            <div class="text-sm italic text-gray-500 dark:text-gray-500 mb-3">
+                                International Conference on Technology and Innovation in Learning, Teaching and
+                                Education
+                            </div>
+                            <div class="flex gap-3 text-sm">
+                                <a href="https://doi.org/10.1007/978-3-032-02675-0_2" target="_blank"
+                                    class="flex items-center text-red-500 dark:text-red-400 hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1.5 text-xs"></i> DOI
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Paper Item -->
+                    <article class="flex flex-col sm:flex-row gap-4 sm:items-start">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">Conference</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-tight mb-2">
+                                Performance analysis and evaluation of cloud vision emotion Apis
+                            </h3>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                Salik R Khanal, Prabin Sharma, <strong class="text-gray-900 dark:text-white">Kisan
+                                    Thapa</strong>, ..., Vitor Filipe
+                            </div>
+                            <div class="text-sm italic text-gray-500 dark:text-gray-500 mb-3">
+                                11th International Conference on Software Development
+                            </div>
+                            <div class="flex gap-3 text-sm">
+                                <a href="https://doi.org/10.1145/3696593.3696599" target="_blank"
+                                    class="flex items-center text-red-500 dark:text-red-400 hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1.5 text-xs"></i> DOI
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 2023 -->
+            <section>
+                <div class="flex items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-300 dark:text-gray-600 mr-4">2023</h2>
+                    <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Paper Item -->
+                    <article class="flex flex-col sm:flex-row gap-4 sm:items-start">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-300 border border-red-100 dark:border-red-800">Journal</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-tight mb-2">
+                                Protein Kinase Signaling Networks Driven by Oncogenic Gq/11 in Uveal Melanoma Identified
+                                by Phosphoproteomic and Bioinformatic Analyses
+                            </h3>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                Michael D Onken, ..., <strong class="text-gray-900 dark:text-white">Kisan
+                                    Thapa</strong>, ..., Kendall J Blumer
+                            </div>
+                            <div class="text-sm italic text-gray-500 dark:text-gray-500 mb-3">
+                                Molecular & Cellular Proteomics
+                            </div>
+                            <div class="flex gap-3 text-sm">
+                                <a href="https://www.mcponline.org/article/S1535-9476(23)00160-3/fulltext"
+                                    target="_blank"
+                                    class="flex items-center text-red-500 dark:text-red-400 hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1.5 text-xs"></i> View
+                                </a>
+                                <a href="https://doi.org/10.1016/j.mcpro.2023.100649" target="_blank"
+                                    class="flex items-center text-gray-500 hover:text-gray-800 dark:hover:text-gray-300 transition">
+                                    <i class="fas fa-quote-right mr-1.5 text-xs"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Paper Item -->
+                    <article class="flex flex-col sm:flex-row gap-4 sm:items-start">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-300 border border-red-100 dark:border-red-800">Journal</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-tight mb-2">
+                                A framework for considering prior information in network‐based approaches to omics data
+                                analysis
+                            </h3>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                Julia Somers, ..., <strong class="text-gray-900 dark:text-white">Kisan Thapa</strong>,
+                                ..., Emek Demir
+                            </div>
+                            <div class="text-sm italic text-gray-500 dark:text-gray-500 mb-3">
+                                Proteomics
+                            </div>
+                            <div class="flex gap-3 text-sm">
+                                <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/epdf/10.1002/pmic.202200402"
+                                    target="_blank"
+                                    class="flex items-center text-red-500 dark:text-red-400 hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1.5 text-xs"></i> View
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Paper Item -->
+                    <article class="flex flex-col sm:flex-row gap-4 sm:items-start">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Preprint</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-tight mb-2">
+                                Performance of ChatGPT on USMLE: Unlocking the potential of large language models
+                            </h3>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                Prabin Sharma, <strong class="text-gray-900 dark:text-white">Kisan Thapa</strong>, ...,
+                                Salik Ram Khanal
+                            </div>
+                            <div class="text-sm italic text-gray-500 dark:text-gray-500 mb-3">
+                                arXiv
+                            </div>
+                            <div class="flex gap-3 text-sm">
+                                <a href="https://arxiv.org/pdf/2307.00112" target="_blank"
+                                    class="flex items-center text-red-500 dark:text-red-400 hover:underline">
+                                    <i class="fas fa-file-pdf mr-1.5 text-xs"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Paper Item -->
+                    <article class="flex flex-col sm:flex-row gap-4 sm:items-start">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span
+                                    class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 border border-gray-200 dark:border-gray-700">Preprint</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white leading-tight mb-2">
+                                Screening Autism Spectrum Disorder in childrens using Deep Learning Approach
+                            </h3>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                Subash Gautam, Prabin Sharma, <strong class="text-gray-900 dark:text-white">Kisan
+                                    Thapa</strong>, ..., Vítor Filipe
+                            </div>
+                            <div class="text-sm italic text-gray-500 dark:text-gray-500 mb-3">
+                                arXiv
+                            </div>
+                            <div class="flex gap-3 text-sm">
+                                <a href="https://arxiv.org/pdf/2306.14300" target="_blank"
+                                    class="flex items-center text-red-500 dark:text-red-400 hover:underline">
+                                    <i class="fas fa-file-pdf mr-1.5 text-xs"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+
     </main>
-</div>
 
-<!-- Footer (Copied from index.html, adjusted paths) -->
-<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-    <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
-        ©
-        <script>document.write(new Date().getFullYear())</script>
-        Kisan Thapa. All rights reserved.
-    </div>
-</footer>
+    <!-- Simple Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto text-center text-sm text-gray-500">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script> Kisan Thapa. All rights reserved.
+        </div>
+    </footer>
 
-<!-- Link JS (Adjusted path) -->
-<script src="../js/index.js"></script>
+    <!-- Link JS -->
+    <script src="../js/index.js"></script>
 
 </body>
+
 </html>

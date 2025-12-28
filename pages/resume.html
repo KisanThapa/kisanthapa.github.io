@@ -2,107 +2,145 @@
 <html lang="en" class="">
 
 <head>
-    <title>Resume | Kisan Thapa</title>
+    <title>Resume & CV | Kisan Thapa</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="View or download the resume of Kisan Thapa, PhD Candidate in Computational Biology & Deep Learning."
-          name="description">
+    <meta content="Download Kisan Thapa's Resume and Academic CV." name="description">
+
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-          rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
+
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
-<!-- Navbar -->
-<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
-        <div class="text-3xl font-bold text-gray-900 dark:text-white">
-            Kisan <span class="font-light">Thapa</span>
-        </div>
-        <div class="flex items-center space-x-4">
-            <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
+    <!-- Navbar -->
+    <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+
+            <!-- Simple Logo -->
+            <a href="../index.html"
+                class="text-2xl font-mono font-semibold text-gray-900 dark:text-white hover:text-red-500 transition">
+                Kisan Thapa.
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="projects.html">Projects</a>
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition"
-                   href="publications.html">Publications</a>
+                    href="publications.html">Publications</a>
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="contact.html">Contact</a>
-                <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400"
-                   href="resume.html">Resume</a> <!-- Active link -->
-                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="cv.html">CV</a>
+
+                <!-- Simple Resume Button (Active) -->
+                <a href="resume.html"
+                    class="px-3 py-1.5 border border-red-500 text-red-500 dark:border-red-400 dark:text-red-400 rounded hover:bg-red-50 dark:hover:bg-red-900/20 transition">
+                    Resume / CV
+                </a>
             </nav>
 
+            <!-- Mobile Menu Button -->
             <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
-                    id="hamburger-menu">
+                id="hamburger-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
-                          stroke-width="2"></path>
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    </path>
                 </svg>
                 <span class="sr-only">Open menu</span>
             </button>
         </div>
-    </div>
-    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
-         id="mobile-menu">
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="projects.html">Projects</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="publications.html">Publications</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
-           href="resume.html">Resume</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="cv.html">CV</a>
-    </nav>
-</header>
 
-<div class="container mx-auto max-w-screen-lg w-full">
-    <main class="container mx-auto mt-8 sm:mt-16 px-6 sm:px-12 max-w-screen-lg w-full">
-        <section class="mb-8" id="cv">
-            <div class="flex justify-between items-center mb-6">
-                <h1 class="text-2xl sm:text-3xl font-medium text-gray-900 dark:text-white">Resume</h1>
-                <a class="text-red-500 dark:text-red-400 flex items-center font-medium hover:underline text-sm sm:text-base"
-                   href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf" target="_blank"
-                   rel="noopener noreferrer">
-                    <i class="fas fa-download mr-2"></i>
-                    Download PDF
+        <!-- Mobile Menu -->
+        <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+            id="mobile-menu">
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="projects.html">Projects</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="publications.html">Publications</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
+                href="resume.html">Resume / CV</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-8 sm:mt-8 px-6 sm:px-12 max-w-screen-lg w-full">
+
+        <!-- Header & Download Buttons -->
+        <section class="mb-8 border-b border-gray-100 dark:border-gray-800 pb-8">
+            <h1 class="text-3xl sm:text-3xl font-semibold mb-2 text-gray-900 dark:text-white">
+                Resume & CV
+            </h1>
+            <p class="text-gray-800 dark:text-gray-300 mb-6">
+                View my 1-page resume below, or download the full academic CV.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4">
+                <!-- Resume Download (Primary) -->
+                <a href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf" target="_blank"
+                    class="inline-flex items-center px-4 py-2 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-gray-900 text-sm font-medium rounded transition shadow-sm">
+                    <i class="fas fa-file-alt mr-2"></i> Download Resume
+                </a>
+
+                <!-- CV Download (Secondary) -->
+                <a href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_CV.pdf" target="_blank"
+                    class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium rounded transition">
+                    <i class="fas fa-graduation-cap mr-2"></i> Download Full CV
                 </a>
             </div>
+        </section>
 
-            <!-- Iframe for PDF -->
-            <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-md">
+        <!-- PDF Viewer Section -->
+        <section class="mb-12">
+            <div
+                class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm bg-gray-100 dark:bg-gray-800">
+
+                <!-- PDF Iframe -->
                 <iframe frameborder="0"
-                        src="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf#toolbar=0&navpanes=0"
-                        style="width: 100%; height: 100vh;"
-                        title="Kisan Thapa Resume PDF Viewer">
+                    src="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf#toolbar=0&navpanes=0"
+                    style="width: 100%; height: 800px;" title="Kisan Thapa Resume PDF Viewer" class="w-full">
 
-                    <p class="p-4 text-gray-700 dark:text-gray-300">
-                        Your browser does not support embedded PDFs. Please
-                        <a class="text-red-500 dark:text-red-400 underline hover:text-red-600 dark:hover:text-red-300"
-                           href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf" target="_blank"
-                           rel="noopener noreferrer">download the PDF</a>
-                        to view it.
-                    </p>
+                    <!-- Fallback -->
+                    <div class="flex flex-col items-center justify-center h-96 p-4 text-center">
+                        <p class="text-gray-700 dark:text-gray-300 mb-2">
+                            Your browser does not support embedded PDFs.
+                        </p>
+                        <a class="text-red-500 dark:text-red-400 underline hover:text-red-600 dark:hover:text-red-300 font-medium"
+                            href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf" target="_blank"
+                            rel="noopener noreferrer">
+                            Click here to download the PDF
+                        </a>
+                    </div>
                 </iframe>
             </div>
         </section>
+
     </main>
-</div>
 
-<!-- Footer (Copied from index.html, adjusted paths) -->
-<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-    <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
-        ©
-        <script>document.write(new Date().getFullYear())</script>
-        Kisan Thapa. All rights reserved.
-    </div>
-</footer>
+    <!-- Simple Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto text-center text-sm text-gray-500">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script> Kisan Thapa.
+        </div>
+    </footer>
 
-<!-- Link JS (Adjusted path) -->
-<script src="../js/index.js"></script>
+    <!-- Link JS -->
+    <script src="../js/index.js"></script>
 
 </body>
+
 </html>

@@ -9,17 +9,21 @@
         content="Personal portfolio of Kisan Thapa, a PhD Candidate in Computer Science at UMass Boston specializing in Computational Biology, Deep Learning, GNNs, and Bioinformatics. Researcher at the Network Biology Laboratory."
         name="description">
 
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/style.css" rel="stylesheet">
-    <link href="assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
-    <link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-        rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts: Inter (Clean & Simple) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
+
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
-
-<!-- Added dark mode classes to body -->
 
 <body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
@@ -27,36 +31,39 @@
     <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
 
-            <div class="text-3xl font-bold text-gray-900 dark:text-white">
-                Kisan <span class="font-light">Thapa</span>
-            </div>
+            <!-- Simple Logo -->
+            <a href="#"
+                class="text-2xl font-mono font-semibold text-gray-900 dark:text-white hover:text-red-500 transition">
+                Kisan Thapa.
+            </a>
 
-            <div class="flex items-center space-x-4">
-                <!-- Desktop Navigation -->
-                <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
-                    <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400"
-                        href="index.html">About</a> <!-- Active link -->
-                    <a class="hover:text-red-500 dark:hover:text-red-400 transition"
-                        href="pages/projects.html">Projects</a>
-                    <a class="hover:text-red-500 dark:hover:text-red-400 transition"
-                        href="pages/publications.html">Publications</a>
-                    <a class="hover:text-red-500 dark:hover:text-red-400 transition"
-                        href="pages/contact.html">Contact</a>
-                    <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="pages/resume.html">Resume</a>
-                    <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="pages/cv.html">CV</a>
-                </nav>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400"
+                    href="index.html">About</a> <!-- Active link -->
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="pages/projects.html">Projects</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition"
+                    href="pages/publications.html">Publications</a>
+                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="pages/contact.html">Contact</a>
 
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
-                    id="hamburger-menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2"></path>
-                    </svg>
-                    <span class="sr-only">Open menu</span>
-                </button>
-            </div>
+                <!-- Simple Resume Button -->
+                <a href="pages/resume.html"
+                    class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-200 hover:border-red-500 hover:text-red-500 dark:hover:border-red-400 dark:hover:text-red-400 transition">
+                    Resume / CV
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
+                id="hamburger-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    </path>
+                </svg>
+                <span class="sr-only">Open menu</span>
+            </button>
+
         </div>
 
         <!-- Mobile Menu -->
@@ -70,239 +77,294 @@
                 href="pages/publications.html">Publications</a>
             <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
                 href="pages/contact.html">Contact</a>
-            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
-                href="pages/resume.html">Resume</a>
-            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="pages/cv.html">CV</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="pages/resume.html">Resume
+                / CV</a>
         </nav>
     </header>
 
-    <div class="container mx-auto max-w-screen-lg w-full">
-        <main class="container mx-auto mt-8 sm:mt-16 px-6 sm:px-12 max-w-screen-lg w-full">
-            <!-- Intro Section -->
-            <section class="mb-12" id="about-intro">
-                <div class="flex flex-col md:flex-row items-start gap-8">
-                    <!-- Text Content Column -->
-                    <div class="md:w-2/3">
-                        <h1 class="text-3xl sm:text-4xl font-bold mb-2 text-gray-900 dark:text-white">Kisan Thapa</h1>
-                        <p class="text-xl text-gray-700 dark:text-gray-300 mb-4">PhD Candidate in Computer Science</p>
-                        <div class="space-y-4 text-gray-800 dark:text-gray-300">
-                            <p>
-                                I am a PhD candidate at the University of Massachusetts Boston, specializing in <strong
-                                    class="font-medium text-gray-900 dark:text-white">Computational Biology</strong> and
-                                <strong class="font-medium text-gray-900 dark:text-white">Deep Learning</strong>.
-                                My research focuses on developing and applying advanced computational methods,
-                                particularly
-                                leveraging deep learning and graph neural networks (GNNs), to decipher complex
-                                biological
-                                systems from omics data.
-                            </p>
-                            <p>
-                                I work within the <a class="text-red-500 hover:underline dark:text-red-400 font-medium"
-                                    href="https://sites.google.com/view/umb-network-biology" target="_blank"
-                                    rel="noopener noreferrer">Network Biology
-                                    Laboratory</a> under the supervision of <a
-                                    class="text-red-500 hover:underline dark:text-red-400 font-medium"
-                                    href="https://sites.google.com/view/ozgunbabur" target="_blank"
-                                    rel="noopener noreferrer">Prof. Özgün Babur</a>. My passion lies in bridging the gap
-                                between cutting-edge AI techniques and biological discovery, creating intuitive software
-                                tools that empower researchers.
-                            </p>
-                        </div>
+    <main class="container mx-auto mt-8 sm:mt-8 px-6 sm:px-12 max-w-screen-lg w-full">
 
-                        <!-- Links Section -->
-                        <div
-                            class="mt-6 font-medium flex flex-wrap gap-x-4 gap-y-2 items-center text-gray-600 dark:text-gray-400">
-                            <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
-                                href="https://github.com/KisanThapa" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github fa-fw mr-1"></i> GitHub
-                            </a>
-                            <span class="text-gray-400 dark:text-gray-600 hidden md:inline">|</span>
-                            <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
-                                href="https://www.linkedin.com/in/kisanthapa/" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="fab fa-linkedin fa-fw mr-1"></i> LinkedIn
-                            </a>
-                            <span class="text-gray-400 dark:text-gray-600 hidden md:inline">|</span>
-                            <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
-                                href="https://scholar.google.com/citations?user=4Qs3ndUAAAAJ&hl=en" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="fas fa-graduation-cap fa-fw mr-1"></i> Google Scholar
-                            </a>
-                            <span class="text-gray-400 dark:text-gray-600 hidden md:inline">|</span>
-                            <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
-                                href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_Resume.pdf" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="fas fa-file-pdf fa-fw mr-1"></i> Resume
-                            </a>
-                            <span class="text-gray-400 dark:text-gray-600 hidden md:inline">|</span>
-                            <a class="hover:text-red-500 dark:hover:text-red-400 flex items-center hover:underline transition"
-                                href="https://www.cs.umb.edu/~kisan/resume/Kisan_Thapa_CV.pdf" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="fas fa-file-pdf fa-fw mr-1"></i> CV
-                            </a>
-                        </div>
+        <!-- Intro Section -->
+        <section
+            class="flex flex-col-reverse md:flex-row items-start gap-4 mb-4 border-b border-gray-100 dark:border-gray-800 pb-4"
+            id="about-intro">
 
-                        <div class="mt-4 text-sm text-gray-700 dark:text-gray-400">
-                            Email:
-                            <span class="text-red-500 dark:text-red-400 font-medium select-all">
-                                Kisan<span class="text-blue-500 dark:text-blue-400">[DOT]</span>Thapa001<span
-                                    class="text-blue-500 dark:text-blue-400">[AT]</span>umb.edu
-                            </span>
-                        </div>
+            <!-- Text Content Column -->
+            <div class="md:w-2/3">
+                <h1 class="text-3xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-2">
+                    Kisan Thapa
+                </h1>
+                <h2 class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                    PhD Candidate in Computer Science
+                </h2>
+
+                <div class="space-y-4 text-gray-800 dark:text-gray-300">
+                    <p>
+                        I am a PhD candidate at the University of Massachusetts Boston, specializing in <strong
+                            class="font-medium text-gray-900 dark:text-white">Computational Biology</strong> and
+                        <strong class="font-medium text-gray-900 dark:text-white">Deep Learning</strong>.
+                    </p>
+
+                    <p>
+                        My research focuses on developing advanced computational methods,
+                        particularly
+                        leveraging deep learning, to decipher complex
+                        biological
+                        systems from omics data.
+                    </p>
+
+                    <p>
+                        I work within the <a class="text-red-500 hover:underline dark:text-red-400 font-medium"
+                            href="https://sites.google.com/view/umb-network-biology" target="_blank"
+                            rel="noopener noreferrer">Network Biology
+                            Laboratory</a> under the supervision of <a
+                            class="text-red-500 hover:underline dark:text-red-400 font-medium"
+                            href="https://sites.google.com/view/ozgunbabur" target="_blank"
+                            rel="noopener noreferrer">Prof. Özgün Babur</a>.
+                    </p>
+                </div>
+
+                <!-- Simple Action Buttons -->
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <a href="pages/resume.html"
+                        class="inline-flex items-center px-4 py-2 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-gray-900 text-sm font-medium rounded transition">
+                        <i class="fas fa-file-alt mr-2"></i> Resume
+                    </a>
+                    <a href="https://www.linkedin.com/in/kisanthapa/" target="_blank"
+                        class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium rounded transition">
+                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/KisanThapa" target="_blank"
+                        class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium rounded transition">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=4Qs3ndUAAAAJ&hl=en" target="_blank"
+                        class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-sm font-medium rounded transition">
+                        <i class="fas fa-graduation-cap mr-2"></i> Google Scholar
+                    </a>
+                </div>
+
+                <div class="mt-6 text-sm text-gray-500">
+                    Email:
+                    <span id="email"></span>
+                </div>
+            </div>
+
+            <!-- Profile Image (Simple Circle) -->
+            <div class="w-full md:w-1/3 flex justify-center md:justify-end">
+                <img src="assets/profile.jpeg" alt="Kisan Thapa"
+                    class="w-48 h-48 sm:w-56 sm:h-56 rounded-full object-cover border border-gray-200 dark:border-gray-700 shadow-sm">
+            </div>
+
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-8 border-gray-100 border-b-2 pb-8" id="education">
+            <h2 class="text-xl font-medium mb-4 text-gray-900 dark:text-white">Education</h2>
+
+            <div class="space-y-4 ml-6 border-l-2 border-red-200 dark:border-red-700 pl-4">
+                <div class="relative">
+                    <div
+                        class="absolute -left-[2.6rem] top-1 w-4 h-4 bg-red-500 dark:bg-red-400 rounded-full border-2 border-white dark:border-gray-800">
                     </div>
+                    <!-- Timeline dot -->
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">2021 - Present</p>
+                    <p class="text-gray-900 dark:text-white">PhD in Computer Science</p>
+                    <p class="text-gray-700 dark:text-gray-300">University of Massachusetts Boston</p>
+                </div>
+                <div class="relative">
+                    <div
+                        class="absolute -left-[2.6rem] top-1 w-4 h-4 bg-red-500 dark:bg-red-400 rounded-full border-2 border-white dark:border-gray-800">
+                    </div>
+                    <!-- Timeline dot -->
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">2021 - 2025</p>
+                    <p class="text-gray-900 dark:text-white">Master of Science in Computer Science</p>
+                    <p class="text-gray-700 dark:text-gray-300">University of Massachusetts Boston</p>
+                </div>
+                <div class="relative">
+                    <div
+                        class="absolute -left-[2.6rem] top-1 w-4 h-4 bg-red-500 dark:bg-red-400 rounded-full border-2 border-white dark:border-gray-800">
+                    </div>
+                    <!-- Timeline dot -->
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">2013 - 2017</p>
+                    <p class="text-gray-900 dark:text-white">Bachelor of Computer Engineering</p>
+                    <p class="text-gray-700 dark:text-gray-300">Pokhara University, Nepal</p>
+                </div>
+            </div>
 
-                    <!-- Image Column -->
-                    <div class="md:w-1/3 mt-8 md:mt-0 flex justify-center md:justify-end">
-                        <img alt="Kisan Thapa profile picture"
-                            class="w-60 h-60 sm:w-64 sm:h-64 object-cover object-center shrink-0 rounded-full shadow-lg border-4 border-white dark:border-gray-700"
-                            src="assets/profile.jpeg">
+        </section>
+
+        <section class="mb-8" id="news-updates">
+
+            <div class="grid md:grid-cols-3 gap-16">
+
+                <!-- LEFT COLUMN: Info -->
+                <div class="md:col-span-1 space-y-10">
+
+                    <!-- Research Interests -->
+                    <section>
+                        <h3
+                            class="text-lg font-bold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
+                            Research
+                            Interests
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded border border-gray-200 dark:border-gray-700">Software
+                                Engineering</span>
+                            <span
+                                class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded border border-gray-200 dark:border-gray-700">CompBio</span>
+
+                            <span
+                                class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded border border-gray-200 dark:border-gray-700">Machine
+                                Learning</span>
+                            <span
+                                class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded border border-gray-200 dark:border-gray-700">Deep
+                                Learning</span>
+                            <span
+                                class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded border border-gray-200 dark:border-gray-700">GNNs</span>
+                            <span
+                                class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded border border-gray-200 dark:border-gray-700">Bioinformatics</span>
+                        </div>
+                    </section>
+
+                    <!-- Skills (Crucial for Recruiters) -->
+                    <section>
+                        <h3
+                            class="text-lg font-bold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
+                            Skills
+                        </h3>
+                        <div class="space-y-3">
+                            <div>
+                                <span class="text-xs font-bold text-gray-500 uppercase">Languages</span>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded">Python</span>
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded">Java</span>
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded">JavaScript</span>
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded">R</span>
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded">SQL</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-gray-500 uppercase">Tools</span>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded">PyTorch</span>
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded">TensorFlow</span>
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded">Scikit-Learn</span>
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded">Docker</span>
+                                    <span
+                                        class="text-sm text-gray-800 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded">Git</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- RIGHT COLUMN: News -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-medium mb-4 text-gray-900 dark:text-white">
+                        News & Updates
+                    </h3>
+
+                    <div class="space-y-6">
+
+                        <!-- News Item -->
+                        <div class="flex gap-4 items-start">
+                            <div class="text-xs font-mono text-gray-500 w-24 pt-1 flex-shrink-0 text-right">Dec 2025
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Awarded CSM Dean’s Doctoral
+                                    Research
+                                    Fellowship</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Sponsored by Oracle and UMass
+                                    Boston.</p>
+                            </div>
+                        </div>
+
+                        <!-- News Item -->
+                        <div class="flex gap-4 items-start">
+                            <div class="text-xs font-mono text-gray-500 w-24 pt-1 flex-shrink-0 text-right">May 2025
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Received Master of Science in
+                                    Computer Science</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                    En-route MS from University of Massachusetts Boston.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- News Item -->
+                        <div class="flex gap-4 items-start">
+                            <div class="text-xs font-mono text-gray-500 w-24 pt-1 flex-shrink-0 text-right">Mar 2025
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Paper Published in Cell Press
+                                    Patterns
+                                </h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                    First-author paper: <a href="pages/publications.html"
+                                        class="text-accent-600 hover:underline">"Strategies to include prior knowledge
+                                        in
+                                        omics analysis..."</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- News Item -->
+                        <div class="flex gap-4 items-start">
+                            <div class="text-xs font-mono text-gray-500 w-24 pt-1 flex-shrink-0 text-right">Feb 2025
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Conference Presentation</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Presented at the UMass Boston
+                                    Graduate Research Symposium.</p>
+                            </div>
+                        </div>
+
+                        <!-- News Item -->
+                        <div class="flex gap-4 items-start">
+                            <div class="text-xs font-mono text-gray-500 w-24 pt-1 flex-shrink-0 text-right">Dec 2024
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Launched this personal portfolio
+                                    website!</h4>
+                            </div>
+                        </div>
+
+                        <!-- News Item -->
+                        <div class="flex gap-4 items-start">
+                            <div class="text-xs font-mono text-gray-500 w-24 pt-1 flex-shrink-0 text-right">Dec 2023
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Passed PhD Qualifying Exam</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Advanced to PhD Candidacy.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </section>
 
-            <!-- Research Interests Section -->
-            <section class="my-12" id="research-interests">
-                <h2 class="text-2xl font-medium mb-4 text-gray-900 dark:text-white">Research Interests</h2>
-                <div class="flex flex-wrap gap-2">
-                    <span
-                        class="bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-300 text-sm font-medium px-3 py-1 rounded-full">Computational
-                        Biology</span>
-                    <span
-                        class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Deep
-                        Learning</span>
-                    <span
-                        class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 text-sm font-medium px-3 py-1 rounded-full">Graph
-                        Neural Networks</span>
-                    <span
-                        class="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-300 text-sm font-medium px-3 py-1 rounded-full">Machine
-                        Learning</span>
-                    <!--                <span class="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Omics Data Analysis</span>-->
-                    <span
-                        class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-300 text-sm font-medium px-3 py-1 rounded-full">Network
-                        Biology</span>
-                </div>
-            </section>
+            </div>
 
-            <!-- Education Section -->
-            <section class="mb-12" id="education">
-                <h2 class="text-2xl font-medium mb-4 text-gray-900 dark:text-white">Education</h2>
-                <div class="space-y-4 border-l-2 border-red-200 dark:border-red-700 pl-4">
-                    <div class="relative">
-                        <div
-                            class="absolute -left-[2.6rem] top-1 w-4 h-4 bg-red-500 dark:bg-red-400 rounded-full border-2 border-white dark:border-gray-800">
-                        </div>
-                        <!-- Timeline dot -->
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">2021 – Present</p>
-                        <p class="font-medium text-gray-900 dark:text-white">PhD in Computer Science</p>
-                        <p class="text-gray-700 dark:text-gray-300">University of Massachusetts Boston</p>
-                    </div>
-                    <div class="relative">
-                        <div
-                            class="absolute -left-[2.6rem] top-1 w-4 h-4 bg-red-500 dark:bg-red-400 rounded-full border-2 border-white dark:border-gray-800">
-                        </div>
-                        <!-- Timeline dot -->
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">2021 – 2025</p>
-                        <p class="font-medium text-gray-900 dark:text-white">Master of Science in Computer Science
-                            (en-route)</p>
-                        <p class="text-gray-700 dark:text-gray-300">University of Massachusetts Boston</p>
-                    </div>
-                    <div class="relative">
-                        <div
-                            class="absolute -left-[2.6rem] top-1 w-4 h-4 bg-red-500 dark:bg-red-400 rounded-full border-2 border-white dark:border-gray-800">
-                        </div>
-                        <!-- Timeline dot -->
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">2013 – 2017</p>
-                        <p class="font-medium text-gray-900 dark:text-white">Bachelor of Computer Engineering</p>
-                        <p class="text-gray-700 dark:text-gray-300">Pokhara University, Nepal</p>
-                    </div>
-                </div>
-            </section>
+        </section>
 
-            <!-- News Section -->
-            <section class="mb-12" id="news">
-                <h2 class="text-2xl font-medium mb-4 text-gray-900 dark:text-white">News & Updates</h2>
-                <div class="space-y-4">
+    </main>
 
-                    <!-- News items -->
-                    <div class="flex items-start space-x-3">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Dec 22,
-                            2025</span>
-                        <div class="flex-1 text-gray-800 dark:text-gray-300">
-                            🏆 Awarded the <strong class="text-red-500 hover:underline dark:text-red-400 font-medium">CSM Dean’s Doctoral Research Fellowship</strong> by the
-                            <strong class="text-red-500 hover:underline dark:text-red-400 font-medium">University of Massachusetts
-                                Boston</strong>, sponsored by <strong class="text-red-500 hover:underline dark:text-red-400 font-medium">Oracle</strong>.
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-3">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">May 31,
-                            2025</span>
-                        <div class="flex-1 text-gray-800 dark:text-gray-300">
-                            🎓 Received my en-route <strong class="text-red-500 hover:underline dark:text-red-400 font-medium">Master of Science in Computer Science</strong> from the
-                            <strong class="text-red-500 hover:underline dark:text-red-400 font-medium">University of Massachusetts Boston</strong>.
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-3">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Mar 14,
-                            2025</span>
-                        <div class="flex-1 text-gray-800 dark:text-gray-300">
-                            🎉 Published my first-author paper
-                            <a href="pages/publications.html#paper-id-1"
-                                class="text-red-500 hover:underline dark:text-red-400 font-medium">"Strategies to
-                                include prior knowledge in omics analysis with deep neural networks"</a>
-                            in <strong class="text-red-500 hover:underline dark:text-red-400 font-medium">Cell
-                                Press Patterns</strong>.
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-3">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Feb 14,
-                            2025</span>
-                        <div class="flex-1 text-gray-800 dark:text-gray-300">
-                            🎤 Presented our paper on prior knowledge integration at the Graduate Research Symposium,
-                            <strong class="text-red-500 hover:underline dark:text-red-400 font-medium">UMass
-                                Boston</strong>.
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-3">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Jan 12,
-                            2025</span>
-                        <div class="flex-1 text-gray-800 dark:text-gray-300">
-                            📰 Our review paper on integrating prior knowledge in deep learning for omics analysis was
-                            accepted by <strong class="text-red-500 hover:underline dark:text-red-400 font-medium">Cell
-                                Press Patterns</strong>!
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-3">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Dec 14,
-                            2024</span>
-                        <div class="flex-1 text-gray-800 dark:text-gray-300">
-                            🚀 Launched this personal portfolio website!
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-3">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm w-28 flex-shrink-0 pt-0.5">Dec 20,
-                            2023</span>
-                        <div class="flex-1 text-gray-800 dark:text-gray-300">
-                            ✅ Passed the PhD qualifying exam! 🎉📜
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-        <div
-            class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
-            ©
-            <script>document.write(new Date().getFullYear())</script>
-            Kisan Thapa. All rights reserved.
+    <!-- Simple Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto text-center text-sm text-gray-500">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script> Kisan Thapa.
         </div>
     </footer>
 

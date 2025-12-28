@@ -5,142 +5,200 @@
     <title>Contact | Kisan Thapa</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Contact information and social media links for Kisan Thapa, PhD Candidate in Computational Biology & Deep Learning at UMass Boston."
-          name="description">
+    <meta content="Contact information for Kisan Thapa, PhD Candidate in Computational Biology." name="description">
 
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-          rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
+
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
-<!-- Added dark mode classes -->
 <body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
-<!-- Navbar -->
-<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
-        <div class="text-3xl font-bold text-gray-900 dark:text-white">
-            Kisan <span class="font-light">Thapa</span>
-        </div>
-        <div class="flex items-center space-x-4">
-            <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
+    <!-- Navbar -->
+    <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+
+            <!-- Simple Logo -->
+            <a href="../index.html"
+                class="text-2xl font-mono font-semibold text-gray-900 dark:text-white hover:text-red-500 transition">
+                Kisan Thapa.
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="projects.html">Projects</a>
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition"
-                   href="publications.html">Publications</a>
+                    href="publications.html">Publications</a>
                 <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400"
-                   href="contact.html">Contact</a>
-                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="resume.html">Resume</a>
-                <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="cv.html">CV</a>
+                    href="contact.html">Contact</a> <!-- Active link -->
+
+                <!-- Simple Resume Button -->
+                <a href="resume.html"
+                    class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-200 hover:border-red-500 hover:text-red-500 dark:hover:border-red-400 dark:hover:text-red-400 transition">
+                    Resume / CV
+                </a>
             </nav>
 
+            <!-- Mobile Menu Button -->
             <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
-                    id="hamburger-menu">
+                id="hamburger-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
-                          stroke-width="2"></path>
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    </path>
                 </svg>
                 <span class="sr-only">Open menu</span>
             </button>
         </div>
-    </div>
-    <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
-         id="mobile-menu">
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="projects.html">Projects</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="publications.html">Publications</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
-           href="contact.html">Contact</a>
-        <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="cv.html">CV</a>
-    </nav>
-</header>
 
+        <!-- Mobile Menu -->
+        <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+            id="mobile-menu">
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="projects.html">Projects</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="publications.html">Publications</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400"
+                href="contact.html">Contact</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="resume.html">Resume /
+                CV</a>
+        </nav>
+    </header>
 
-<div class="container mx-auto max-w-screen-lg w-full">
-    <main class="container mx-auto mt-8 sm:mt-16 px-6 sm:px-12 max-w-screen-lg w-full">
-        <section class="mb-8" id="contact">
+    <main class="container mx-auto mt-8 sm:mt-8 px-6 sm:px-12 max-w-screen-lg w-full">
 
-            <div class="mb-8">
-                <h1 class="text-2xl sm:text-3xl font-medium text-gray-900 dark:text-white">Get In Touch</h1>
-                <p class="mt-2 text-gray-700 dark:text-gray-300">Feel free to reach out via email or connect on social
-                    media.</p>
-            </div>
+        <!-- Header -->
+        <section class="mb-12 border-b border-gray-100 dark:border-gray-800 pb-4">
+            <h1 class="text-3xl sm:text-3xl font-semibold mb-2 text-gray-900 dark:text-white">
+                Contact
+            </h1>
+            <p class="text-gray-800 dark:text-gray-300">
+                Reach out via email or connect with me on professional networks.
+            </p>
+        </section>
 
-            <!-- Email -->
-            <div class="mt-4 mb-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                <span class="font-medium text-gray-800 dark:text-gray-200">Email:</span>
-                <a class="text-red-500 dark:text-red-400 font-medium hover:underline ml-2 select-all"
-                   href="mailto:Kisan.Thapa001@umb.edu"> <!-- Added mailto link -->
-                    Kisan<span class="text-blue-500 dark:text-blue-400">[DOT]</span>Thapa001<span
-                            class="text-blue-500 dark:text-blue-400">[AT]</span>umb.edu
+        <!-- Primary Contact: Email -->
+        <section class="mb-12">
+            <div
+                class="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-8 text-center hover:border-red-300 dark:hover:border-red-900 transition duration-300">
+                <div
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-800 text-red-500 mb-4 shadow-sm">
+                    <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Email Me</h2>
+
+                <a class="text-xl sm:text-2xl font-mono text-gray-700 dark:text-gray-200 hover:text-red-500 dark:hover:text-red-400 transition select-all"
+                    href="#">
+                    <span id="email"></span>
                 </a>
             </div>
+        </section>
 
-            <!-- Social Media Section -->
-            <div class="mt-12">
-                <h2 class="text-xl font-medium mb-4 text-gray-900 dark:text-white">Connect Online</h2>
-                <!-- Social Media Links in a Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Network Grid -->
+        <section>
+            <h2 class="text-xl font-medium mb-6 text-gray-900 dark:text-white border-l-4 border-red-500 pl-3">
+                Connect Online
+            </h2>
 
-                    <!-- Google Scholar -->
-                    <a class="flex items-center bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 p-3 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800/60 transition shadow-sm"
-                       href="https://scholar.google.com/citations?user=4Qs3ndUAAAAJ&hl=en" target="_blank"
-                       rel="noopener noreferrer">
-                        <i class="fas fa-graduation-cap fa-fw text-2xl text-blue-500 dark:text-blue-400"></i>
-                        <p class="ml-3 text-lg font-medium">Google Scholar</p>
-                    </a>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                    <!-- LinkedIn -->
-                    <a class="flex items-center bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 p-3 rounded-lg hover:bg-sky-200 dark:hover:bg-sky-800/60 transition shadow-sm"
-                       href="https://www.linkedin.com/in/kisanthapa/" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin fa-fw text-2xl text-sky-600 dark:text-sky-400"></i>
-                        <p class="ml-3 text-lg font-medium">LinkedIn</p>
-                    </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/kisanthapa/" target="_blank" rel="noopener noreferrer"
+                    class="group flex items-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-red-400 dark:hover:border-red-500 hover:shadow-sm transition duration-200">
+                    <div class="text-gray-400 group-hover:text-[#0077b5] transition-colors text-2xl w-10 text-center">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-gray-900 dark:text-white">LinkedIn</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Professional Profile</p>
+                    </div>
+                    <i class="fas fa-arrow-right ml-auto text-gray-300 group-hover:text-red-400 text-sm"></i>
+                </a>
 
-                    <!-- GitHub -->
-                    <a class="flex items-center bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition shadow-sm"
-                       href="https://github.com/KisanThapa" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github fa-fw text-2xl text-gray-700 dark:text-gray-300"></i>
-                        <p class="ml-3 text-lg font-medium">GitHub</p>
-                    </a>
+                <!-- Google Scholar -->
+                <a href="https://scholar.google.com/citations?user=4Qs3ndUAAAAJ&hl=en" target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex items-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-red-400 dark:hover:border-red-500 hover:shadow-sm transition duration-200">
+                    <div class="text-gray-400 group-hover:text-[#4285F4] transition-colors text-2xl w-10 text-center">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-gray-900 dark:text-white">Google Scholar</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Citations & Research</p>
+                    </div>
+                    <i class="fas fa-arrow-right ml-auto text-gray-300 group-hover:text-red-400 text-sm"></i>
+                </a>
 
-                    <!-- Twitter (X) -->
-                    <a class="flex items-center bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 p-3 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800/40 transition shadow-sm"
-                       href="https://x.com/_kisanthapa" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-twitter fa-fw text-2xl text-blue-500 dark:text-blue-400"></i>
-                        <!-- Use fa-twitter or fa-x-twitter -->
-                        <p class="ml-3 text-lg font-medium">Twitter (X)</p>
-                    </a>
+                <!-- GitHub -->
+                <a href="https://github.com/KisanThapa" target="_blank" rel="noopener noreferrer"
+                    class="group flex items-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-red-400 dark:hover:border-red-500 hover:shadow-sm transition duration-200">
+                    <div
+                        class="text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors text-2xl w-10 text-center">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-gray-900 dark:text-white">GitHub</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Code Repositories</p>
+                    </div>
+                    <i class="fas fa-arrow-right ml-auto text-gray-300 group-hover:text-red-400 text-sm"></i>
+                </a>
 
-                    <!-- Instagram -->
-                    <a class="flex items-center bg-pink-100 dark:bg-pink-900/50 text-pink-700 dark:text-pink-300 p-3 rounded-lg hover:bg-pink-200 dark:hover:bg-pink-800/60 transition shadow-sm"
-                       href="https://www.instagram.com/kisan_n_n/" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-instagram fa-fw text-2xl text-pink-600 dark:text-pink-400"></i>
-                        <p class="ml-3 text-lg font-medium">Instagram</p>
-                    </a>
+                <!-- Twitter (X) -->
+                <a href="https://x.com/_kisanthapa" target="_blank" rel="noopener noreferrer"
+                    class="group flex items-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-red-400 dark:hover:border-red-500 hover:shadow-sm transition duration-200">
+                    <div
+                        class="text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors text-2xl w-10 text-center">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-gray-900 dark:text-white">Twitter / X</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Updates & Thoughts</p>
+                    </div>
+                    <i class="fas fa-arrow-right ml-auto text-gray-300 group-hover:text-red-400 text-sm"></i>
+                </a>
 
-                </div>
+                <!-- Instagram (Optional - kept based on previous file) -->
+                <a href="https://www.instagram.com/kisan_n_n/" target="_blank" rel="noopener noreferrer"
+                    class="group flex items-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-red-400 dark:hover:border-red-500 hover:shadow-sm transition duration-200">
+                    <div class="text-gray-400 group-hover:text-[#E1306C] transition-colors text-2xl w-10 text-center">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="font-medium text-gray-900 dark:text-white">Instagram</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Personal</p>
+                    </div>
+                    <i class="fas fa-arrow-right ml-auto text-gray-300 group-hover:text-red-400 text-sm"></i>
+                </a>
+
             </div>
         </section>
+
     </main>
-</div>
 
-<!-- Footer (Copied from index.html, adjusted paths) -->
-<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-    <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
-        ©
-        <script>document.write(new Date().getFullYear())</script>
-        Kisan Thapa. All rights reserved.
-    </div>
-</footer>
+    <!-- Simple Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto text-center text-sm text-gray-500">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script> Kisan Thapa.
+        </div>
+    </footer>
 
-<!-- Link JS (Adjusted path) -->
-<script src="../js/index.js"></script>
+    <!-- Link JS -->
+    <script src="../js/index.js"></script>
 
 </body>
+
 </html>
