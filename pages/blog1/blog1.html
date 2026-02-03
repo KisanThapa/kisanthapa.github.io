@@ -1,242 +1,629 @@
 <!DOCTYPE html>
-<html lang="en" class=""> <!-- JS adds 'dark' if needed -->
+<html lang="en" class="">
 
 <head>
-  <!-- *** UPDATE TITLE FOR EACH POST *** -->
-  <title>Blog Post Title | Kisan Thapa</title>
+  <title>Inductive Representation Learning on Large Graphs | Kisan Thapa</title>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- *** UPDATE DESCRIPTION FOR EACH POST *** -->
-  <meta content="Detailed blog post about [Topic]. Insights by Kisan Thapa." name="description">
+  <meta content="Review of Inductive Representation Learning on Large Graphs (GraphSAGE) by Hamilton et al. (2017)."
+    name="description">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Include your compiled CSS if using the Typography plugin -->
+
   <!-- <link href="../dist/output.css" rel="stylesheet"> -->
-  <link href="../css/style.css" rel="stylesheet"> <!-- Keep if you have custom base styles -->
-  <link href="../assets/kisan_icon.jpeg" rel="shortcut icon" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
-        rel="stylesheet" type="text/css">
+  <link href="../../css/style.css" rel="stylesheet">
+  <link href="../../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
+    rel="stylesheet" type="text/css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-  <!-- Basic styling if NOT using Typography plugin -->
+  <!-- *** MATH SUPPORT (KaTeX) *** -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false}
+        ],
+        throwOnError : false
+      });"></script>
+
+  <!-- *** CODE HIGHLIGHTING (Highlight.js) *** -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
   <style>
-    /* Basic styles if Typography plugin isn't used */
-    .manual-prose h2 { @apply text-2xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white; }
-    .manual-prose h3 { @apply text-xl font-semibold mt-5 mb-2 text-gray-900 dark:text-white; }
-    .manual-prose p { @apply mb-4 text-gray-700 dark:text-gray-300 leading-relaxed; }
-    .manual-prose ul { @apply list-disc list-inside mb-4 pl-4 text-gray-700 dark:text-gray-300; }
-    .manual-prose ol { @apply list-decimal list-inside mb-4 pl-4 text-gray-700 dark:text-gray-300; }
-    .manual-prose li { @apply mb-2; }
-    .manual-prose a { @apply text-red-600 dark:text-red-400 underline hover:text-red-700 dark:hover:text-red-300; }
-    .manual-prose code { @apply px-1 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-sm text-red-800 dark:text-red-300; }
-    .manual-prose pre { @apply p-4 bg-gray-800 dark:bg-gray-900 rounded-md overflow-x-auto text-sm text-gray-200 dark:text-gray-300 mb-4; }
-    .manual-prose pre code { @apply bg-transparent p-0 rounded-none text-inherit; }
-    .manual-prose blockquote { @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-400 mb-4; }
+    /* Typography overrides for better reading experience */
+    .prose-custom {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .prose-custom h1 {
+      font-size: 2.25rem;
+      /* 36px */
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .prose-custom h2 {
+      font-size: 1.75rem;
+      /* 28px */
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      /* gray-200 */
+    }
+
+    /* Dark mode border adjustment */
+    .dark .prose-custom h2 {
+      border-color: #374151;
+      /* gray-700 */
+    }
+
+    .prose-custom h3 {
+      font-size: 1.5rem;
+      /* 24px */
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .prose-custom p {
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .prose-custom ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .prose-custom ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .prose-custom li {
+      margin-bottom: 0.5rem;
+    }
+
+    .prose-custom code {
+      font-family: 'Fira Code', monospace;
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.25rem;
+      font-size: 0.9em;
+    }
+
+    .dark .prose-custom code {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .prose-custom pre {
+      background-color: transparent;
+      /* Handled by HLJS theme */
+      padding: 0;
+      margin: 1.5rem 0;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    .prose-custom blockquote {
+      border-left: 4px solid #ef4444;
+      /* red-500 */
+      padding-left: 1rem;
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.5rem 0;
+    }
   </style>
 
 </head>
 
-<!-- Added dark mode classes -->
-<body class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+<body
+  class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300 flex flex-col min-h-screen">
 
-<!-- Navbar (Copied structure, ensure Blog link is active) -->
-<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
-  <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
-    <div class="text-3xl font-bold text-gray-900 dark:text-white">
-      Kisan <span class="font-light">Thapa</span>
-    </div>
-    <div class="flex items-center space-x-4">
-      <!-- Desktop Navigation -->
-      <nav class="font-medium hidden md:flex space-x-4 items-center text-gray-600 dark:text-gray-300">
-        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
-        <!-- Keep Blog active as we are inside the blog section -->
-        <a class="hover:text-red-500 dark:hover:text-red-400 transition text-red-500 dark:text-red-400" href="blog.html">Blog</a>
-        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="projects.html">Projects</a>
-        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="publications.html">Publications</a>
-        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="contact.html">Contact</a>
-        <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="cv.html">Resume</a>
-      </nav>
-      <!-- Theme Toggle Button -->
-      <button id="theme-toggle-button" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:focus:ring-offset-gray-800">
-        <span id="theme-toggle-sun-icon" class="hidden"><i class="fas fa-sun text-yellow-500"></i></span>
-        <span id="theme-toggle-moon-icon" class="hidden"><i class="fas fa-moon text-blue-400"></i></span>
-        <span class="sr-only">Toggle theme</span>
-      </button>
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200" id="hamburger-menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-        <span class="sr-only">Open menu</span>
-      </button>
-    </div>
-  </div>
-  <!-- Mobile Menu -->
-  <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700" id="mobile-menu">
-    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
-    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500 dark:text-red-400" href="blog.html">Blog</a>
-    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="projects.html">Projects</a>
-    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="publications.html">Publications</a>
-    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="contact.html">Contact</a>
-    <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="cv.html">Resume</a>
-  </nav>
-</header>
+  <!-- Navbar -->
+  <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+      <a href="../../index.html"
+        class="text-2xl font-mono font-semibold text-gray-900 dark:text-white hover:text-red-500 transition">
+        Kisan Thapa.
+      </a>
 
-<div class="container mx-auto max-w-screen-lg w-full">
+      <div class="flex items-center space-x-4">
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../../index.html">About</a>
+          <a class="text-red-500 dark:text-red-400 font-bold" href="../blog.html">Blog</a>
+          <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../projects.html">Projects</a>
+          <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../publications.html">Publications</a>
+          <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../contact.html">Contact</a>
+          <a href="../resume.html"
+            class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-200 hover:border-red-500 hover:text-red-500 dark:hover:border-red-400 dark:hover:text-red-400 transition">
+            Resume / CV
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
+          id="hamburger-menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav
+      class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+      id="mobile-menu">
+      <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../../index.html">About</a>
+      <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500"
+        href="../blog.html">Blog</a>
+      <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../projects.html">Projects</a>
+      <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+        href="../publications.html">Publications</a>
+    </nav>
+  </header>
+
   <!-- Content -->
-  <main class="container mx-auto mt-8 sm:mt-12 px-6 sm:px-12 max-w-screen-lg w-full">
+  <main class="container mx-auto mt-8 sm:mt-12 px-6 sm:px-12 max-w-screen-lg w-full flex-grow">
 
     <!-- Back to Blog Link -->
     <div class="mb-6">
-      <a href="blog.html" class="text-sm text-red-500 dark:text-red-400 hover:underline">
+      <a href="../blog.html" class="text-sm text-red-500 dark:text-red-400 hover:underline">
         ← Back to Blog List
       </a>
     </div>
 
-    <article class="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 shadow-md border border-gray-200 dark:border-gray-700">
+    <article
+      class="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 shadow-md border border-gray-200 dark:border-gray-700">
       <!-- Post Header -->
       <header class="mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
-        <!-- *** UPDATE TITLE *** -->
+
         <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-gray-900 dark:text-white leading-tight">
-          Graph Neural Networks in Biology: Beyond Simple Embeddings
+          Inductive Representation Learning on Large Graphs
         </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-2">(Hamilton et al., 2017)</p>
+
         <!-- Metadata -->
         <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 gap-x-4 gap-y-1">
-                    <span>
-                        <i class="fas fa-calendar-alt mr-1"></i>
-                      <!-- *** UPDATE DATE *** -->
-                        October 26, 2024
-                    </span>
           <span>
-                        <i class="fas fa-user mr-1"></i> Kisan Thapa
-                    </span>
-          <span>
-                        <i class="fas fa-tags mr-1"></i>
-            <!-- *** UPDATE TAGS *** -->
-                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Deep Learning</a>,
-                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">GNNs</a>,
-                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Computational Biology</a>
-                    </span>
-          <!-- Optional: Reading Time
-          <span>
-             <i class="fas fa-clock mr-1"></i> 5 min read
+            <i class="fas fa-calendar-alt mr-1"></i>
+
+            Feb 03, 2026
           </span>
-          -->
+          <span>
+            <i class="fas fa-user mr-1"></i> Kisan Thapa
+          </span>
+          <span>
+            <i class="fas fa-tags mr-1"></i>
+
+            <a href="#" class="hover:text-red-500 dark:hover:text-red-400">GraphSAGE</a>,
+            <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Graph Learning</a>,
+            <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Inductive Learning</a>
+          </span>
+          <button id="full-width-toggle"
+            class="ml-auto text-xs flex items-center gap-1 text-gray-500 hover:text-gray-900 dark:hover:text-white transition"
+            title="Toggle Read Mode">
+            <i class="fas fa-expand"></i> <span>Wide Mode</span>
+          </button>
         </div>
       </header>
 
       <!-- Optional Featured Image -->
       <figure class="mb-6">
-        <!-- *** UPDATE IMAGE SRC & ALT *** -->
-        <img src="../assets/sample-blog-1.png" alt="Abstract representation of Graph Neural Networks" class="w-full max-h-96 object-cover rounded-md border border-gray-200 dark:border-gray-700">
-        <!-- Optional Caption -->
-        <!-- <figcaption class="text-xs text-center text-gray-500 dark:text-gray-400 mt-2">Fig 1: GNN layers processing biological network data.</figcaption> -->
+
+        <img src="../../assets/graph_sage.png" alt="GraphSAGE Architecture"
+          class="w-full h-auto rounded-md border border-gray-200 dark:border-gray-700">
       </figure>
 
       <!-- Post Content Area -->
-      <!-- Add class="prose dark:prose-invert max-w-none" if using Tailwind Typography plugin -->
-      <!-- Add class="manual-prose" if using the manual styles in the <style> tag -->
-      <div class="prose dark:prose-invert max-w-none">
+      <div id="blog-content"
+        class="prose-custom text-gray-800 dark:text-gray-300 max-w-none mx-auto transition-all duration-300">
 
-        <!-- *** START WRITING YOUR BLOG POST CONTENT HERE *** -->
 
+
+        <h2>Abstract</h2>
         <p>
-          Graph Neural Networks (GNNs) have rapidly emerged as a powerful toolset for analyzing relational data, making them exceptionally well-suited for various problems in computational biology. Biological systems, from protein interactions to gene regulatory networks, are inherently graph-structured. While early applications focused on tasks like node embedding, node classification (e.g., predicting protein function), and link prediction (e.g., predicting drug-target interactions), the potential of GNNs extends far beyond these foundational tasks.
+          <em>GraphSAGE</em> is a framework for inductive representation learning on large graphs. Unlike transductive
+          methods (which require all nodes during training), GraphSAGE generates node embeddings for unseen nodes by
+          learning a function that samples and aggregates features from a node's local neighborhood.
         </p>
 
-        <p>
-          This post delves into some of the more advanced applications and ongoing challenges in applying GNNs to biological data, moving towards more complex biological questions.
-        </p>
-
-        <h2>Moving Beyond Static Snapshots</h2>
-
-        <p>
-          Many biological networks represent dynamic processes. Traditional GNNs often operate on static graphs. However, research is increasingly exploring:
-        </p>
+        <h3>The Problem with Early GNNs (Like GCN)</h3>
+        <p>Early GNNs were Transductive.</p>
         <ul>
-          <li><strong>Temporal GNNs:</strong> Modeling how networks evolve over time, crucial for understanding developmental processes or disease progression.</li>
-          <li><strong>Dynamic Edge Features:</strong> Incorporating changes in interaction strengths or types.</li>
-          <li><strong>Causal Inference:</strong> Using GNNs not just to correlate but potentially to infer causal relationships within pathways, perhaps by integrating intervention data.</li>
+          <li><strong>What that means:</strong> You have to feed entire graph into the training process.</li>
+          <li><strong>The limitation:</strong> You have to retrain the whole model to generate an embedding if new
+            node is added, or some property changed.</li>
+          <li><strong>Scalability:</strong> You cannot easily process a graph with billions of nodes like (Pinterest
+            or Facebook) because the whole adjacency matrix won't fit in GPU memory.</li>
         </ul>
 
-        <h2>Interpretability: Opening the Black Box</h2>
-
-        <p>
-          A major hurdle for deep learning in science is interpretability. While GNNs can make accurate predictions, understanding *why* they make those predictions is critical for biological validation and discovery. Techniques being explored include:
+        <h3>The GraphSAGE Solution</h3>
+        <p>GraphSAGE (Graph <strong>S</strong>ample and <strong>Ag</strong>gregat<strong>e</strong>) introduced
+          <strong>Inductive</strong> learning to graphs.
         </p>
+        <ul>
+          <li><strong>What that means:</strong> Instead of learning embeddings for each node, GraphSAGE learns
+            <strong>aggregating Functions.</strong>
+          </li>
+          <li><strong>The Analogy:</strong>
+            <ul>
+              <li><em>Transductive (GCN):</em> Memorizing the map of New York City. If you go to London, you are lost.
+              </li>
+              <li><em>Inductive (GraphSAGE):</em> Learning the skill of reading a map. You can now navigate New York,
+                London, or a city that hasn't been built yet.</li>
+            </ul>
+          </li>
+          <li><strong>High-Level Intuition:</strong> assumes that a node is defined by its neighbors
+            <ol>
+              <li><em>Sampling</em>: For a target node, select fixed number of neighbors (not all of them, just a
+                sample). This keeps computation fixed regardless of node degree.</li>
+              <li><em>Aggregating</em>: Gather the feature information (text, images, stats) from those sampled
+                neighbors and squash them together into a single vector.</li>
+              <li><em>Updating</em>: Combine the neighbors' aggregated info with the target node's current info to
+                create a new embedding.</li>
+            </ol>
+          </li>
+        </ul>
+
+        <h2>Method</h2>
+        <p>
+          The GraphSAGE algorithm generates embeddings by aggregating information from a node's local neighborhood.
+          The process consists of three main steps: (1) Neighborhood Sampling, (2) Aggregation, and (3)
+          Prediction/Loss.
+        </p>
+
         <ol>
-          <li>Attention Mechanisms: Identifying which nodes or edges were most influential for a prediction.</li>
-          <li>Subgraph Explanations: Extracting the minimal subgraph responsible for a model's decision.</li>
-          <li>Perturbation Analysis: Observing how changes in the input graph affect the output.</li>
+          <li><strong>Forward Propagation Algorithm:</strong><br>
+            Let the graph be defined as $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ with input features
+            ${\{\mathbf{x}_v, \forall v \in \mathcal{V}\}}$. Let $K$ be the search depth (number of layers).
+
+            <p>We initialize the vector representations at $k=0$ as the input features:
+              \[
+              \mathbf{h}^0_v = \mathbf{x}_v
+              \]
+            </p>
+
+            <p>For each layer $k = 1 \dots K$, and for each node $v \in \mathcal{V}$:</p>
+            <ol type="a">
+              <li><strong>Aggregate Neighbors:</strong>
+                \[
+                \mathbf{h}^k_{\mathcal{N}(v)} = \text{AGGREGATE}_k \left( \{ \mathbf{h}^{k-1}_u, \forall u \in
+                \mathcal{N}(v) \} \right)
+                \]
+              </li>
+              <li><strong>Update Node Embedding:</strong><br>
+                Combine the aggregated neighbor info with the node's own previous representation:
+                \[
+                \mathbf{h}^k_v = \sigma \left( \mathbf{W}^k \cdot \text{CONCAT} \left( \mathbf{h}^{k-1}_v,
+                \mathbf{h}^k_{\mathcal{N}(v)} \right) \right)
+                \]
+                where $\mathbf{W}^k$ is a learnable weight matrix and $\sigma$ is a non-linearity (e.g., ReLU).
+              </li>
+              <li><strong>Normalize:</strong>
+                \[
+                \mathbf{h}^k_v = \frac{\mathbf{h}^k_v}{\| \mathbf{h}^k_v \|_2}
+                \]
+              </li>
+            </ol>
+            <p>The final representation for node $v$ is $\mathbf{z}_v = \mathbf{h}^K_v$.</p>
+          </li>
+
+          <li><strong>Aggregation Functions:</strong><br>
+            The aggregation function must be permutation invariant (the order of neighbors should not matter). The
+            paper proposes three distinct architecture choices:
+
+            <ul>
+              <li><strong>Mean Aggregator:</strong><br>
+                This is the simplest approach. It takes the element-wise mean of the vectors in $\{
+                \mathbf{h}^{k-1}_u, \forall u \in \mathcal{N}(v) \}$.
+                \[
+                \text{AGGREGATE}_k^{\text{mean}} = \frac{1}{|\mathcal{N}(v)|} \sum_{u \in \mathcal{N}(v)}
+                \mathbf{h}^{k-1}_u
+                \]
+                <em>Note:</em> The paper notes that a variant of this (GCN-like) can concatenate the node $v$ with its
+                neighbors before averaging, but the inductive Algorithm 1 keeps them separate during aggregation.
+              </li>
+
+              <li><strong>LSTM Aggregator:</strong><br>
+                LSTMs have higher expressive capability but are not naturally permutation invariant. To fix this,
+                GraphSAGE adapts LSTMs to sets by applying them to a <strong>random permutation</strong> of the
+                neighbors.
+                \[
+                \text{AGGREGATE}_k^{\text{LSTM}} = \text{LSTM} \left( [ \mathbf{h}^{k-1}_{u_{\pi(1)}}, \dots,
+                \mathbf{h}^{k-1}_{u_{\pi(|\mathcal{N}(v)|)}} ] \right)
+                \]
+                where $\pi$ is a random permutation function.
+              </li>
+
+              <li><strong>Pooling Aggregator:</strong><br>
+                This explicitly models the permutation invariance. Each neighbor's vector is passed through a fully
+                connected neural network, followed by an element-wise max-pooling operation.
+                \[
+                \text{AGGREGATE}_k^{\text{pool}} = \max \left( \{ \sigma \left( \mathbf{W}_{\text{pool}}
+                \mathbf{h}^{k-1}_u + \mathbf{b} \right), \forall u \in \mathcal{N}(v) \} \right)
+                \]
+                where max denotes the element-wise maximum operator. This captures distinct features from the
+                neighborhood (e.g., "is there <em>any</em> neighbor that is a fraudster?").
+              </li>
+            </ul>
+          </li>
+
+          <li><strong>Neighborhood Sampling (Minibatching):</strong><br>
+            To keep the computational footprint manageable, GraphSAGE does not use the full set $\mathcal{N}(v)$.
+            Instead, it uniformly samples a fixed size set of neighbors.
+
+            <p>Let $S_k$ be the sample size at layer $k$. If $|\mathcal{N}(v)| < S_k$, we sample with replacement;
+                otherwise, we sample without replacement. This ensures the memory footprint per batch is fixed and
+                predictable, regardless of the node degree.</p>
+          </li>
+
+          <li><strong>Loss Function:</strong><br>
+            GraphSAGE can be trained in a supervised or unsupervised manner.
+
+            <ul>
+              <li><strong>Unsupervised (Negative Sampling):</strong><br>
+                We want nearby nodes to have similar embeddings, and disparate nodes to have distinct embeddings. For
+                a node $u$, the loss function is:
+                \[
+                J_{\mathcal{G}}(\mathbf{z}_u) = - \log \left( \sigma(\mathbf{z}_u^\top \mathbf{z}_v) \right) - Q \cdot
+                \mathbb{E}_{v_n \sim P_n(v)} \left[ \log \left( \sigma(-\mathbf{z}_u^\top \mathbf{z}_{v_n}) \right)
+                \right]
+                \]
+                where $v$ is a neighbor (positive sample), $P_n$ is a negative sampling distribution, and $Q$ is the
+                number of negative samples.
+              </li>
+
+              <li><strong>Supervised:</strong><br>
+                For tasks like node classification, the unsupervised loss is replaced by a standard Cross-Entropy loss
+                calculated on the final embeddings $\mathbf{z}_v$ of labeled nodes.
+              </li>
+            </ul>
+          </li>
         </ol>
 
-        <h3>Challenges Remain</h3>
+        <h3>Python</h3>
+        <pre><code class="language-python">
+  import sys
+  import torch
+  import torch.nn.functional as F 
+  from torch_geometric.nn import SAGEConv
+  from torch_geometric.datasets import Planetoid
 
-        <p>
-          Despite the excitement, several challenges persist: handling heterogeneous graphs (multiple node/edge types), dealing with noisy or incomplete network data, and scaling GNNs to massive biological datasets like single-cell atlases.
-        </p>
+  print(sys.version)
+  print(torch.__version__)
+  # 3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:54:21) [Clang 16.0.6 ]
+  # 2.10.0
 
-        <blockquote>
-          "The integration of domain knowledge remains key. GNN architectures that explicitly incorporate biological priors often outperform generic models."
-        </blockquote>
+  # Load cora citation data
+  dataset = Planetoid(root="/tmp/Cora", name="Cora")
+  data = dataset[0]
+  print(type(data))
+  # <class 'torch_geometric.data.data.Data'>
 
-        <pre><code class="language-python"># Example: Basic GNN layer (using hypothetical library)
-import bio_gnn
+  # Graph Global Statistics
+  print(f"Nodes: {data.num_nodes}")
+  print(f"Edges: {data.num_edges}")
+  print(f"Average node degree: {data.num_edges / data.num_nodes:.2f}")
+  print(f"Isolated nodes: {data.has_isolated_nodes()}")
+  print(f"Self-loops: {data.has_self_loops()}")
+  print(f"Is undirected: {data.is_undirected()}")
 
-# Define a simple GNN model
-class SimpleGNN(bio_gnn.Module):
-    def __init__(self, in_channels, hidden_channels, out_channels):
-        super().__init__()
-        self.conv1 = bio_gnn.layers.GraphConv(in_channels, hidden_channels)
-        self.conv2 = bio_gnn.layers.GraphConv(hidden_channels, out_channels)
+  # Feature and Label Analysis
+  print(f"Number of features: {dataset.num_features}")
+  print(f"Number of classes: {dataset.num_classes}")
 
-    def forward(self, x, edge_index):
-        x = self.conv1(x, edge_index).relu()
-        x = self.conv2(x, edge_index)
-        return x
+  # Class Distribution in Training Set
+  train_labels = data.y[data.train_mask]
+  values, counts = torch.unique(train_labels, return_counts=True)
+  for v, c in zip(values, counts):
+      print(f"Class {v.item()}: {c.item()} training samples")
 
-# Load data and train...
-# model = SimpleGNN(dataset.num_node_features, 16, dataset.num_classes)
-</code></pre>
+  # Connectivity Inspection
+  edge_index = data.edge_index
+  print(f"Edge Index Shape: {edge_index.shape}")
+  # Display first 5 edges
+  print(edge_index[:, :5])
 
-        <p>
-          The journey of GNNs in biology is just beginning. As both GNN methods and biological data generation continue to advance, we can expect even more transformative applications in understanding life at the molecular level.
-        </p>
+  """
+  Output Context:
+  Nodes: 2708
+  Edges: 10556
+  Average node degree: 3.90
+  Isolated nodes: False
+  Self-loops: False
+  Is undirected: True
+  Number of features: 1433
+  Number of classes: 7
+  Class 0: 20 training samples
+  Class 1: 20 training samples
+  Class 2: 20 training samples
+  Class 3: 20 training samples
+  Class 4: 20 training samples
+  Class 5: 20 training samples
+  Class 6: 20 training samples
+  Edge Index Shape: torch.Size([2, 10556])
+  tensor([[ 633, 1862, 2582,    2,  652],
+          [   0,    0,    0,    1,    1]])
+  """
 
-        <!-- *** END BLOG POST CONTENT *** -->
+  # Define GraphSAGE Model
+  class GraphSAGE(torch.nn.Module):
+      def __init__(self, in_channels, hidden_channels, out_channels):
+          super().__init__()
+          
+          # Layer 1: Aggregates information from 1-hop neighbors
+          self.conv1 = SAGEConv(in_channels, hidden_channels, aggr='mean')
+          
+          # Layer 2: Aggregates information from 2-hop neighbors (neighbors of neighbors)
+          self.conv2 = SAGEConv(hidden_channels, out_channels, aggr='mean') 
+          
+      def forward(self, x, edge_index):
+          # Step 1: Convolve (Aggregate neighbor info)
+          x = self.conv1(x, edge_index)
+          
+          # Step 2: Activation (Add non-linearity)
+          x = x.relu()
+          
+          # Step 3: Regularization (Prevent overfitting)
+          x = F.dropout(x, p=0.5, training=self.training)
+
+          # Step 4: Second Convolution
+          x = self.conv2(x, edge_index)
+          
+          return F.log_softmax(x, dim=1)
+      
+  # Initialize
+  device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+  model = GraphSAGE(dataset.num_features, 64, dataset.num_classes).to(device)
+  data = data.to(device)
+  optimizer = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=5e-4)
+
+  # Training loop
+  def train():
+      # 1. Prepare the model
+      model.train() 
+
+      # 2. Reset Gradients
+      optimizer.zero_grad()
+      
+      # 3. Forward Pass (The Prediction)
+      out = model(data.x, data.edge_index)
+
+      # 4. Calculate Loss (The Error)
+      loss = F.nll_loss(out[data.train_mask], data.y[data.train_mask])
+      
+      # 5. Backward Pass (The Learning)
+      loss.backward() 
+      optimizer.step()
+      
+      return loss.item()
+
+  # Run it
+  for epoch in range(22):
+      loss = train()
+      print(f'Epoch {epoch}: Loss {loss:.4f}')
+
+  """
+  Epoch 0: Loss 1.9501
+  Epoch 1: Loss 1.6858
+  Epoch 2: Loss 1.2758
+  Epoch 3: Loss 0.8277
+  Epoch 4: Loss 0.4822
+  Epoch 5: Loss 0.2450
+  Epoch 6: Loss 0.1192
+  Epoch 7: Loss 0.0669
+  Epoch 8: Loss 0.0340
+  Epoch 9: Loss 0.0196
+  Epoch 10: Loss 0.0093
+  Epoch 11: Loss 0.0098
+  Epoch 12: Loss 0.0036
+  Epoch 13: Loss 0.0028
+  Epoch 14: Loss 0.0012
+  Epoch 15: Loss 0.0023
+  Epoch 16: Loss 0.0013
+  Epoch 17: Loss 0.0012
+  Epoch 18: Loss 0.0005
+  Epoch 19: Loss 0.0023
+  Epoch 20: Loss 0.0011
+  Epoch 21: Loss 0.0004
+  """</code></pre>
+
+        <h2>References</h2>
+        <ul>
+          <li>
+            Hamilton, W. L., Ying, Z., & Leskovec, J. (2017).
+            <strong>Inductive Representation Learning on Large Graphs.</strong>
+            <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 30.
+          </li>
+          <li>
+            Kipf, T. N., & Welling, M. (2017).
+            <strong>Semi-Supervised Classification with Graph Convolutional Networks.</strong>
+            <em>International Conference on Learning Representations (ICLR)</em>.
+          </li>
+        </ul>
+
+
 
       </div>
+    </article>
 
-      <!-- Optional Sections (Add if needed) -->
-      <!-- Social Sharing Placeholder -->
-      <!-- <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
-          <h3 class="text-lg font-medium mb-2 text-gray-900 dark:text-white">Share this post:</h3>
-          <div class="flex space-x-2">
-              <a href="#" class="text-blue-500 hover:text-blue-700"><i class="fab fa-twitter fa-lg"></i></a>
-              <a href="#" class="text-blue-700 hover:text-blue-900"><i class="fab fa-linkedin fa-lg"></i></a>
-              <a href="#" class="text-red-500 hover:text-red-700"><i class="fas fa-envelope fa-lg"></i></a>
-          </div>
-      </div> -->
+  </main>
 
-      <!-- Comments Placeholder -->
-      <!-- <div class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
-           <h3 class="text-xl font-medium mb-4 text-gray-900 dark:text-white">Comments</h3>
-           <p class="text-gray-600 dark:text-gray-400">Comments are disabled for this post.</p>
-           <!-- Or integrate Disqus/etc. here -->
-</div> -->
+  <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto text-center text-sm text-gray-500 dark:text-gray-400">
+      &copy;
+      <script>document.write(new Date().getFullYear())</script> Kisan Thapa. All rights reserved.
+    </div>
+  </footer>
 
-</article>
+  <script src="../../js/index.js"></script>
 
-</main>
-</div>
+  <script>
+    const toggleBtn = document.getElementById('full-width-toggle');
+    const mainContainer = document.querySelector('main');
+    const navContainer = document.querySelector('header > div');
+    const toggleIcon = toggleBtn.querySelector('i');
+    const toggleText = toggleBtn.querySelector('span');
 
-<!-- Footer (Consistent structure) -->
-<footer class="bg-gray-100 dark:bg-gray-800 mt-16 pb-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-  <div class="container mx-auto px-6 sm:px-12 max-w-screen-lg w-full text-center text-gray-600 dark:text-gray-400 text-sm">
-    © <script>document.write(new Date().getFullYear())</script> Kisan Thapa. All rights reserved.
-  </div>
-</footer>
+    let isFullWidth = false;
 
-<!-- Link JS (Corrected path) -->
-<script src="../js/index.js"></script>
+    toggleBtn.addEventListener('click', () => {
+      isFullWidth = !isFullWidth;
+
+      if (isFullWidth) {
+        // Expand
+        mainContainer.classList.remove('max-w-screen-lg');
+        mainContainer.classList.add('max-w-none', 'px-6', 'md:px-20');
+        if (navContainer) {
+          navContainer.classList.remove('max-w-screen-lg');
+          navContainer.classList.add('max-w-none');
+        }
+
+        toggleIcon.classList.remove('fa-expand');
+        toggleIcon.classList.add('fa-compress');
+        toggleText.textContent = "Standard Mode";
+      } else {
+        // Contract
+        mainContainer.classList.add('max-w-screen-lg');
+        mainContainer.classList.remove('max-w-none', 'px-6', 'md:px-20');
+        if (navContainer) {
+          navContainer.classList.add('max-w-screen-lg');
+          navContainer.classList.remove('max-w-none');
+        }
+
+        toggleIcon.classList.remove('fa-compress');
+        toggleIcon.classList.add('fa-expand');
+        toggleText.textContent = "Wide Mode";
+      }
+    });
+  </script>
 
 </body>
+
 </html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <!-- *** BLOG POST METADATA *** -->
+    <title>Blog Title Placeholder | Kisan Thapa</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Brief description of the blog post for SEO and social sharing." name="description">
+
+    <!-- *** STYLES & SCRIPTS *** -->
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles (Adjust path if you move this file to a subfolder, e.g., ../../css/style.css) -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- *** MATH SUPPORT (KaTeX) *** -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+        integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+        integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false}
+          ],
+          throwOnError : false
+        });"></script>
+
+    <!-- *** CODE HIGHLIGHTING (Highlight.js) *** -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/r.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <style>
+        /* Typography overrides for better reading experience */
+        .prose-custom {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .prose-custom h1,
+        .prose-custom h2,
+        .prose-custom h3 {
+            color: inherit;
+            font-weight: 600;
+        }
+
+        .prose-custom p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose-custom code {
+            font-family: 'Fira Code', monospace;
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+        }
+
+        .dark .prose-custom code {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .prose-custom pre {
+            background-color: transparent;
+            /* Handled by HLJS theme */
+            padding: 0;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .prose-custom blockquote {
+            border-left: 4px solid #ef4444;
+            /* red-500 */
+            padding-left: 1rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .katex-display {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body
+    class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+            <a href="../index.html"
+                class="text-2xl font-mono font-semibold text-gray-900 dark:text-white hover:text-red-500 transition">
+                Kisan Thapa.
+            </a>
+
+            <div class="flex items-center space-x-4">
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../index.html">About</a>
+                    <a class="text-red-500 dark:text-red-400 font-bold" href="blog.html">Blog</a>
+                    <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="projects.html">Projects</a>
+                    <a class="hover:text-red-500 dark:hover:text-red-400 transition"
+                        href="publications.html">Publications</a>
+                    <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="contact.html">Contact</a>
+                    <a href="resume.html"
+                        class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-200 hover:border-red-500 hover:text-red-500 dark:hover:border-red-400 dark:hover:text-red-400 transition">
+                        Resume / CV
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
+                    id="hamburger-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+            id="mobile-menu">
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" href="../index.html">About</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500"
+                href="blog.html">Blog</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="projects.html">Projects</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="publications.html">Publications</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-8 sm:mt-12 px-6 sm:px-12 max-w-screen-lg w-full flex-grow">
+
+        <!-- Back Link -->
+        <div class="mb-6">
+            <a href="blog.html"
+                class="inline-flex items-center text-sm text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 transition">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+            </a>
+        </div>
+
+        <!-- Blog Header -->
+        <header class="mb-8 border-b border-gray-200 dark:border-gray-700 pb-8">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <!-- Tags -->
+                <span
+                    class="px-2 py-1 text-xs font-semibold bg-red-100 text-red-600 rounded dark:bg-red-900/30 dark:text-red-400">Research</span>
+                <span
+                    class="px-2 py-1 text-xs font-semibold bg-gray-100 text-gray-600 rounded dark:bg-gray-800 dark:text-gray-400">Machine
+                    Learning</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+                Review: Graph Neural Networks in Computational Biology
+            </h1>
+
+            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-6">
+                <span class="flex items-center"><i class="far fa-calendar-alt mr-2"></i> Oct 26, 2024</span>
+                <span class="flex items-center"><i class="far fa-clock mr-2"></i> 8 min read</span>
+
+                <!-- Full Width Toggle -->
+                <button id="full-width-toggle"
+                    class="ml-auto text-xs flex items-center gap-1 text-gray-500 hover:text-gray-900 dark:hover:text-white transition"
+                    title="Toggle Read Mode">
+                    <i class="fas fa-expand"></i> <span>Wide Mode</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Featured Image (Optional) -->
+        <div class="mb-10">
+            <img src="https://via.placeholder.com/1200x600" alt="Blog Cover" class="w-full h-auto rounded-xl shadow-sm">
+            <p class="text-center text-xs text-gray-400 mt-2 italic">Figure 1: Visualization of a Protein Interaction
+                Network</p>
+        </div>
+
+        <!-- Article Content -->
+        <!-- Use 'prose-custom' class for global typography styles defined in <head> -->
+        <article id="blog-content"
+            class="prose-custom text-gray-800 dark:text-gray-300 max-w-none mx-auto transition-all duration-300">
+
+            <p class="lead text-lg font-medium text-gray-900 dark:text-white">
+                This template supports <strong>Markdown-like</strong> features including code block highlighting and
+                LaTeX math equations.
+            </p>
+
+            <h3>1. Introduction</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+                As shown in equation $(1)$, we can model the system dynamics using differential equations.
+            </p>
+
+            <h3>2. Mathematical Formulation</h3>
+            <p>
+                We can write the loss function for the Graph Neural Network as follows:
+            </p>
+
+            <!-- Math Block ($$ ... $$) -->
+            $$
+            \mathcal{L} = -\sum_{v \in \mathcal{V}} \sum_{c=1}^C Y_{v,c} \log(\hat{Y}_{v,c}) + \lambda ||W||^2
+            $$
+
+            <p>
+                Where $\mathcal{V}$ is the set of vertices and $C$ is the number of classes.
+                You can also use inline math like $\alpha + \beta = \gamma$.
+            </p>
+
+            <h3>3. Code Implementation</h3>
+            <p>
+                Here is a Python snippets showing how to implement a basic GCN layer using PyTorch Geometric:
+            </p>
+
+            <!-- Code Block (pre > code) -->
+            <pre><code class="language-python">
+                import torch
+                import torch.nn.functional as F
+                from torch_geometric.nn import GCNConv
+
+                class GCN(torch.nn.Module):
+                    def __init__(self):
+                        super().__init__()
+                        self.conv1 = GCNConv(dataset.num_node_features, 16)
+                        self.conv2 = GCNConv(16, dataset.num_classes)
+
+                    def forward(self, data):
+                        x, edge_index = data.x, data.edge_index
+
+                        x = self.conv1(x, edge_index)
+                        x = F.relu(x)
+                        x = F.dropout(x, training=self.training)
+                        x = self.conv2(x, edge_index)
+
+                        return F.log_softmax(x, dim=1)
+                </code></pre>
+
+            <h3>4. Conclusion</h3>
+            <p>
+                This template ensures that your research reviews look professional and are easy to read.
+            <ul>
+                <li>Responsive design</li>
+                <li>Dark mode support</li>
+                <li>Syntax highlighting</li>
+            </ul>
+            </p>
+
+        </article>
+
+        <!-- Author / Footer for Post -->
+        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <div class="flex items-center gap-4">
+                <img src="../assets/profile.jpeg" alt="Kisan Thapa" class="w-12 h-12 rounded-full object-cover">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-900 dark:text-white">Kisan Thapa</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">PhD Candidate @ UMass Boston | CompBio & Deep
+                        Learning</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer (Standardized) -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto text-center text-sm text-gray-500 dark:text-gray-400">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script> Kisan Thapa. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Global JS -->
+    <script src="../js/index.js"></script>
+
+    <!-- Page Specific JS -->
+    <script>
+        const toggleBtn = document.getElementById('full-width-toggle');
+        const blogContent = document.getElementById('blog-content');
+        const mainContainer = document.querySelector('main');
+        const navContainer = document.querySelector('header > div');
+        const toggleIcon = toggleBtn.querySelector('i');
+        const toggleText = toggleBtn.querySelector('span');
+
+        let isFullWidth = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isFullWidth = !isFullWidth;
+
+            if (isFullWidth) {
+                // Expand
+                mainContainer.classList.remove('max-w-screen-lg');
+                mainContainer.classList.add('max-w-none', 'px-6', 'md:px-20');
+                if (navContainer) {
+                    navContainer.classList.remove('max-w-screen-lg');
+                    navContainer.classList.add('max-w-none');
+                }
+
+                toggleIcon.classList.remove('fa-expand');
+                toggleIcon.classList.add('fa-compress');
+                toggleText.textContent = "Standard Mode";
+            } else {
+                // Contract
+                mainContainer.classList.add('max-w-screen-lg');
+                mainContainer.classList.remove('max-w-none', 'px-6', 'md:px-20');
+                if (navContainer) {
+                    navContainer.classList.add('max-w-screen-lg');
+                    navContainer.classList.remove('max-w-none');
+                }
+
+                toggleIcon.classList.remove('fa-compress');
+                toggleIcon.classList.add('fa-expand');
+                toggleText.textContent = "Wide Mode";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
