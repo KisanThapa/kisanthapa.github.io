@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <title>Understand Precision and Recall once for all | Kisan Thapa</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Precision and Recall" name="description">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- <link href="../dist/output.css" rel="stylesheet"> -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../assets/kisan_icon.png" rel="shortcut icon" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"
+        rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- *** MATH SUPPORT (KaTeX) *** -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+        integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+        integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false}
+        ],
+        throwOnError : false
+      });"></script>
+
+    <!-- *** CODE HIGHLIGHTING (Highlight.js) *** -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        /* Typography overrides for better reading experience */
+        .prose-custom {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .prose-custom h1 {
+            font-size: 2.25rem;
+            /* 36px */
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .prose-custom h2 {
+            font-size: 1.75rem;
+            /* 28px */
+            font-weight: 600;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            /* gray-200 */
+        }
+
+        /* Dark mode border adjustment */
+        .dark .prose-custom h2 {
+            border-color: #374151;
+            /* gray-700 */
+        }
+
+        .prose-custom h3 {
+            font-size: 1.5rem;
+            /* 24px */
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .prose-custom p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose-custom ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose-custom ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prose-custom li {
+            margin-bottom: 0.5rem;
+        }
+
+        .prose-custom code {
+            font-family: 'Fira Code', monospace;
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+        }
+
+        .dark .prose-custom code {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .prose-custom pre {
+            background-color: transparent;
+            /* Handled by HLJS theme */
+            padding: 0;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .prose-custom blockquote {
+            border-left: 4px solid #ef4444;
+            /* red-500 */
+            padding-left: 1rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .katex-display {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.5rem 0;
+        }
+    </style>
+
+</head>
+
+<body
+    class="font-light text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6 sm:px-12 max-w-screen-lg w-full">
+            <a href="../../index.html"
+                class="text-2xl font-mono font-semibold text-gray-900 dark:text-white hover:text-red-500 transition">
+                Kisan Thapa.
+            </a>
+
+            <div class="flex items-center space-x-4">
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../../index.html">About</a>
+                    <a class="text-red-500 dark:text-red-400 font-bold" href="../blog.html">Blog</a>
+                    <a class="hover:text-red-500 dark:hover:text-red-400 transition"
+                        href="../projects.html">Projects</a>
+                    <a class="hover:text-red-500 dark:hover:text-red-400 transition"
+                        href="../publications.html">Publications</a>
+                    <a class="hover:text-red-500 dark:hover:text-red-400 transition" href="../contact.html">Contact</a>
+                    <a href="../resume.html"
+                        class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-200 hover:border-red-500 hover:text-red-500 dark:hover:border-red-400 dark:hover:text-red-400 transition">
+                        Resume / CV
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-800 dark:text-gray-200"
+                    id="hamburger-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav class="font-medium hidden md:hidden flex flex-col space-y-2 p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+            id="mobile-menu">
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="../../index.html">About</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-red-500"
+                href="../blog.html">Blog</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="../projects.html">Projects</a>
+            <a class="block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                href="../publications.html">Publications</a>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <main class="container mx-auto mt-8 sm:mt-12 px-6 sm:px-12 max-w-screen-lg w-full flex-grow">
+
+        <!-- Back to Blog Link -->
+        <div class="mb-6">
+            <a href="../blog.html" class="text-sm text-red-500 dark:text-red-400 hover:underline">
+                ← Back to Blog List
+            </a>
+        </div>
+
+        <article
+            class="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 shadow-md border border-gray-200 dark:border-gray-700">
+
+            <!-- Post Header -->
+            <header class="mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
+
+                <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-gray-900 dark:text-white leading-tight">
+                    Understand Precision and Recall once for all
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-2">(Kisan Thapa)</p>
+
+                <!-- Metadata -->
+                <div class="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 gap-x-4 gap-y-1">
+                    <span>
+                        <i class="fas fa-calendar-alt mr-1"></i>
+
+                        Feb 14, 2026
+                    </span>
+                    <span>
+                        <i class="fas fa-user mr-1"></i> Kisan Thapa
+                    </span>
+                    <span>
+                        <i class="fas fa-tags mr-1"></i>
+
+                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Precision and Recall</a>,
+                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Evaluation Metrics</a>,
+                        <a href="#" class="hover:text-red-500 dark:hover:text-red-400">Machine Learning</a>
+                    </span>
+                    <button id="full-width-toggle"
+                        class="ml-auto text-xs flex items-center gap-1 text-gray-500 hover:text-gray-900 dark:hover:text-white transition"
+                        title="Toggle Read Mode">
+                        <i class="fas fa-expand"></i> <span>Wide Mode</span>
+                    </button>
+                </div>
+            </header>
+
+            <figure class="mb-6">
+                <img src="../../assets/confusion_matrix.png" alt="Confusion Matrix"
+                    class="w-full h-auto rounded-lg border dark:invert">
+            </figure>
+
+            <div id="blog-content"
+                class="prose-custom text-gray-800 dark:text-gray-300 max-w-none mx-auto transition-all duration-300">
+
+                <p>
+                    Precision and Recall are two fundamental metrics in machine learning classification tasks, yet they
+                    often confuse beginners. Instead of memorizing definitions, let's understand them intuitively using
+                    a simple analogy: <strong>Fishing in a Pond</strong>.
+                </p>
+
+                <h3>The Fishing Analogy</h3>
+                <p>
+                    Imagine you are a fisherman with a net (your <strong>Model</strong>), and you are fishing in a pond.
+                    The pond contains two types of creatures: <strong>Fish</strong> (which you want to catch) and
+                    <strong>Frogs</strong> (which you don't want).
+                </p>
+                <ul>
+                    <li><strong>Fish</strong> represents the <strong>Positive Class</strong> (what we are looking for).
+                    </li>
+                    <li><strong>Frog</strong> represents the <strong>Negative Class</strong> (what we want to ignore).
+                    </li>
+                    <li><strong>The Net</strong> represents our <strong>Classifier/Model</strong>.</li>
+                </ul>
+                <p>
+                    Let's assume the pond has <strong>100 Fish</strong> and <strong>10 Frogs</strong>. You cast your net
+                    once.
+                </p>
+
+                <h3>Understanding the Confusion Matrix</h3>
+                <p>
+                    When you pull up your net, four things can happen for each creature involved:
+                </p>
+                <ul>
+                    <li><strong>True Positive (TP):</strong> You wanted to catch a fish, and you caught a
+                        <strong>fish</strong>. (Success!)
+                    </li>
+                    <li><strong>False Positive (FP):</strong> You wanted to catch a fish (implied by using the net), but
+                        you caught a <strong>frog</strong>.
+                        This is a "False Alarm" or <strong>Type I Error</strong>. You predicted positive, but it was
+                        negative.</li>
+                    <li><strong>True Negative (TN):</strong> You ignored a frog, and it was indeed a
+                        <strong>frog</strong>. (Success! The net didn't pick up the trash).
+                    </li>
+                    <li><strong>False Negative (FN):</strong> You missed a fish that was swimming right there.
+                        This is a "Miss" or <strong>Type II Error</strong>. You predicted negative (by not catching it),
+                        but it was positive.</li>
+                </ul>
+
+                <h3>Precision: Quality of the Catch</h3>
+                <p>
+                    <strong>Precision</strong> asks the question: <em>"Out of all the things I caught in my net, how
+                        many were actually fish?"</em>
+                </p>
+                <p>
+                    It measures the <strong>purity</strong> of your positive predictions. If you have high precision, it
+                    means when you predict something is a fish, you are usually right.
+                </p>
+
+                <div class="katex-display">
+                    $$ \text{Precision} = \frac{\text{True Positives (TP)}}{\text{Total Caught (TP + FP)}} $$
+                </div>
+
+                <p>
+                    In our analogy, if you caught 10 creatures, and 8 were fish and 2 were frogs, your precision is
+                    $8/10 = 0.8$ or 80%.
+                </p>
+
+                <h3>Recall: Quantity of the Catch</h3>
+                <p>
+                    <strong>Recall</strong> (also called Sensitivity) asks the question: <em>"Out of all the fish
+                        available in the pond, how many did I manage to catch?"</em>
+                </p>
+                <p>
+                    It measures the <strong>completeness</strong> of your positive predictions. High recall means you
+                    didn't miss many fish.
+                </p>
+
+                <div class="katex-display">
+                    $$ \text{Recall} = \frac{\text{True Positives (TP)}}{\text{Total Actual Fish (TP + FN)}} $$
+                </div>
+
+                <p>
+                    If there were 100 fish in the pond, and you caught 80 of them (regardless of how many frogs you also
+                    caught), your recall is $80/100 = 0.8$ or 80%.
+                </p>
+
+                <h3>The Precision-Recall Trade-off</h3>
+                <p>
+                    Ideally, we want both high precision and high recall, but in practice, they often trade off against
+                    each other. Think about adjusting the size of your net's mesh or your strategy:
+                </p>
+
+                <p class="font-bold">Scenario A: The "Strict" Net (High Precision, Low Recall)</p>
+                <p>
+                    You decide you absolutely <strong>hate</strong> touching frogs. You make your net very selective
+                    (maybe you only catch things that look 100% like a perfect fish).
+                </p>
+                <ul>
+                    <li><strong>Result:</strong> You will catch very few frogs (Low FP $\rightarrow$ High Precision).
+                    </li>
+                    <li><strong>Trade-off:</strong> You will likely miss many odd-looking or fast-swimming fish (High FN
+                        $\rightarrow$ Low Recall).</li>
+                </ul>
+
+                <p class="font-bold">Scenario B: The "Lenient" Net (Low Precision, High Recall)</p>
+                <p>
+                    You decide you <strong>must</strong> catch every single fish to feed your village. You use a massive
+                    net and scoop up everything.
+                </p>
+                <ul>
+                    <li><strong>Result:</strong> You catch almost every fish (Low FN $\rightarrow$ High Recall).</li>
+                    <li><strong>Trade-off:</strong> You will also catch a lot of frogs and trash (High FP $\rightarrow$
+                        Low Precision).</li>
+                </ul>
+
+                <h3>Conclusion</h3>
+                <p>
+                    There is no "perfect" balance that applies to every problem. The right balance depends on your
+                    specific goal:
+                </p>
+                <ul>
+                    <li><strong>Spam Detection:</strong> We prefer <strong>High Precision</strong>. We don't want to
+                        accidentally label a real email as spam (False Positive). It's okay to miss a few spam emails
+                        (False Negative).</li>
+                    <li><strong>Cancer Diagnosis:</strong> We prefer <strong>High Recall</strong>. We cannot afford to
+                        miss a sick patient (False Negative). It's better to flag a healthy person for further testing
+                        (False Positive) than to let a sick person go home.</li>
+                </ul>
+
+            </div>
+        </article>
+
+
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto text-center text-sm text-gray-500 dark:text-gray-400">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script> Kisan Thapa. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../../js/index.js"></script>
+
+    <script>
+        const toggleBtn = document.getElementById('full-width-toggle');
+        const mainContainer = document.querySelector('main');
+        const navContainer = document.querySelector('header > div');
+        const toggleIcon = toggleBtn.querySelector('i');
+        const toggleText = toggleBtn.querySelector('span');
+
+        let isFullWidth = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isFullWidth = !isFullWidth;
+
+            if (isFullWidth) {
+                // Expand
+                mainContainer.classList.remove('max-w-screen-lg');
+                mainContainer.classList.add('max-w-none', 'px-6', 'md:px-20');
+                if (navContainer) {
+                    navContainer.classList.remove('max-w-screen-lg');
+                    navContainer.classList.add('max-w-none');
+                }
+
+                toggleIcon.classList.remove('fa-expand');
+                toggleIcon.classList.add('fa-compress');
+                toggleText.textContent = "Standard Mode";
+            } else {
+                // Contract
+                mainContainer.classList.add('max-w-screen-lg');
+                mainContainer.classList.remove('max-w-none', 'px-6', 'md:px-20');
+                if (navContainer) {
+                    navContainer.classList.add('max-w-screen-lg');
+                    navContainer.classList.remove('max-w-none');
+                }
+
+                toggleIcon.classList.remove('fa-compress');
+                toggleIcon.classList.add('fa-expand');
+                toggleText.textContent = "Wide Mode";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
