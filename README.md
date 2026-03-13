@@ -1,5 +1,5 @@
 # kisanthapa.github.io
 
-# kisanthapa.com.np
+# kisanthapa.com
 
 My personal website
