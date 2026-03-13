@@ -6,7 +6,6 @@ import rehypeKatex from 'rehype-katex'
 
 export default defineConfig({
   site: 'https://kisanthapa.github.io',
-  output: 'static',
   integrations: [mdx()],
   vite: {
     plugins: [tailwindcss()],
