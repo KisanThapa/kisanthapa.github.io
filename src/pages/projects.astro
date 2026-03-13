@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const projects = [
+  {
+    name: 'CausalPath Webserver',
+    status: 'Active',
+    description:
+      'CausalPath analyzes molecular profiles (phosphoproteomics, transcriptomics, etc.) to infer causal biological mechanisms by integrating prior knowledge from pathway databases. It helps explain experimental observations in the context of known biology.',
+    tech: ['Java', 'JavaScript', 'HTML', 'CSS', 'Cytoscape.js'],
+    links: [
+      { label: 'Live Webserver', href: 'https://causalpath.cs.umb.edu' },
+      { label: 'GitHub', href: 'https://github.com/PathwayAndDataAnalysis/causalpath-newt-webserver' },
+    ],
+  },
+  {
+    name: 'Cell Activity Inference Landscape (KALE)',
+    status: 'Ongoing',
+    description:
+      'Implements rank-based methods (GSEA, VIPER) within a webserver to predict transcription factor (TF) activity from gene expression data. Provides biologists with an accessible tool to infer regulatory changes without requiring programming expertise.',
+    tech: ['Python', 'Flask', 'Pandas', 'NumPy'],
+    links: [
+      { label: 'Live Webserver', href: 'https://kale.cs.umb.edu' },
+      { label: 'GitHub', href: 'https://github.com/PathwayAndDataAnalysis/TF-Prediction-Webserver' },
+    ],
+  },
+]
+
+const statusStyle: Record<string, string> = {
+  Active:  'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900',
+  Ongoing: 'bg-slate-100 text-slate-700 border border-slate-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700',
+}
+---
+
+<BaseLayout title="Projects — Kisan Thapa" description="Selected research and engineering projects in computational biology and deep learning.">
+
+  <div class="pb-10 border-b border-slate-100 dark:border-zinc-800">
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">Projects</h1>
+    <p class="mt-2 text-sm text-slate-500 dark:text-zinc-400">
+      Selected work focusing on computational techniques for biological insight.
+    </p>
+  </div>
+
+  <ul class="mt-10 space-y-12">
+    {projects.map((project) => (
+      <li class="group">
+        <div class="flex items-start justify-between gap-4">
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-zinc-100 leading-snug">{project.name}</h2>
+          <span class={`flex-shrink-0 mt-0.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${statusStyle[project.status] ?? ''}`}>
+            {project.status}
+          </span>
+        </div>
+
+        <p class="mt-3 text-sm text-slate-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
+          {project.description}
+        </p>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+          {project.tech.map((t) => (
+            <span class="rounded border border-slate-200 dark:border-zinc-700 px-2.5 py-1 text-xs text-slate-500 dark:text-zinc-500">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <div class="mt-4 flex gap-5">
+          {project.links.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-slate-500 dark:text-zinc-500 hover:text-slate-900 dark:hover:text-zinc-100 underline underline-offset-2 transition-colors"
+            >
+              {link.label} ↗
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-8 border-b border-slate-100 dark:border-zinc-800 last:border-0" />
+      </li>
+    ))}
+  </ul>
+
+</BaseLayout>

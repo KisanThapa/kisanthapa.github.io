@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Class-based dark mode: add `dark` class to <html> to activate */
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.prose pre {
+    overflow-x: auto;
+}
+
+.prose :where(code):not(:where(pre code)) {
+    background-color: #f1f5f9;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-weight: 400;
+}
+
+.dark .prose :where(code):not(:where(pre code)) {
+    background-color: #27272a;
+    color: #d4d4d8;
+}
+
+.prose :where(code):not(:where(pre code))::before,
+.prose :where(code):not(:where(pre code))::after {
+    content: none;
+}

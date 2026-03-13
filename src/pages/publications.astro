@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const publications = [
+  {
+    year: 2025,
+    papers: [
+      {
+        type: 'Journal',
+        title: 'Strategies to include prior knowledge in omics analysis with deep neural networks',
+        authors: ['Kisan Thapa', 'Meric Kinali', 'Shichao Pei', 'Augustin Luna', 'Ozgun Babur'],
+        venue: 'Cell Press Patterns',
+        links: [
+          { label: 'DOI', href: 'https://doi.org/10.1016/j.patter.2025.101203' },
+        ],
+      },
+    ],
+  },
+  {
+    year: 2024,
+    papers: [
+      {
+        type: 'Preprint',
+        title: 'A prognostic matrix gene expression signature defines functional glioblastoma phenotypes and niches',
+        authors: ['Monika Vishnoi', 'Zeynep Dereli', '...', 'Kisan Thapa', '...', 'Anil Korkut'],
+        venue: 'Research Square',
+        links: [
+          { label: 'PDF', href: 'https://www.researchsquare.com/article/rs-4541464/v1' },
+          { label: 'DOI', href: 'https://doi.org/10.21203/rs.3.rs-4541464/v1' },
+        ],
+      },
+      {
+        type: 'Conference',
+        title: 'Unlocking the Potential of Large Language Models for AI-Assisted Medical Education: A Case Study with ChatGPT',
+        authors: ['Prabin Sharma', 'Kisan Thapa', '...', 'Vitor Filipe'],
+        venue: 'International Conference on Technology and Innovation in Learning, Teaching and Education',
+        links: [
+          { label: 'DOI', href: 'https://doi.org/10.1007/978-3-032-02675-0_2' },
+        ],
+      },
+      {
+        type: 'Conference',
+        title: 'Performance analysis and evaluation of cloud vision emotion APIs',
+        authors: ['Salik R Khanal', 'Prabin Sharma', 'Kisan Thapa', '...', 'Vitor Filipe'],
+        venue: '11th International Conference on Software Development and Technologies for Enhancing Accessibility and Fighting Info-exclusion',
+        links: [
+          { label: 'DOI', href: 'https://doi.org/10.1145/3696593.3696599' },
+        ],
+      },
+    ],
+  },
+  {
+    year: 2023,
+    papers: [
+      {
+        type: 'Journal',
+        title: 'Protein Kinase Signaling Networks Driven by Oncogenic Gq/11 in Uveal Melanoma Identified by Phosphoproteomic and Bioinformatic Analyses',
+        authors: ['Michael D Onken', '...', 'Kisan Thapa', '...', 'Kendall J Blumer'],
+        venue: 'Molecular & Cellular Proteomics',
+        links: [
+          { label: 'View', href: 'https://www.mcponline.org/article/S1535-9476(23)00160-3/fulltext' },
+          { label: 'DOI', href: 'https://doi.org/10.1016/j.mcpro.2023.100649' },
+        ],
+      },
+      {
+        type: 'Journal',
+        title: 'A framework for considering prior information in network-based approaches to omics data analysis',
+        authors: ['Julia Somers', '...', 'Kisan Thapa', '...', 'Emek Demir'],
+        venue: 'Proteomics',
+        links: [
+          { label: 'View', href: 'https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/epdf/10.1002/pmic.202200402' },
+        ],
+      },
+      {
+        type: 'Preprint',
+        title: 'Performance of ChatGPT on USMLE: Unlocking the potential of large language models',
+        authors: ['Prabin Sharma', 'Kisan Thapa', '...', 'Salik Ram Khanal'],
+        venue: 'arXiv',
+        links: [
+          { label: 'PDF', href: 'https://arxiv.org/pdf/2307.00112' },
+        ],
+      },
+      {
+        type: 'Preprint',
+        title: 'Screening Autism Spectrum Disorder in children using Deep Learning Approach',
+        authors: ['Subash Gautam', 'Prabin Sharma', 'Kisan Thapa', '...', 'Vítor Filipe'],
+        venue: 'arXiv',
+        links: [
+          { label: 'PDF', href: 'https://arxiv.org/pdf/2306.14300' },
+        ],
+      },
+    ],
+  },
+]
+
+const badgeStyle: Record<string, string> = {
+  Journal:    'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900',
+  Conference: 'bg-slate-100 text-slate-700 border border-slate-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700',
+  Preprint:   'bg-white text-slate-500 border border-slate-200 dark:bg-zinc-950 dark:text-zinc-500 dark:border-zinc-700',
+}
+---
+
+<BaseLayout title="Publications — Kisan Thapa" description="Peer-reviewed journals, conference papers, and preprints.">
+
+  <div class="pb-10 border-b border-slate-100 dark:border-zinc-800">
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">Publications</h1>
+    <p class="mt-2 text-slate-500 dark:text-zinc-400 text-sm">
+      Peer-reviewed journals, conferences, and preprints. My name is <strong class="text-slate-700 dark:text-zinc-300 font-medium">bolded</strong> where applicable.
+      Also on{' '}
+      <a
+        href="https://scholar.google.com/citations?user=4Qs3ndUAAAAJ&hl=en"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline underline-offset-2 hover:text-slate-900 dark:hover:text-zinc-100 transition-colors"
+      >
+        Google Scholar
+      </a>.
+    </p>
+  </div>
+
+  <div class="mt-10 space-y-16">
+    {publications.map((group) => (
+      <section>
+        <!-- Year heading -->
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-2xl font-bold text-slate-200 dark:text-zinc-700 tabular-nums">{group.year}</h2>
+          <div class="h-px bg-slate-100 dark:bg-zinc-800 flex-grow" />
+        </div>
+
+        <ul class="space-y-8">
+          {group.papers.map((paper) => (
+            <li class="flex gap-4">
+              <!-- Type badge -->
+              <div class="mt-1 flex-shrink-0 w-20 text-right">
+                <span class={`inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${badgeStyle[paper.type] ?? ''}`}>
+                  {paper.type}
+                </span>
+              </div>
+
+              <!-- Paper details -->
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-medium text-slate-900 dark:text-zinc-100 leading-snug">
+                  {paper.title}
+                </p>
+
+                <p class="mt-1.5 text-xs text-slate-500 dark:text-zinc-500">
+                  {paper.authors.map((author, i) => (
+                    <>
+                      {author === 'Kisan Thapa'
+                        ? <strong class="text-slate-700 dark:text-zinc-200 font-semibold">{author}</strong>
+                        : <span>{author}</span>
+                      }
+                      {i < paper.authors.length - 1 && <span>,{' '}</span>}
+                    </>
+                  ))}
+                </p>
+
+                <p class="mt-1 text-xs italic text-slate-400 dark:text-zinc-600">{paper.venue}</p>
+
+                <div class="mt-2 flex gap-4">
+                  {paper.links.map((link) => (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-xs text-slate-500 dark:text-zinc-500 hover:text-slate-900 dark:hover:text-zinc-100 underline underline-offset-2 transition-colors"
+                    >
+                      {link.label} ↗
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+</BaseLayout>
